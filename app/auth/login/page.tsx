@@ -13,30 +13,43 @@ import {
 import { useForm } from "react-hook-form"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import React from "react"
+import React, { useState } from "react"
 import Image from "next/image"
 import { SocialButton } from "../_components/social-button"
 import { Divider } from "@/components/divider"
 import { useRouter } from "next/navigation"
+import { LoginSchema } from "../schemas"
+import { login } from "@/actions/login"
+import { toast } from "sonner"
 
 function LoginPage() {
   const { push } = useRouter()
+  const [isLoading, setLoading] = useState(false)
 
-  const formSchema = z.object({
-    email: z
-      .string()
-      .min(1, { message: "최소 1글자 이상 작성해주세요" })
-      .email("이메일 주소가 유효하지 않습니다"),
-    password: z.string().min(7, { message: "최소 7자 이상 작성해주세요" }),
-  })
-
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<z.infer<typeof LoginSchema>>({
+    resolver: zodResolver(LoginSchema),
     defaultValues: {
       email: "",
       password: "",
     },
   })
+
+  const onSubmit = async (values: z.infer<typeof LoginSchema>) => {
+    setLoading(true)
+    try {
+      const res = await login(values)
+      if (res?.error) {
+        toast(res.error)
+        return
+      }
+      push("/roster")
+    } catch (error) {
+      console.log(error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <div className="bg-[#1a1a1a] flex justify-center items-center h-full p-50 ">
       <div className="bg-[#1e1e1e] w-[1200px] h-[700px] flex flex-row border-2 border-[#1e1e1e] drop-shadow-2xl">
@@ -57,7 +70,7 @@ function LoginPage() {
           </div>
           <Form {...form}>
             <form
-              onSubmit={form.handleSubmit(() => {})}
+              onSubmit={form.handleSubmit(onSubmit)}
               onChange={() => console.log(form.getValues())}
             >
               <div className="space-y-3">
@@ -103,15 +116,15 @@ function LoginPage() {
                 />
               </div>
               <div className="mt-10 flex flex-col ">
-                <Button size="lg" type="submit">
+                <Button size="lg" type="submit" disabled={isLoading}>
                   로그인
                 </Button>
                 <Divider isAuth />
-                <SocialButton />
+                <SocialButton disabled={isLoading} />
                 <Button
                   type="submit"
                   variant="link"
-                  // disabled={isLoading}
+                  disabled={isLoading}
                   onClick={(e) => {
                     e.preventDefault()
                     push("/auth/register")

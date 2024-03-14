@@ -13,30 +13,46 @@ import {
 import { useForm } from "react-hook-form"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import React from "react"
+import React, { useState, useTransition } from "react"
 import Image from "next/image"
 import { SocialButton } from "../_components/social-button"
 import { Divider } from "@/components/divider"
 import { useRouter } from "next/navigation"
+import { RegisterSchema } from "../schemas"
+import { register } from "@/actions/register"
+import { toast } from "sonner"
 
 function RegisterPage() {
   const { push } = useRouter()
+  const [isLoading, setLoading] = useState(false)
 
-  const formSchema = z.object({
-    email: z
-      .string()
-      .min(1, { message: "최소 1글자 이상 작성해주세요" })
-      .email("이메일 주소가 유효하지 않습니다"),
-    password: z.string().min(7, { message: "최소 7자 이상 작성해주세요" }),
-  })
-
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<z.infer<typeof RegisterSchema>>({
+    resolver: zodResolver(RegisterSchema),
     defaultValues: {
+      name: "",
       email: "",
       password: "",
     },
   })
+
+  const onSubmit = async (values: z.infer<typeof RegisterSchema>) => {
+    setLoading(true)
+    try {
+      const res = await register(values)
+      if (res.success) {
+        toast(res.success)
+        push("/auth/login")
+      }
+      if (res.error) {
+        toast(res.error)
+      }
+    } catch (error) {
+      console.log(error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <div className="bg-[#1a1a1a] flex justify-center items-center h-full p-50 ">
       <div className="bg-[#1e1e1e] w-[1200px] h-[700px] flex flex-row border-2 border-[#1e1e1e] drop-shadow-2xl ">
@@ -48,7 +64,7 @@ function RegisterPage() {
             alt="logo"
           />
         </div>
-        <div className="w-[55%] bg-[#272727] px-24 py-20 space-y-6">
+        <div className="w-[55%] bg-[#272727] px-24 py-32 space-y-6">
           <div className="space-y-3">
             <h2 className="text-white font-bold text-4xl">Sign up</h2>
             <p className="text-[#c4c4c4] text-sm">
@@ -57,10 +73,29 @@ function RegisterPage() {
           </div>
           <Form {...form}>
             <form
-              onSubmit={form.handleSubmit(() => {})}
+              onSubmit={form.handleSubmit(onSubmit)}
               onChange={() => console.log(form.getValues())}
             >
               <div className="space-y-3">
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-[#c4c4c4] font-semibold pl-1">
+                        Name*
+                      </FormLabel>
+                      <FormControl>
+                        <Input
+                          {...field}
+                          className="bg-[#1e1e1e] border-[#1a1a1a] text-white h-12 placeholder:text-[#555555]"
+                          placeholder="홍길동"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
                 <FormField
                   control={form.control}
                   name="email"
@@ -101,56 +136,16 @@ function RegisterPage() {
                     </FormItem>
                   )}
                 />
-                <FormField
-                  control={form.control}
-                  name="password"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-[#c4c4c4] font-semibold pl-1">
-                        Password*
-                      </FormLabel>
-                      <FormControl>
-                        <Input
-                          {...field}
-                          className="bg-[#1e1e1e] border-[#1a1a1a] text-white h-12 placeholder:text-[#555555]"
-                          placeholder="*******"
-                          type="password"
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="password"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-[#c4c4c4] font-semibold pl-1">
-                        Password*
-                      </FormLabel>
-                      <FormControl>
-                        <Input
-                          {...field}
-                          className="bg-[#1e1e1e] border-[#1a1a1a] text-white h-12 placeholder:text-[#555555]"
-                          placeholder="*******"
-                          type="password"
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
               </div>
               <div className="mt-8 flex flex-col ">
-                <Button size="lg" type="submit">
+                <Button size="lg" type="submit" disabled={isLoading}>
                   회원가입
                 </Button>
 
                 <Button
                   type="submit"
                   variant="link"
-                  // disabled={isLoading}
+                  disabled={isLoading}
                   onClick={(e) => {
                     e.preventDefault()
                     push("/auth/login")

@@ -13,7 +13,7 @@ import {
 import { useForm } from "react-hook-form"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import React, { useState } from "react"
+import React, { useState, useTransition } from "react"
 import Image from "next/image"
 import { SocialButton } from "../_components/social-button"
 import { Divider } from "@/components/divider"
@@ -21,10 +21,12 @@ import { useRouter } from "next/navigation"
 import { LoginSchema } from "../schemas"
 import { login } from "@/actions/login"
 import { toast } from "sonner"
+import { signIn } from "next-auth/react"
+import { error } from "console"
 
 function LoginPage() {
   const { push } = useRouter()
-  const [isLoading, setLoading] = useState(false)
+  const [isPending, startTransition] = useTransition()
 
   const form = useForm<z.infer<typeof LoginSchema>>({
     resolver: zodResolver(LoginSchema),
@@ -34,20 +36,12 @@ function LoginPage() {
     },
   })
 
-  const onSubmit = async (values: z.infer<typeof LoginSchema>) => {
-    setLoading(true)
-    try {
-      const res = await login(values)
-      if (res?.error) {
-        toast(res.error)
-        return
-      }
-      push("/roster")
-    } catch (error) {
-      console.log(error)
-    } finally {
-      setLoading(false)
-    }
+  const onSubmit = (values: z.infer<typeof LoginSchema>) => {
+    startTransition(() => {
+      login(values).catch((error) => {
+        console.log(error)
+      })
+    })
   }
 
   return (
@@ -116,15 +110,15 @@ function LoginPage() {
                 />
               </div>
               <div className="mt-10 flex flex-col ">
-                <Button size="lg" type="submit" disabled={isLoading}>
+                <Button size="lg" type="submit" disabled={isPending}>
                   로그인
                 </Button>
                 <Divider isAuth />
-                <SocialButton disabled={isLoading} />
+                <SocialButton disabled={isPending} />
                 <Button
                   type="submit"
                   variant="link"
-                  disabled={isLoading}
+                  disabled={isPending}
                   onClick={(e) => {
                     e.preventDefault()
                     push("/auth/register")

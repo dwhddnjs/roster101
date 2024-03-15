@@ -18,26 +18,17 @@ export const {
       })
     },
   },
+
   callbacks: {
     async session({ session, user, token }) {
       if (token.sub && session.user) {
         session.user.id = token.sub
       }
 
-      // if (token.role && session.user) {
-      //   session.user.role = token.role as UserRole
-      // }
-
-      // if (session.user) {
-      //   session.user.isTwoFactorEnabled = token.isTwoFactorEnabled as boolean
-      // }
-
-      // if (session.user) {
-      //   session.user.name = token.name
-      //   session.user.email = token.email as string
-      //   session.user.isOAuth = token.isOAuth as boolean
-      // }
-      console.log(session)
+      if (session.user) {
+        session.user.name = token.name
+        session.user.email = token.email as string
+      }
 
       return session
     },

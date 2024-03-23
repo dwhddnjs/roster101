@@ -6,14 +6,7 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card"
 import { Medal } from "lucide-react"
-
-type PlayerTypes = {
-  id: number
-  img: string
-  nickname: string
-  name: string
-  career: string[] | null
-}
+import { PlayerTypes } from "../types/player-types"
 
 interface PlayerCardProps {
   player: PlayerTypes

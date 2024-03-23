@@ -1,4 +1,10 @@
-export const players = {
+import { PlayerTypes } from "@/app/roster/types/player-types"
+
+interface PlayersTypes {
+  [key: string]: PlayerTypes[]
+}
+
+export const players: PlayersTypes = {
   top: [
     {
       id: 1,

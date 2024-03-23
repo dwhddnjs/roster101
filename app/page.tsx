@@ -8,7 +8,6 @@ import Tier from "@/public/images/tier.png"
 import { useRouter } from "next/navigation"
 import { ChevronLeft, ChevronRight, Mail } from "lucide-react"
 import { signOut } from "next-auth/react"
-import { logout } from "@/actions/logout"
 import { toast } from "sonner"
 
 export default function HomePage() {

@@ -6,13 +6,17 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card"
 import { Medal } from "lucide-react"
-import { PlayerTypes } from "../types/player-types"
+import { PlayerTypes } from "../../../types/player-types"
 
 interface PlayerCardProps {
   player: PlayerTypes
 }
 
 export const PlayerCard = ({ player }: PlayerCardProps) => {
+  if (!player) {
+    return null
+  }
+
   return (
     <HoverCard>
       <HoverCardTrigger>

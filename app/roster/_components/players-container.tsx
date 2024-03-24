@@ -1,21 +1,28 @@
 import React, { useState } from "react"
 import { PlayerCard } from "./player-card"
-import { PlayerTypes } from "../types/player-types"
+import { PlayerTypes } from "../../../types/player-types"
 import { players } from "@/lib/player"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import { SearchPlayerInput } from "./search-player-Input"
+import { findPlayerByNicknameOrName } from "@/lib/function"
 
 export const PlayersContainer = () => {
   const [position, setPosition] = useState("top")
+  const [searchValue, setSearchValue] = useState("")
 
   const onSelectPosition = (position: string) => {
     setPosition(position)
   }
 
+  const onChangeSearchValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(e.target.value)
+  }
+
   return (
-    <div className="border-[4px] border-[#1e1e1e] drop-shadow-md">
-      <div className=" w-full bg-[#1e1e1e] py-2 px-3">
-        <div className="w-fit">
+    <div className="border-[4px] border-[#1e1e1e] drop-shadow-md ">
+      <div className=" w-full bg-[#1e1e1e] py-3 px-4 flex justify-between">
+        <div className="w-fit ">
           <Button
             variant="ghost"
             size="icon"
@@ -57,11 +64,23 @@ export const PlayersContainer = () => {
             <Image src="/images/spt_icon_p.svg" width={26} height={26} alt="" />
           </Button>
         </div>
+        <SearchPlayerInput
+          searchValue={searchValue}
+          onChangeSearchValue={onChangeSearchValue}
+        />
       </div>
-      <div className="grid grid-flow-row grid-cols-9 gap-4 p-4 bg-[#1a1a1a]">
-        {players[position].map((player) => (
-          <PlayerCard player={player} key={player.id} />
-        ))}
+      <div className="grid grid-flow-row grid-cols-9 gap-4 p-4 bg-[#1a1a1a] min-h-[300px]">
+        {searchValue.length === 0 ? (
+          players[position].map((player) => (
+            <PlayerCard player={player} key={player.id} />
+          ))
+        ) : (
+          <PlayerCard
+            player={
+              findPlayerByNicknameOrName(players, searchValue) as PlayerTypes
+            }
+          />
+        )}
       </div>
     </div>
   )

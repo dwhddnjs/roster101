@@ -16,7 +16,6 @@ export const MainHeader = ({
   ...props
 }: React.HtmlHTMLAttributes<HTMLElement>) => {
   const { data, status } = useSession()
-  console.log("data: ", data)
 
   const pathname = usePathname()
   const { replace, push } = useRouter()

@@ -22,14 +22,19 @@ export const PlayersContainer = () => {
   return (
     <div className="border-[4px] border-[#1e1e1e] drop-shadow-md ">
       <div className=" w-full bg-[#1e1e1e] py-3 px-4 flex justify-between">
-        <div className="w-fit ">
+        <div className="w-fit flex items-center justify-center">
           <Button
             variant="ghost"
             size="icon"
             className="hover:bg-[#1a1a1a]"
             onClick={() => onSelectPosition("top")}
           >
-            <Image src="/images/top_icon_p.svg" width={26} height={26} alt="" />
+            <Image
+              src="/images/top_icon_p.svg"
+              width={position === "top" ? 36 : 26}
+              height={position === "top" ? 36 : 26}
+              alt=""
+            />
           </Button>
           <Button
             variant="ghost"
@@ -37,7 +42,12 @@ export const PlayersContainer = () => {
             className="hover:bg-[#1a1a1a]"
             onClick={() => onSelectPosition("jgl")}
           >
-            <Image src="/images/jgl_icon_p.svg" width={26} height={26} alt="" />
+            <Image
+              src="/images/jgl_icon_p.svg"
+              width={position === "jgl" ? 36 : 26}
+              height={position === "jgl" ? 36 : 26}
+              alt=""
+            />
           </Button>
           <Button
             variant="ghost"
@@ -45,7 +55,12 @@ export const PlayersContainer = () => {
             className="hover:bg-[#1a1a1a]"
             onClick={() => onSelectPosition("mid")}
           >
-            <Image src="/images/mid_icon_p.svg" width={26} height={26} alt="" />
+            <Image
+              src="/images/mid_icon_p.svg"
+              width={position === "mid" ? 36 : 26}
+              height={position === "mid" ? 36 : 26}
+              alt=""
+            />
           </Button>
           <Button
             variant="ghost"
@@ -53,7 +68,12 @@ export const PlayersContainer = () => {
             className="hover:bg-[#1a1a1a]"
             onClick={() => onSelectPosition("ad")}
           >
-            <Image src="/images/ad_icon_p.svg" width={26} height={26} alt="" />
+            <Image
+              src="/images/ad_icon_p.svg"
+              width={position === "ad" ? 36 : 26}
+              height={position === "ad" ? 36 : 26}
+              alt=""
+            />
           </Button>
           <Button
             variant="ghost"
@@ -61,7 +81,12 @@ export const PlayersContainer = () => {
             className="hover:bg-[#1a1a1a]"
             onClick={() => onSelectPosition("spt")}
           >
-            <Image src="/images/spt_icon_p.svg" width={26} height={26} alt="" />
+            <Image
+              src="/images/spt_icon_p.svg"
+              width={position === "spt" ? 36 : 26}
+              height={position === "spt" ? 36 : 26}
+              alt=""
+            />
           </Button>
         </div>
         <SearchPlayerInput

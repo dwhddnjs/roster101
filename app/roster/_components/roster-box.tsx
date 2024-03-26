@@ -10,10 +10,10 @@ import { useRosterStore } from "@/hooks/useRosterStore"
 import { renderPositionImg } from "@/lib/function"
 
 export const RosterBox = () => {
-  const { roster } = useRosterStore()
+  const { roster, onResetRoster } = useRosterStore()
 
   return (
-    <div className="flex fixed w-fit bottom-0 left-1/3 -translate-x-1/3">
+    <div className="flex fixed w-fit bottom-0 left-1/2 -translate-x-1/2">
       <div className="w-[100px] h-[130px] border-[1px] bg-[#272727] border-[#1e1e1e] flex flex-col items-center justify-between pt-[18px] pb-[10px]">
         <div className="flex flex-col justify-center items-center space-y-1">
           <Image src={esportIcon} width={32} height={32} alt="" />
@@ -30,6 +30,7 @@ export const RosterBox = () => {
           <Button
             className="font-bold bg-transparent rounded-[50%]"
             size={"xs"}
+            onClick={onResetRoster}
           >
             <RotateCcw width={18} />
           </Button>

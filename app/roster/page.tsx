@@ -13,16 +13,16 @@ import { RosterBox } from "./_components/roster-box"
 
 function RosterPage() {
   return (
-    <div className="w-full h-full flex">
-      {/* <Button onClick={() => signOut()}>로그아웃</Button> */}
-      <div className="w-[18%] h-full bg-[#191919] "></div>
+    <div className="w-full min-h-full flex">
+      <div className="w-[18%]  bg-[#191919] "></div>
       <div className="w-[82%] h-full pt-24 px-[48px] space-y-5">
-        <div className="space-y-1">
+        <div className="space-y-1 ml-3">
           <h3 className="text-4xl text-[#eeeeee] font-bold">Roster</h3>
           <p className="text-md text-[#c4c4c4]">당신의 로스터를 구성해보세요</p>
         </div>
         {/* player-container */}
         <PlayersContainer />
+        <div className="h-[300px]" />
       </div>
       <RosterBox />
     </div>

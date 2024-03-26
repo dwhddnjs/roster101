@@ -44,7 +44,7 @@ export const MainHeader = ({
   }
 
   return (
-    <div className="w-full px-7 h-16 flex fixed justify-between items-center bg-[#1a1a1a] z-10">
+    <div className="w-full px-7 h-16 flex fixed justify-between items-center bg-[#1a1a1a] z-10 ">
       <div className="space-x-10 flex items-center">
         <div
           className="flex space-x-2 cursor-pointer"

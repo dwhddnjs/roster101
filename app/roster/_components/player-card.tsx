@@ -39,7 +39,12 @@ export const PlayerCard = ({ player }: PlayerCardProps) => {
             </div>
           </div>
           <div className="absolute bottom-2 right-2">
-            <Image src="/images/top_icon_p.svg" width={24} height={24} alt="" />
+            <Image
+              src={`/images/${player.position}_icon_p.svg`}
+              width={18}
+              height={18}
+              alt=""
+            />
           </div>
         </div>
       </HoverCardTrigger>

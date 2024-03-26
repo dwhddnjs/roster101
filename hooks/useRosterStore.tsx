@@ -4,6 +4,7 @@ import { create } from "zustand"
 export interface useRosterStoreTypes {
   roster: Array<PlayerTypes & { id: number }>
   onSelectPlayer: (player: PlayerTypes) => void
+  onResetRoster: () => void
 }
 
 export const useRosterStore = create<useRosterStoreTypes>((set, get) => ({
@@ -116,6 +117,53 @@ export const useRosterStore = create<useRosterStoreTypes>((set, get) => ({
     )
     set({
       roster: [...filteredRoster, result].sort((a, b) => a.id - b.id),
+    })
+  },
+
+  onResetRoster: () => {
+    set({
+      roster: [
+        {
+          id: 1,
+          img: "",
+          position: "top",
+          nickname: "",
+          name: "",
+          career: null,
+        },
+        {
+          id: 2,
+          img: "",
+          position: "jgl",
+          nickname: "",
+          name: "",
+          career: null,
+        },
+        {
+          id: 3,
+          img: "",
+          position: "mid",
+          nickname: "",
+          name: "",
+          career: null,
+        },
+        {
+          id: 4,
+          img: "",
+          position: "ad",
+          nickname: "",
+          name: "",
+          career: null,
+        },
+        {
+          id: 5,
+          img: "",
+          position: "spt",
+          nickname: "",
+          name: "",
+          career: null,
+        },
+      ],
     })
   },
 }))

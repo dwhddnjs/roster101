@@ -21,7 +21,9 @@ model User {
   image         String?
   password      String?
   accounts      Account[]
+  roster Roster[] @relation()
 }
+
 
 model Account {
   id                 String  @id @default(cuid())
@@ -40,4 +42,25 @@ model Account {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
+}
+
+model Roster {
+  id Int @default(autoincrement()) @id
+  title String
+  players Player[] @relation()
+  userId String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+
+  @@index([userId])
+}
+
+model Player {
+  id Int @id
+  nickname String
+  position String
+  img String
+  career String[]
+  rosterId  Int
+  roster Roster @relation(fields: [rosterId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  @@index([rosterId])
 }

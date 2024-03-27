@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState } from "react"
 import { PlayerCard } from "./player-card"
 import { PlayerTypes } from "../../../types/player-types"

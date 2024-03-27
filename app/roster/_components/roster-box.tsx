@@ -8,9 +8,12 @@ import { Button } from "@/components/ui/button"
 import { Check, RotateCcw, ChevronsDown, ChevronsUp } from "lucide-react"
 import { useRosterStore } from "@/hooks/useRosterStore"
 import { renderPositionImg } from "@/lib/function"
+import { useSaveRosterModalStore } from "@/hooks/useSaveRosterModalStore"
+import { saveRoster } from "@/actions/save-roster"
 
 export const RosterBox = () => {
   const { roster, onResetRoster } = useRosterStore()
+  const { onOpen } = useSaveRosterModalStore()
 
   return (
     <div className="flex fixed w-fit bottom-0 left-1/2 -translate-x-1/2">
@@ -23,7 +26,7 @@ export const RosterBox = () => {
           <Button
             className="font-bold bg-[#74A99C] rounded-[50%] text-xs"
             size={"xs"}
-            // onClick={onOpenModal}
+            onClick={onOpen}
           >
             <Check width={20} />
           </Button>

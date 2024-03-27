@@ -8,6 +8,7 @@ import { SessionProvider } from "next-auth/react"
 import { MainHeader } from "@/components/main-header"
 import { usePathname } from "next/navigation"
 import { headers } from "next/headers"
+import { ModalProvider } from "@/providers/modal-provider"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -28,6 +29,7 @@ export default async function RootLayout({
       <html lang="en">
         <body className={inter.className}>
           <MainHeader />
+          <ModalProvider />
           {children}
           <Toaster />
         </body>

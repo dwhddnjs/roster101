@@ -2,9 +2,8 @@
 
 import { currentUser } from "@/lib/auth"
 import { db } from "@/lib/db"
-import { getUserById } from "@/prisma/data/user"
+
 import { PlayerTypes } from "@/types/player-types"
-import { Player } from "@prisma/client"
 
 export const saveRoster = async (roster: PlayerTypes[], title: string) => {
   const user = await currentUser()
@@ -13,24 +12,31 @@ export const saveRoster = async (roster: PlayerTypes[], title: string) => {
     return { error: "Unauthorized" }
   }
 
-  const existingUser = await db.user.findUnique({
-    where: {
-      id: user.id,
-    },
-    select: {
-      roster: true,
-    },
-  })
+  if (!title) {
+    return { error: "로스터 이름을 작성해주세요" }
+  }
 
   const newRoster = await db.roster.create({
     data: {
       title,
-      userId: user.id as string,
+      user: {
+        connect: { id: user.id },
+      },
     },
   })
-  //   const newPlayers = await db.player.create({
-  //     data: {
 
-  //     }
-  //   })
+  const mapPlayers = roster.map((player) => {
+    const { id, ...rest } = player
+
+    return {
+      ...rest,
+      rosterId: newRoster.id,
+    }
+  })
+
+  await db.player.createMany({
+    data: mapPlayers,
+  })
+
+  return { success: "로스터가 생성 되었습니다" }
 }

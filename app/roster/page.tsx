@@ -10,11 +10,13 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { PlayerCard } from "./_components/player-card"
 import { PlayersContainer } from "./_components/players-container"
 import { RosterBox } from "./_components/roster-box"
+import { useMyRoster } from "@/hooks/useMyRoster"
+import { RosterSidebar } from "./_components/roster-sidebar"
 
 function RosterPage() {
   return (
     <div className="w-full min-h-full flex">
-      <div className="w-[18%]  bg-[#191919] "></div>
+      <RosterSidebar />
       <div className="w-[82%] h-full pt-24 px-[48px] space-y-5">
         <div className="space-y-1 ml-3">
           <h3 className="text-4xl text-[#eeeeee] font-bold">Roster</h3>

@@ -84,7 +84,7 @@ export const players: PlayersDataTypes = {
       position: "top",
       name: "이동주",
       img: "https://nng-phinf.pstatic.net/MjAyNDAxMTdfMTg4/MDAxNzA1NDU2OTQzMDgy.q_jlQO9hpM0osiltqHn2vLG86wJW5q4bpfI0il8M0mIg.nR57jxwuivQ8PPcQYSwa3V3suEMzW3wJLTUKXCWXjzQg.PNG/fxxVaMbEPCDZdjCdKThO.png",
-      career: null,
+      career: [],
     },
     {
       id: 8,
@@ -92,7 +92,7 @@ export const players: PlayersDataTypes = {
       position: "top",
       name: "박근우",
       img: "https://nng-phinf.pstatic.net/MjAyNDAxMTdfNDkg/MDAxNzA1NDU3MzYyMzIw.HS8Og4jfGTesfBCPpc-QeoI-D473cb7ruHrg9Q6pRMIg.pJNHmEvOBQ_UbIl68J5PUnXy_nhpjuUfP76MbXTZEJ0g.PNG/ZQlchMLeoqlpWLIizTIB.png",
-      career: null,
+      career: [],
     },
     {
       id: 9,
@@ -100,7 +100,7 @@ export const players: PlayersDataTypes = {
       position: "top",
       name: "박루한",
       img: "https://nng-phinf.pstatic.net/MjAyNDAxMTdfMTY5/MDAxNzA1NDU0NTQyMTE0.PsgAjT-FwQ-_wnlJbzdCeOUBRgvnJ5TVOeeJSHHcy64g.A-__67NvzoarSywwnUjMqiwfMfcMhmuq_mVK_0cszPEg.PNG/olOpmUixhnRkJmrRqmkz.png",
-      career: null,
+      career: [],
     },
     {
       id: 10,
@@ -116,7 +116,7 @@ export const players: PlayersDataTypes = {
       position: "top",
       name: "이승민",
       img: "https://nng-phinf.pstatic.net/MjAyNDAxMTdfMjI0/MDAxNzA1NDU3MzYyMTMy.rHgHHvpKDm9jP-plKLj1numQv2Aiz3zzUgWonUxYbrog.EcGQjwiei9ClDjv7ePcieFxjrF0DLDNLGbp2PVGWSmcg.PNG/iotMlEzmehSAwyRgVPMW.png",
-      career: null,
+      career: [],
     },
     {
       id: 12,
@@ -124,7 +124,7 @@ export const players: PlayersDataTypes = {
       position: "top",
       name: "송현민",
       img: "https://nng-phinf.pstatic.net/MjAyNDAxMTlfMTY0/MDAxNzA1NjM4NTAzNDUw.SVD-CpGfPJf8Qp_kSlZghoPMaWKraJm37KEJo8oKv9og.CroHtoNluy3N-X7O5sglzoeXZScTZGDqLtqVJhOu2Kcg.PNG/YBtRCoCbGhVAbOLfznVF.png",
-      career: null,
+      career: [],
     },
     {
       id: 13,
@@ -132,7 +132,7 @@ export const players: PlayersDataTypes = {
       position: "top",
       name: "이민회",
       img: "https://nng-phinf.pstatic.net/MjAyNDAzMTZfMTk2/MDAxNzEwNTgyNDQxNjg2.dQB8-PkaBoG84Uu21kmzMHemgxh50-Tt08Vsrm91jdIg.tqZyYf0HlAYR8ATVdCwff2tOhDHVSv2fyiqsqnTHAjUg.PNG/OTgfBKPVdgXIAzaCKgKw.png",
-      career: null,
+      career: [],
     },
     {
       id: 14,
@@ -140,7 +140,7 @@ export const players: PlayersDataTypes = {
       position: "top",
       name: "김재연",
       img: "https://nng-phinf.pstatic.net/MjAyMzEyMDRfMjgz/MDAxNzAxNjU2NDI1MTkz.E6AbQ_bBsssHeQVJYIizHiglN85ITNsJr6fsAErQWw0g.0GeI6T_TOcrT9oSOD9ahKs4Sivef7P3cZIWCYnYBXfgg.PNG/YnZdiXXLXrMRqGdNRwgY.png",
-      career: null,
+      career: [],
     },
     {
       id: 15,
@@ -173,7 +173,7 @@ export const players: PlayersDataTypes = {
       position: "top",
       name: "김동민",
       img: "https://nng-phinf.pstatic.net/MjAyMzExMjFfODgg/MDAxNzAwNTI3NzAxNzQ2.KbyJftTjI7foJ5QT2lO-yTf_OfsVuwVCEhVx8W7miFUg.DocmAvVIyQ-fYh6qx5bLTl4rtZH_WVjGiI0DSjj9sJgg.PNG/yjCzPMvcLFsNTPSYwWsY.png",
-      career: null,
+      career: [],
     },
     {
       id: 18,
@@ -181,7 +181,7 @@ export const players: PlayersDataTypes = {
       position: "top",
       name: "윤용호",
       img: "https://nng-phinf.pstatic.net/MjAyMzA0MTBfMjgg/MDAxNjgxMDkzNTg0OTYw.R45XCTzC9lvUBlsuEVpwfrR8SEBVBWUWIdj8JjJp3u8g.c1iX2cuNuhyek0H5dZ_BXBgZpj9P0Kz7tP_4uBg2zekg.PNG/VxECRvRgdnjqbbyJfxVT.png",
-      career: null,
+      career: [],
     },
     {
       id: 19,
@@ -207,7 +207,7 @@ export const players: PlayersDataTypes = {
       position: "top",
       name: "이재원",
       img: "https://nng-phinf.pstatic.net/MjAyMzA1MDNfMjc2/MDAxNjgzMTI0MDM5NjUy.ps3a_lwrZf1csEDBUYtc5r3-qXRRZqM_hklFrpMNue0g.6ENLxfsDWtg6GQgSF1NzHh5zPYo4X1cHo_cGWObMVUAg.PNG/rqmlnKJhWKTmEfrAWYeH.png",
-      career: null,
+      career: [],
     },
     {
       id: 21,
@@ -215,7 +215,7 @@ export const players: PlayersDataTypes = {
       position: "top",
       name: "박우태",
       img: "https://nng-phinf.pstatic.net/MjAyMzEyMjBfMjYz/MDAxNzAzMDM3MjAxODc3.omXH9CYtUS5q_4gWQhBIGtiIgpwWj8iqgaZT159MaGEg.W46jfe4kUuW5SoxTilBJWpGHXuM6OUlsF-EJ1WwvvFMg.PNG/QPxsjraiiKyvtfXSnGPo.png",
-      career: null,
+      career: [],
     },
     {
       id: 22,
@@ -223,7 +223,7 @@ export const players: PlayersDataTypes = {
       position: "top",
       name: "윤정민",
       img: "https://nng-phinf.pstatic.net/MjAyMTExMTJfMzQg/MDAxNjM2Njg0MjEyNDgy.nGS1qez7yuS1Oi-C4jj-0tik2ZXN40wQxnxlwNSq71Ug.TzT-8VJlHNk2UH7JSldFnXgILo5HoYlIGTJIa0xpRA8g.PNG/LFMJoTNUJPVCdlEgxrTs.png",
-      career: null,
+      career: [],
     },
     {
       id: 23,
@@ -231,7 +231,7 @@ export const players: PlayersDataTypes = {
       position: "top",
       name: "김준영",
       img: "https://nng-phinf.pstatic.net/MjAyMzA0MTdfMTMx/MDAxNjgxNzA3NzQxNDUy.qmL_jF53lxtDWj2AFQfMUHEhavtYhPBWoJcJ2zvSF-og.aUh5R5v3Sef7c2tDWXHncoUTMi74RvxI3EQLFltOyuIg.PNG/MBzEUauUmOfAuUOjbxdf.png",
-      career: null,
+      career: [],
     },
     {
       id: 24,
@@ -254,7 +254,7 @@ export const players: PlayersDataTypes = {
       position: "top",
       name: "전익수",
       img: "https://nng-phinf.pstatic.net/MjAyMTAyMjRfMjgg/MDAxNjE0MTcyNTcxMTc4.hpYJaWkQSPZP7820J8ZrMBWbH8B5UsxHCKTDY5o31tsg.b7dnH3DMHmBgI-OlB185ULZqUD2E0wSoRnSF9GCYqDYg.PNG/DsjAApHoXZREEHCCdHqt.png",
-      career: null,
+      career: [],
     },
     {
       id: 26,
@@ -262,7 +262,7 @@ export const players: PlayersDataTypes = {
       position: "top",
       name: "김동하",
       img: "https://nng-phinf.pstatic.net/MjAyMTAyMjRfMTAy/MDAxNjE0MTcyNTcxNDc3.dngvfD0DoczcPFNPXIJWIAunS4HQ7L2SebF11IzQw20g.HetFF1P6PSKW_KNcz28mwaToUPjuCqZE9KXJDtFGHNUg.PNG/pPuOTxCJEKHAuWNLoQDK.png",
-      career: null,
+      career: [],
     },
     {
       id: 27,
@@ -270,7 +270,7 @@ export const players: PlayersDataTypes = {
       position: "top",
       name: "한규준",
       img: "https://nng-phinf.pstatic.net/MjAyMjA0MTlfMTUg/MDAxNjUwMzI5NTM2NDY3.tLlkYxqXK0z_c6ItJUJlvmSHnOFfuAwKFH0tYAtJTr4g.-D5fFdVkaQ2aOcIXdWPzn5cNQtkD1jUI4VsAyIbTSJEg.PNG/VSgzOKLiZSDZIMQmRGaM.png",
-      career: null,
+      career: [],
     },
     {
       id: 28,
@@ -294,7 +294,7 @@ export const players: PlayersDataTypes = {
       position: "top",
       name: "전지원",
       img: "https://nng-phinf.pstatic.net/MjAyMjA1MTdfMTAx/MDAxNjUyNzc5MTU1OTU1.KDw9tU6ZxPfcNJpXihvo_uQywQ7EYHsXJnlEoaIMnU8g.7D-Ik8tz4HIAz_6PCVMr-EwDT7wmADE1TiiGMIQjD8Mg.PNG/uEvLRgbIEkjVKmXgKRbr.png",
-      career: null,
+      career: [],
     },
     {
       id: 31,
@@ -302,7 +302,7 @@ export const players: PlayersDataTypes = {
       position: "top",
       name: "박권혁",
       img: "https://nng-phinf.pstatic.net/MjAyMTAyMjRfMTQz/MDAxNjE0MTcyNTczNDgz.XZ4C9Ua5JP4RE7HaOuf0qJodzRodiNYqjT82BYBBhNog.YyRORIFf1icKfNNvm6THfI01NWN5JkyrLe1_eM-x4kkg.PNG/lAbEwdsFumEZwTAvDVSi.png",
-      career: null,
+      career: [],
     },
     {
       id: 32,
@@ -310,7 +310,7 @@ export const players: PlayersDataTypes = {
       position: "top",
       name: "허만흥",
       img: "https://nng-phinf.pstatic.net/MjAyMTAyMjRfMTcw/MDAxNjE0MTcyNTcyNTQ3.KueLNk-ZZ73_5PhKHjzeaO7TWkFpvqaHcOh6DvJtzlEg.ZOuFeGo644sVhrtXqusKl5QkeAlrfqCnBbz49xn8NQIg.PNG/KeXsuDNpfZgrHzCfjMjk.png",
-      career: null,
+      career: [],
     },
     {
       id: 33,
@@ -318,7 +318,7 @@ export const players: PlayersDataTypes = {
       position: "top",
       name: "이상욱",
       img: "https://nng-phinf.pstatic.net/MjAyMTExMTJfMTc3/MDAxNjM2Njg0MjEyNjEz.yBk5ShGBU-TyorUgCXIqvzieG0cVfMH4b2bjb_y4u_Qg.8O0i7f1X5IHi5qSnoRUwUW_IfbQbqZEXT6YKMKenCMog.PNG/kdDDMypLSgAswnRsmspZ.png",
-      career: null,
+      career: [],
     },
     {
       id: 34,
@@ -339,7 +339,7 @@ export const players: PlayersDataTypes = {
       position: "top",
       name: "최의석",
       img: "https://nng-phinf.pstatic.net/MjAyMjA0MTlfMjc5/MDAxNjUwMzMzMzE2MTQ0.AbOVhJ1HfoKFsuukTqseBHSMAiw9UYEtxyARmb9zypUg.ADuoaQsjqsxniJ2MkVzCP-MSoBxQbEKXwQixhisrNP0g.PNG/uPyLEibsmDaofuxfBDJj.png",
-      career: null,
+      career: [],
     },
     {
       id: 37,
@@ -355,7 +355,7 @@ export const players: PlayersDataTypes = {
       position: "top",
       name: "문창민",
       img: "https://nng-phinf.pstatic.net/MjAyMTAyMjRfMTIw/MDAxNjE0MTcyNTc2Mzky.bNaeTRB_VeN6MNn6w5beW4X9jUcMrSxFMXVFQh9S_cwg.Mr3AE5CUXo259tVI0OAy3dWnWjtFZOOr3yHEDXIfAbwg.PNG/iEIkDzaKJXryCwRmUbsX.png",
-      career: null,
+      career: [],
     },
   ],
   jgl: [
@@ -404,7 +404,7 @@ export const players: PlayersDataTypes = {
       position: "jgl",
       name: "김정현",
       img: "https://nng-phinf.pstatic.net/MjAyNDAxMTlfNSAg/MDAxNzA1NjM4NTAzOTM5.FWyIYc2gFqRxVAj5gOKfVHxD9gRgYwMQi5rvCyvDjr4g.6ZCaTKPuFbKntAvJF9qY4lUFFU_hQ2CdmauB-ZWFA_sg.PNG/ZHSpnyodjIjtbBOVqvoS.png",
-      career: null,
+      career: [],
     },
     {
       id: 4,
@@ -441,7 +441,7 @@ export const players: PlayersDataTypes = {
       position: "jgl",
       name: "김동범",
       img: "https://nng-phinf.pstatic.net/MjAyMzA3MDZfMjY5/MDAxNjg4NjI2NTIwODI5.5fE5xyAYAfDJGfMF15xAepjUYdIvzT6psvNhgJcgaLYg.t3jxKkC_9fKhKqmIaUlPWnR73fEShav18BfkVG6VCxgg.PNG/cbmFIkcgNQXFhRxpBIOj.png",
-      career: null,
+      career: [],
     },
     {
       id: 7,
@@ -449,7 +449,7 @@ export const players: PlayersDataTypes = {
       position: "jgl",
       name: "고영재",
       img: "https://nng-phinf.pstatic.net/MjAyMzA3MDZfNjkg/MDAxNjg4NjI3MTgzOTE4.kT0Z1ITGThCRhTrD_1pZB8ifk3yScT2yH-vZfXgc-9kg.LOeU-C6rqDRT9m59g7rQDZt_6oOwCL6ZHM833w3vhpUg.PNG/REAinRpcdQoZgbhPLBWm.png",
-      career: null,
+      career: [],
     },
     {
       id: 8,
@@ -457,7 +457,7 @@ export const players: PlayersDataTypes = {
       position: "jgl",
       name: "이승복",
       img: "https://nng-phinf.pstatic.net/MjAyNDAxMTdfMjEz/MDAxNzA1NDU3MzYyNDI2.g-2cVvUb0d6fLePMeawtvh9nuPw0yQAFB8v9kC-XoGYg.6vVgbUGMCG13rf1nyrIDXCLrzOe6eCxRLeprYizH6fsg.PNG/UiPtmRYTEIYqOpGtoRKa.png",
-      career: null,
+      career: [],
     },
     {
       id: 9,
@@ -465,7 +465,7 @@ export const players: PlayersDataTypes = {
       position: "jgl",
       name: "엄성현",
       img: "https://nng-phinf.pstatic.net/MjAyMzA3MDZfMjg4/MDAxNjg4NjI1OTgzMjEy.fFo4Qd3gHXLRICKG4w0IrOdMTOBWxjiSFYcz8kDtbhkg.sKrTw5NLxCQ31j1nFP4fbI3ojY1OgE_iKziq1Yh7RLAg.PNG/rhDbhhbOCKgLSaYvctik.png",
-      career: null,
+      career: [],
     },
     {
       id: 10,
@@ -473,7 +473,7 @@ export const players: PlayersDataTypes = {
       position: "jgl",
       name: "조승훈",
       img: "https://nng-phinf.pstatic.net/MjAyMzA2MjhfMTEz/MDAxNjg3OTM2ODI1MDU1.m8QgNOzkrx-tsPaWanziQ-WYgUd9X_vKDjpjhOma9zkg.VdcC03xlD7MRNw_22y55xZmYOe0tcDdKw4m9Ft1Nt2sg.PNG/VRoIXgqrkdmFHcnyEKUc.png",
-      career: null,
+      career: [],
     },
     {
       id: 11,
@@ -497,7 +497,7 @@ export const players: PlayersDataTypes = {
       position: "jgl",
       name: "배영준",
       img: "https://nng-phinf.pstatic.net/MjAyNDAxMTdfMTIy/MDAxNzA1NDU2MTAyNzk1.9M04vssZL6jTqlC-xWYKJrN85pzaaEioevhdKY-Zi3Yg.aWrZiXNay7uOoe4wJGl_-cWMtIcdJik_r29M5fbGxJwg.PNG/wGqSyzVAdNefHKPqzIQf.png",
-      career: null,
+      career: [],
     },
     {
       id: 14,
@@ -505,7 +505,7 @@ export const players: PlayersDataTypes = {
       position: "jgl",
       name: "구관모",
       img: "https://nng-phinf.pstatic.net/MjAyNDAzMDRfMTMg/MDAxNzA5NTI1NzIwNDA2.VFQxEiQt2uKpShKHo59hoFkGoHoSCSqwk3k8Sba6fIog.THK7hEUt7yqzKRDwn4rBDqI_FpspshdyvzpUhtrEJzQg.PNG/vUaneMXBMkgjbOlyGgJV.png",
-      career: null,
+      career: [],
     },
     {
       id: 15,
@@ -513,7 +513,7 @@ export const players: PlayersDataTypes = {
       position: "jgl",
       name: "김민성",
       img: "https://nng-phinf.pstatic.net/MjAyNDAyMTVfODYg/MDAxNzA3OTkzNzQxNDI1.el7r8eUAX01rY0kTck04bCvl2riBMUIPgW83RK5Pkokg.J9BHwFOW1FBj06xM0YFXW7FBErqmqKNMQEbWzo58ffAg.PNG/EkvXzeSNXfySKERcirgG.png",
-      career: null,
+      career: [],
     },
     {
       id: 16,
@@ -521,7 +521,7 @@ export const players: PlayersDataTypes = {
       position: "jgl",
       name: "방문영",
       img: "https://nng-phinf.pstatic.net/MjAyNDAyMDVfMTEx/MDAxNzA3MTIwMzg0Mzc2.Y0riMLsTQHvptYJNSLWstQJ67o7Au5VBDqsBQ2yVlQ8g.bJvONOdhSLRJgG2EsjhhGA0079Zb_iAgoa9XvkAdY0og.PNG/mMtUrmnHsYKtbtbUNOPe.png",
-      career: null,
+      career: [],
     },
     {
       id: 17,
@@ -529,7 +529,7 @@ export const players: PlayersDataTypes = {
       position: "jgl",
       name: "함유진",
       img: "https://nng-phinf.pstatic.net/MjAyNDAxMTdfMTIz/MDAxNzA1NDUzOTQzMzc3.8IvId6W1LYpY8VcB9I4CJ1TsdiNmNnsTjymZ_KdqME4g.f6RUfUnWILfJ4m3Jn9EonY1J75t0CVh-3QNxKTfsXPEg.PNG/QKUISFfDnXRHZXJISHMp.png",
-      career: null,
+      career: [],
     },
     {
       id: 18,
@@ -551,7 +551,7 @@ export const players: PlayersDataTypes = {
       position: "jgl",
       name: "이진혁",
       img: "https://nng-phinf.pstatic.net/MjAyMjExMjJfMzUg/MDAxNjY5MDgyNzc3MTQ5.N0eNbvOUHuCSNw4cUNuJiKaTj0hSG078bk24oKpDxMIg.ipHCkhcP-bgFIS-bx2OfvsZ8_1e-w6dgo0dyGojvRjMg.PNG/wKVCLzMwklyhWyZiMXLd.png",
-      career: null,
+      career: [],
     },
     {
       id: 20,
@@ -559,7 +559,7 @@ export const players: PlayersDataTypes = {
       position: "jgl",
       name: "김장겸",
       img: "https://nng-phinf.pstatic.net/MjAyMzAxMDRfMTA1/MDAxNjcyODA2ODU1NDA5.pEl5lyu3dMv9C95FCYJE48zwjlXVhuvMEl8IdXeUFa0g.0new2iqusp6BfzegpbHZHZ8nCu-lW6s30yo14lBt-lAg.PNG/EgpIMAfEdFUwUPgVbGmZ.png",
-      career: null,
+      career: [],
     },
     {
       id: 21,
@@ -567,7 +567,7 @@ export const players: PlayersDataTypes = {
       position: "jgl",
       name: "최엘림",
       img: "https://nng-phinf.pstatic.net/MjAyMzA2MDJfMTQw/MDAxNjg1NjcyMTg0MjU5.AwFtg1Wv8-ltiZn4h9LtePStIPVCGQ06yxd1MTVdszMg.eQPpttUjPhG0V8cUE-lWqTqYXD7lTSNlu6ALg-XJM8kg.PNG/aPpIKUpoQdNDyjDBVrvb.png",
-      career: null,
+      career: [],
     },
     {
       id: 22,
@@ -575,7 +575,7 @@ export const players: PlayersDataTypes = {
       position: "jgl",
       name: "전어진",
       img: "https://nng-phinf.pstatic.net/MjAyNDAxMTJfMjYx/MDAxNzA1MDQ0MDgyNzA5.WsRHetAxc9K4ZLFLlXjfhAHtdJLDTiumhTHSNltd_fYg.XIR5cxRlr1iDVYsNW5BDaLJxdVabYxo80ycAGSn-Ta8g.PNG/chbdKTzCpjSApPYYRbYb.png",
-      career: null,
+      career: [],
     },
     {
       id: 23,
@@ -591,7 +591,7 @@ export const players: PlayersDataTypes = {
       position: "jgl",
       name: "박미르",
       img: "https://nng-phinf.pstatic.net/MjAyMjA0MTFfMjg3/MDAxNjQ5NjQwMDE3OTk5.GDPSSRmNSKZ9gmUE9oxAKeBs_eCxCZUiUtsULtLmp9Ag.xA8gIgJ4-xFj5pNP4XlvZHqMEtpuoKMrmwToJme7GVgg.PNG/zncMtHCIOeImsYCqAUui.png",
-      career: null,
+      career: [],
     },
     {
       id: 25,
@@ -615,7 +615,7 @@ export const players: PlayersDataTypes = {
       nickname: "yohan",
       name: "김요한",
       img: "https://nng-phinf.pstatic.net/MjAyMTExMjZfMjQ3/MDAxNjM3OTE5OTEwOTIy.0pzUJL3M4yY5MyrMIEg8GyEpqXU6-JfdHNUlmLp2cfIg.0i3XSIpcAunMoyxao2XSn_aXyUqCJ1BJuI110TPU8ggg.PNG/POoKOurVFHnJXPuYpueZ.png",
-      career: null,
+      career: [],
     },
     {
       id: 27,
@@ -631,7 +631,7 @@ export const players: PlayersDataTypes = {
       position: "jgl",
       name: "이광수",
       img: "https://nng-phinf.pstatic.net/MjAyMzEyMTFfMjgx/MDAxNzAyMjg1MjIzMjEx.SvlWkTLufnN4FJBbcqhJTbFO63XTJGosrmYm5Tj1XsYg.B0ZAxM8s2EPBpGTBODmuDv_1txHHlKwpYwfpPneG2Msg.PNG/QcfhWxsxEKoodvLtIvrA.png",
-      career: null,
+      career: [],
     },
     {
       id: 29,
@@ -639,7 +639,7 @@ export const players: PlayersDataTypes = {
       position: "jgl",
       name: "이재엽",
       img: "https://nng-phinf.pstatic.net/MjAyMjA1MThfMjkg/MDAxNjUyODQ2NjU2MjIy.j0spzj0uiYHgah73C78ssTCcn8MFidDbEdOohamZ_4Qg.UBEBXVlGjv3UOR_R0tWVvjX_GJ9P6cdEtxpLmC6c4N4g.PNG/BdJOGpsIIMwRlaQRirDB.png",
-      career: null,
+      career: [],
     },
     {
       id: 30,
@@ -659,7 +659,7 @@ export const players: PlayersDataTypes = {
       position: "jgl",
       name: "김기범",
       img: "https://nng-phinf.pstatic.net/MjAyMTAyMjRfMjUy/MDAxNjE0MTcyNTc1MTk4.RdOd9zGECspemHSHTKi5ajOdlWet8J0Clo9Mfk16-rIg.D_LjRLhhkCNBEsVA5T3hVw8Y7Ezy3FkiWv1LLYvAkVMg.PNG/gUAjrDvFFKzoNvjDkyvN.png",
-      career: null,
+      career: [],
     },
     {
       id: 32,
@@ -667,7 +667,7 @@ export const players: PlayersDataTypes = {
       position: "jgl",
       name: "김규석",
       img: "https://nng-phinf.pstatic.net/MjAyMTAyMjRfMjgg/MDAxNjE0MTcyNTczMzU3.Lm2iDDoiBksHBkfuXkpOZBpTLXjULHYn08tzqFaWgJMg.ziUK_cuqGB8W6FIMlPZzBmZjVh0fxQTJjxT1iL7j2Wgg.PNG/bQdrwoKCrlwPFOXfKlpM.png",
-      career: null,
+      career: [],
     },
     {
       id: 33,
@@ -675,7 +675,7 @@ export const players: PlayersDataTypes = {
       position: "jgl",
       name: "조성용",
       img: "https://nng-phinf.pstatic.net/MjAyMTExMTJfMTQx/MDAxNjM2Njg0MjEyMTYy.GItBw86JdJpk7jt6I7_-1yK-E76QnBbi7p241L6VzEYg.o4zoWgMK22sQFes1S5JuBu_aDDQRqygq3JsFxdLjnBAg.PNG/CsnDaPmoIcQZyMaxZVeF.png",
-      career: null,
+      career: [],
     },
     {
       id: 34,
@@ -695,7 +695,7 @@ export const players: PlayersDataTypes = {
       position: "jgl",
       name: "박현규",
       img: "https://nng-phinf.pstatic.net/MjAyMTAyMjRfNjMg/MDAxNjE0MTcyNTc2MTMx.k3GO7yaR-UsSKvT2ardHoEFQedT-KphqHBv9YOaVXSkg.7zj-lPk0PUm_BdOFoTGhfQyXIYIsu5fBsMWdBvK7MVUg.PNG/wgDyoRJOKhzWWIvdZckC.png",
-      career: null,
+      career: [],
     },
     {
       id: 36,
@@ -703,7 +703,7 @@ export const players: PlayersDataTypes = {
       position: "jgl",
       name: "손민혁",
       img: "https://nng-phinf.pstatic.net/MjAyMTAyMjRfMTE4/MDAxNjE0MTcyNTczODE3.3QImjkpzBHcIXls26t71ErdmAlu_OPqhQCSGWbqXEH8g.dtDscoXvEOJemDrPTSqxCqcvQhHCz8Gw40N-x31CRYcg.PNG/NYgeUloqomvfYcUuabmT.png",
-      career: null,
+      career: [],
     },
     {
       id: 37,
@@ -739,7 +739,7 @@ export const players: PlayersDataTypes = {
       position: "jgl",
       name: "윤성환",
       img: "https://nng-phinf.pstatic.net/MjAyMTAyMjRfMTgz/MDAxNjE0MTcyNTcyNTg1.53YbJnbaWB2lCTlHLXtSieIm5szb4kX1EixxyLyotRMg.Sy_sflXyhb3_cEBfLHD_RA0K_ap8SWjoQpNly9labs0g.PNG/fzmhgoGQvTnKKpSgGvBY.png",
-      career: null,
+      career: [],
     },
     {
       id: 40,
@@ -747,7 +747,7 @@ export const players: PlayersDataTypes = {
       position: "jgl",
       name: "김무진",
       img: "https://nng-phinf.pstatic.net/MjAyMTAyMjRfMjMw/MDAxNjE0MTcyNTc0ODA3.f0ylL2-A65eD-Vl3L1MWKAUkVzFUTBld-tgsZuswKGMg.IDyWI9GcXrZVEey67TrZBYTSrbERxCa4_0YJUu3Fg84g.PNG/ZWprkFgKyCrXmWtLERTF.png",
-      career: null,
+      career: [],
     },
     {
       id: 41,
@@ -755,7 +755,7 @@ export const players: PlayersDataTypes = {
       position: "jgl",
       name: "김찬희",
       img: "https://nng-phinf.pstatic.net/MjAyMTExMTZfMTY1/MDAxNjM3MDIxNzczNTYy._18kZHyY-EPEY9_eXdiuCrVeWdXo47rpagqEAyLvBlQg.RR96Po4VHYKldymH61ic5oxMyVrh9iCQOgy1GzzuilAg.PNG/UrMicyAHnvRmNDFNFAcK.png",
-      career: null,
+      career: [],
     },
     {
       id: 42,
@@ -763,7 +763,7 @@ export const players: PlayersDataTypes = {
       position: "jgl",
       name: "김준서",
       img: "https://nng-phinf.pstatic.net/MjAyMTAyMjRfMjUw/MDAxNjE0MTcyNTcyNjU4.1lBOhH2-fJaZULZaETVEuLrb87LqDhNEepqHKZaQQDAg.QRFLun230Y80JZHfvCwOwVvWPvP91Nzgxy3-kWwdPEAg.PNG/nnfmcEybbXJbLBnnchjb.png",
-      career: null,
+      career: [],
     },
     {
       id: 43,
@@ -835,7 +835,7 @@ export const players: PlayersDataTypes = {
       name: "이주현",
       position: "mid",
       img: "https://nng-phinf.pstatic.net/MjAyNDAxMTlfMTkz/MDAxNzA1NjM4NTAzMjYw.WfmcOwUKx46dElymPkATtZddqUCH9kOWLE-2zG2zl3cg.UB_KaNBcrldhcQTfOjWJlGR_GUsyLYDY02amQp4YRq8g.PNG/BuUVdpenzhOItLAxnTRY.png",
-      career: null,
+      career: [],
     },
     {
       id: 4,
@@ -873,7 +873,7 @@ export const players: PlayersDataTypes = {
       name: "유수혁",
       position: "mid",
       img: "https://nng-phinf.pstatic.net/MjAyMzA3MDZfMjA0/MDAxNjg4NjI2NTIwNjU4.GdJNcqhph9iWhZERNfBwLJLkd0are_SWzol2YsuAlXgg.1G667dU2OPcbU5oROwZ8RGnljiEMxfsIN2OakqJ8vzYg.PNG/CedChAZMzUksWanABPKK.png",
-      career: null,
+      career: [],
     },
     {
       id: 7,
@@ -881,7 +881,7 @@ export const players: PlayersDataTypes = {
       position: "mid",
       name: "이태영",
       img: "https://nng-phinf.pstatic.net/MjAyNDAxMTdfMTQz/MDAxNzA1NDU2OTQzNDQ1.aVdsFm6DYdynXTtLLY6A26Bjjp3n1KI9lgY4qPzASdsg.opYeW2mzYk-pV0CSFrdYeRtw3iDWXuWs0dkRv6Ps6fUg.PNG/JxxwzmEfcGppYgTVwtYy.png",
-      career: null,
+      career: [],
     },
     {
       id: 8,
@@ -889,7 +889,7 @@ export const players: PlayersDataTypes = {
       position: "mid",
       name: "안현서",
       img: "https://nng-phinf.pstatic.net/MjAyNDAxMTdfMTg0/MDAxNzA1NDU3MzYyNjMz.kVTF7ZxBifBm36kVgLhWQR9GbIk5dW3Cj3zrXt8z9-wg.SxK6hCOEqPfReEw6MZgXPwa7tc0kWAS7DdUGGBSVdRQg.PNG/fAdTsFErqCRNpPRGxoeR.png",
-      career: null,
+      career: [],
     },
     {
       id: 9,
@@ -897,7 +897,7 @@ export const players: PlayersDataTypes = {
       position: "mid",
       name: "김홍조",
       img: "https://nng-phinf.pstatic.net/MjAyNDAxMTdfNSAg/MDAxNzA1NDU0NTQyMjUy.u80TpStNV38tCe-AW7aRGmaux_FlueIq729L4gqP_AMg.-Zg9wG8eB-B0W-RPwVulLbBcewQ_ujM9L1pdpe8cFWUg.PNG/WEXLpZiULzBGtCQIouGb.png",
-      career: null,
+      career: [],
     },
     {
       id: 10,
@@ -927,7 +927,7 @@ export const players: PlayersDataTypes = {
       position: "mid",
       name: "강예후",
       img: "https://nng-phinf.pstatic.net/MjAyMzA3MDZfNDQg/MDAxNjg4NjI2NTg1MzMw.QFgZ-WSSVnYYch9n29jhPGKTDyG8vuBB1Cd_An3p2pYg.zh1iVfE7j4WmxoQxcQ4T4Kgz5jyG0ZCSO65M770c6cIg.PNG/FPWWdmJcUnkaXUiGtqJY.png",
-      career: null,
+      career: [],
     },
     {
       id: 13,
@@ -943,7 +943,7 @@ export const players: PlayersDataTypes = {
       position: "mid",
       name: "오지훈",
       img: "https://nng-phinf.pstatic.net/MjAyMzA3MDdfMTQz/MDAxNjg4NzA0NTIxODE2.r0jhqKCLb_wDOV0GBjCAyayTPHpcfKgseA1kSxvs9K0g.qKGCfhm0UPn325tUskKFEE_m6naiqVM2LeOkSzcEKNMg.PNG/FDVSjODXyaFJvLZSaslj.png",
-      career: null,
+      career: [],
     },
     {
       id: 15,
@@ -951,7 +951,7 @@ export const players: PlayersDataTypes = {
       position: "mid",
       name: "송경진",
       img: "https://nng-phinf.pstatic.net/MjAyNDAzMDNfMjMy/MDAxNzA5NDc2NDYxMjgx.8Dknaj_7tbStpHVki7txVauoJ-ThkFiN_4EBm2z-q0Mg.3BfFS1s0k_GGfM2HmlBCTEcy06DNrGFuuN9WT4DRhU8g.PNG/cdLitbcpxVtiBeLbxglT.png",
-      career: null,
+      career: [],
     },
     {
       id: 16,
@@ -959,7 +959,7 @@ export const players: PlayersDataTypes = {
       position: "mid",
       name: "윤성원",
       img: "https://nng-phinf.pstatic.net/MjAyNDAxMTJfOTIg/MDAxNzA1MDQ0NTAzMDI2.BT-2nlwGqMeZj5zTo3pKX66LysN1ICKEogW4pqy3m0Ig.BiW8RIvao1YzsMcHyR3TFCDUFnlMDmWnXXC9LDrwUGwg.PNG/yoLPayuViMfUrrPpmKiE.png",
-      career: null,
+      career: [],
     },
     {
       id: 17,
@@ -967,7 +967,7 @@ export const players: PlayersDataTypes = {
       position: "mid",
       name: "정예찬",
       img: "https://nng-phinf.pstatic.net/MjAyNDAzMDZfMTA0/MDAxNzA5NjYwODQxNzYx.Jv6I4hQ0fodhhwwGVvX0onblzihSQCWeaFPAs-GY2Lsg.dlrHfWvC5BDnOTcZjik7ULZKLqwvpLiJJpfKFWTf1s8g.PNG/lCKkzvRjIotWTHAUEEqt.png",
-      career: null,
+      career: [],
     },
     {
       id: 18,
@@ -975,7 +975,7 @@ export const players: PlayersDataTypes = {
       position: "mid",
       name: "정성훈",
       img: "https://nng-phinf.pstatic.net/MjAyNDAzMDZfMTA0/MDAxNzA5NjYwODQxNzYx.Jv6I4hQ0fodhhwwGVvX0onblzihSQCWeaFPAs-GY2Lsg.dlrHfWvC5BDnOTcZjik7ULZKLqwvpLiJJpfKFWTf1s8g.PNG/lCKkzvRjIotWTHAUEEqt.png",
-      career: null,
+      career: [],
     },
     {
       id: 19,
@@ -983,7 +983,7 @@ export const players: PlayersDataTypes = {
       position: "mid",
       name: "김태훈",
       img: "https://nng-phinf.pstatic.net/MjAyMzEyMjBfMTE1/MDAxNzAzMDM3MjAyMjg4.AYktMlGv3XBuShbdQqOVQgBsVSogRh9yKwgAD1UDeTgg.vomlpdS2EPv3aOA2Av91hsldq1zuSvEc9ewXPxhGI98g.PNG/VNUXQxkbtrvQisMpWYjm.png",
-      career: null,
+      career: [],
     },
     {
       id: 20,
@@ -991,7 +991,7 @@ export const players: PlayersDataTypes = {
       position: "mid",
       name: "이가을",
       img: "https://nng-phinf.pstatic.net/MjAyMzA0MjVfNjUg/MDAxNjgyNDA0MjIyNDE5.EJCAFT-7KWb-WY2tTArBXorv8LwpPiH6OWY1E8k2JEAg.9BQjLPCp2Umxi94xSAyQ6-tjKeXKUW_Mgl4nrpODerUg.PNG/YkfVCfGpWqACVOPSegXU.png",
-      career: null,
+      career: [],
     },
     {
       id: 21,
@@ -999,7 +999,7 @@ export const players: PlayersDataTypes = {
       position: "mid",
       name: "이대광",
       img: "https://nng-phinf.pstatic.net/MjAyMzEyMTJfNTYg/MDAxNzAyMzgwNjgyNjc5.TNor1UZ1e1bsX4eqoFqdwnUnyZ1a8705zwxsXpxmBV0g.XOOiUDY2vEZccxGFOetpTsOtL54uXmU9G9uZZHSIw5og.PNG/dGEtEvbBAqmtGBhxNBcb.png",
-      career: null,
+      career: [],
     },
     {
       id: 22,
@@ -1007,7 +1007,7 @@ export const players: PlayersDataTypes = {
       position: "mid",
       name: "백진성",
       img: "https://nng-phinf.pstatic.net/MjAyMzExMjFfMjY5/MDAxNzAwNTI3NzAyMjAx.sCHUxaCL6ace2ZiWLAogxlySyBLDyZIgaDgyG0l0WyIg.pERZ27F0i-LXaWcbRbLnSh8y7zNlnOAXLqGJf3AOqdgg.PNG/CaCSvhnTqvZHwCDEZqLH.png",
-      career: null,
+      career: [],
     },
     {
       id: 23,
@@ -1023,7 +1023,7 @@ export const players: PlayersDataTypes = {
       position: "mid",
       name: "이찬주",
       img: "https://nng-phinf.pstatic.net/MjAyMjExMjZfMjYx/MDAxNjY5NDUyMzc2NTk2.1qGNJm2V5B8kH5haj6NrCSZ0WdaOfE-EXZWBi4NwrWkg.geeXGL9pyokphmTlpfanIvUDrahu-Q2i3y9UO15JQigg.PNG/AsVYURsFMdHMmrvuuSui.png",
-      career: null,
+      career: [],
     },
     {
       id: 25,
@@ -1047,7 +1047,7 @@ export const players: PlayersDataTypes = {
       position: "mid",
       name: "임현승",
       img: "https://nng-phinf.pstatic.net/MjAyMzA1MTJfNjEg/MDAxNjgzODY1NDAxODE3.s8qZ7ltJqMdy16bMtHKdSd101tczuc1J9-znOuoUFn0g.NUurtmdiVwpP2jnRKTpjs4aDqroqf9FO9cl6x1c5APYg.PNG/CYsdWYScpPTtAvixYNSl.png",
-      career: null,
+      career: [],
     },
     {
       id: 28,
@@ -1055,7 +1055,7 @@ export const players: PlayersDataTypes = {
       position: "mid",
       name: "박준병",
       img: "https://nng-phinf.pstatic.net/MjAyMzA1MjNfMjYy/MDAxNjg0ODA3MDM5MjIz.wAsQG0UlVW7RZZdcClVDCZWh8MDkFQpWkCXD4W6M0Ksg.Bwyh-i0XOGJzMLZYT_UXOJhw7BvzVLmkZ1gUfxluytgg.PNG/tehERPjzhLSHmzclAyxV.png",
-      career: null,
+      career: [],
     },
     {
       id: 29,
@@ -1063,7 +1063,7 @@ export const players: PlayersDataTypes = {
       position: "mid",
       name: "이성혁",
       img: "https://nng-phinf.pstatic.net/MjAyMTAyMjRfMTA0/MDAxNjE0MTcyNTcxNjg4.n7s6RnRzb6kZSh-EOYKng3ew8xABC_OVesLhaEGkBKkg.0Hawg98LFLcFHT_sjZclL0A6ssJjR85V5BZLIUACdr4g.PNG/uGFHiFvqRhBAINQbfOMN.png",
-      career: null,
+      career: [],
     },
     {
       id: 30,
@@ -1085,7 +1085,7 @@ export const players: PlayersDataTypes = {
       position: "mid",
       name: "김준철",
       img: "https://nng-phinf.pstatic.net/MjAyMTExMTZfMTYy/MDAxNjM3MDIxNzczMjQy.VzC2PCTFY0koq_UajoRov4lXe8LqfV0Wi83nhpdvTLsg.CbQQYfLvA4lO5ps0KwMEuAl43SOyPJFskUBpY1WJ6Jcg.PNG/GjMOnsBfofBdKspByBQA.png",
-      career: null,
+      career: [],
     },
     {
       id: 32,
@@ -1093,7 +1093,7 @@ export const players: PlayersDataTypes = {
       position: "mid",
       name: "정조빈",
       img: "https://nng-phinf.pstatic.net/MjAyMzA0MjVfMjQg/MDAxNjgyNDA0MzQyMzM0.YO6jMPH4iDfj8ePpEuB1arSro-2C7NHo5HgPboN9vAMg.EdADJYkQknS-KXkFYJWjY3G3x75-qu7DjHJQfoCwrfEg.PNG/IhKJZdWgVEDcCjphyafV.png",
-      career: null,
+      career: [],
     },
     {
       id: 33,
@@ -1101,7 +1101,7 @@ export const players: PlayersDataTypes = {
       position: "mid",
       name: "손영민",
       img: "https://nng-phinf.pstatic.net/MjAyMTAyMjRfODUg/MDAxNjE0MTcyNTgxNTQz.TTtdief2d7whMhvPdjpTUXn8TBLqxIE1Uh1D3ibriIog.pIgE1vXFsTyXQtBhW-rSRN1X0G3g1J34WrfDym7uCucg.PNG/ReiTAlmNUOGQqXgiIMqq.png",
-      career: null,
+      career: [],
     },
     {
       id: 34,
@@ -1109,7 +1109,7 @@ export const players: PlayersDataTypes = {
       position: "mid",
       name: "김태양",
       img: "https://nng-phinf.pstatic.net/MjAyMTAyMjRfMTQw/MDAxNjE0MTcyNTc0OTAz.ne2p_5c9lZJ5wGei6ShHrDs0lSR71R0AXDW8bvE_qOMg._xAzM50s1BhV5ABC36x6HjJWxuc6kTzVXkjAqAxLNLMg.PNG/bnaKemAPrUmSBhNfWzBe.png",
-      career: null,
+      career: [],
     },
     {
       id: 35,
@@ -1117,7 +1117,7 @@ export const players: PlayersDataTypes = {
       position: "mid",
       name: "강명구",
       img: "https://nng-phinf.pstatic.net/MjAyMTAyMjRfNTYg/MDAxNjE0MTcyNTczMTk0.bGkLvpsikN9Zb9BBxlsFOLmQOtu69-GhAL55Q_kJlzkg.pQhTLj9aZ2a2yCJt30RmOHF69ig841wj7ftzBVVRQm8g.PNG/JxeGzRwYOdCHklRibBrP.png",
-      career: null,
+      career: [],
     },
     {
       id: 36,
@@ -1125,7 +1125,7 @@ export const players: PlayersDataTypes = {
       position: "mid",
       name: "김주언",
       img: "https://nng-phinf.pstatic.net/MjAyMTAyMjRfMTYg/MDAxNjE0MTcyNTgyMTY1.3qdoaCcUcZIaQr4rURDti_JMuHk83uycsYj4TkC1c7Ag.BB4mn66B19UZGDuwKO8PCUSqjxdqTSSAQQbaxdxG1oog.PNG/xHtdAwhXEBIhDrkSNnar.png",
-      career: null,
+      career: [],
     },
     {
       id: 37,
@@ -1133,7 +1133,7 @@ export const players: PlayersDataTypes = {
       position: "mid",
       name: "유내현",
       img: "https://nng-phinf.pstatic.net/MjAyMTAyMjRfNDYg/MDAxNjE0MTcyNTczOTUx.nXoIn_Xb2Ewgrh2h50cHjPWQfdQRVRlXoxAg8TnwBR4g.20bFf8LiLsuWVdP_oUScQ-TpvT3-1axVNNb9zL1AY0Qg.PNG/kXOghwlmXDjsFdUcdCXD.png",
-      career: null,
+      career: [],
     },
     {
       id: 38,
@@ -1141,7 +1141,7 @@ export const players: PlayersDataTypes = {
       position: "mid",
       name: "최현우",
       img: "https://nng-phinf.pstatic.net/MjAyMTAyMjRfMTE0/MDAxNjE0MTcyNTc4MzE4.ZmVi8qGDHQbDyqEJr4zTOKKagwJ_xLiFlDrDWuu5RdMg.OAVk6wWtmm6p6wtUM1Z3n9mnNh-Ye81D6oFQY85MUhQg.PNG/atpNLyEreAjYXceuzSyN.png",
-      career: null,
+      career: [],
     },
     {
       id: 39,
@@ -1181,7 +1181,7 @@ export const players: PlayersDataTypes = {
       position: "mid",
       name: "정지훈",
       img: "https://nng-phinf.pstatic.net/MjAyNDAzMjVfNDUg/MDAxNzExMzQ1ODI1NTM1.hJCTQh-5aHWpIviq-gbuh60i2RO8qnzkYA2qzBuVhMQg.1v-D8tXas7GAQz0PcCVeiI-1E1VaFxEoCHA4Cyju-cYg.PNG/moncxNAqkDYiIYtVVqdb.png",
-      career: null,
+      career: [],
     },
     {
       id: 43,
@@ -1189,7 +1189,7 @@ export const players: PlayersDataTypes = {
       position: "mid",
       name: "선현민",
       img: "https://nng-phinf.pstatic.net/MjAyNDAzMjVfMTU4/MDAxNzExMzQ1OTQyMDc1.dyVwsM7pA4FrnCNy3Xg-s-ROyUp-37EOS3c1E8Fa8QIg.DuJSE1B5tlcDaa1foUazEnKUN6BV7DbeD2udYzLiyi4g.PNG/tuVsehmQaeWcZLSWjwXu.png",
-      career: null,
+      career: [],
     },
   ],
   ad: [
@@ -1256,7 +1256,7 @@ export const players: PlayersDataTypes = {
       position: "ad",
       name: "김하람",
       img: "https://nng-phinf.pstatic.net/MjAyNDAxMTlfMTAw/MDAxNzA1NjQ5OTAxOTc5.9q9aPArhrsEBjEwP4Cg5Ktwa0LGf8ToFA3fWx7x2i7Mg.Q8Qz7at8ZIsHE4_vpC3FhodaEIfcTDJoS5A4ejQsSvEg.PNG/kHNZFtnWrdbhIdEtdWKm.png",
-      career: null,
+      career: [],
     },
     {
       id: 6,
@@ -1264,7 +1264,7 @@ export const players: PlayersDataTypes = {
       position: "ad",
       name: "박석현",
       img: "https://nng-phinf.pstatic.net/MjAyMzA3MDZfMTc0/MDAxNjg4NjI2NTIxMTk1.0L1GQQd9EgEkiz8IjAIxGcypGrUpv_Jw7Dcb88i_eXsg.ZvnASB6FL7BzNHE1HD6Tcn3PWXfDwQV_JQUE3RcnBiAg.PNG/ANgiWOtLMcEvxntUpBEP.png",
-      career: null,
+      career: [],
     },
     {
       id: 7,
@@ -1272,7 +1272,7 @@ export const players: PlayersDataTypes = {
       position: "ad",
       name: "김태윤",
       img: "https://nng-phinf.pstatic.net/MjAyNDAxMjNfMTI3/MDAxNzA1OTk2NzAxNjkw.5YT2rulJhk6A4oiDlw-X9If1BpraLMo-86BOIhABNJQg.jStUqr3i4j3zrX_B0tPCIJeFKx0kVvcaiVYRhpBoPYEg.PNG/trYPcikcAowlFoJRwcCU.png",
-      career: null,
+      career: [],
     },
     {
       id: 8,
@@ -1280,7 +1280,7 @@ export const players: PlayersDataTypes = {
       position: "ad",
       name: "정지우",
       img: "https://nng-phinf.pstatic.net/MjAyNDAyMTVfMjk5/MDAxNzA3OTcwMzQyMjAx.8UEKKHayUpUEYZFRvXelmdQB7XNTOTtvgTEAmFmHVO0g.p6UeOsOtfZgMt565LcWQa_8AlLtPuCqbsPiNWNnBkX8g.PNG/IgvzKWgfPSUFbwRVdwvu.png",
-      career: null,
+      career: [],
     },
     {
       id: 9,
@@ -1288,7 +1288,7 @@ export const players: PlayersDataTypes = {
       position: "ad",
       name: "박증환",
       img: "https://nng-phinf.pstatic.net/MjAyNDAxMTlfMTMx/MDAxNzA1NjM4NTAyNDE0.2YSKNvUN1CVQQYtfgheyKrGP8xqJNKHo0mwDJL5I8dwg.FwalBq-ZMisz5Qp7EvVTYTiQlzO3vqxQVTT2xsFhiiQg.PNG/uvbkOckylzvwDzitQMti.png",
-      career: null,
+      career: [],
     },
     {
       id: 10,
@@ -1311,7 +1311,7 @@ export const players: PlayersDataTypes = {
       position: "ad",
       name: "서대길",
       img: "https://nng-phinf.pstatic.net/MjAyMzA3MDZfMTkw/MDAxNjg4NjE2NzQyNTkz.MAkdO2rYyyITLAwk8903GIUf6oMVRWeWHDAAdjOfD9Ug.8Carzr6vOSFCGWvq6NPzp-ThAiz6xduVCVxSsNz7Go0g.PNG/KwFHjypwcQmutPkoDTIc.png",
-      career: null,
+      career: [],
     },
     {
       id: 12,
@@ -1319,7 +1319,7 @@ export const players: PlayersDataTypes = {
       position: "ad",
       name: "하인성",
       img: "https://nng-phinf.pstatic.net/MjAyMzA3MDZfNzAg/MDAxNjg4NjI3Nzg0Mjgx.xrUgzG0ZRYg4NqgPeUQ5Zh109_vB00qmjFFQqSb6CLQg.UuGSljjZbZu3nbdKfLpAfzCObXiGJEUhJWqu74HuQjgg.PNG/GrVgThejeKoKenBFXHYi.png",
-      career: null,
+      career: [],
     },
     {
       id: 13,
@@ -1327,7 +1327,7 @@ export const players: PlayersDataTypes = {
       position: "ad",
       name: "이명준",
       img: "https://nng-phinf.pstatic.net/MjAyNDAyMjNfMTA3/MDAxNzA4Njc1MTAxMTUw.DN-3Nv7iTt4zloixqvotnM8Q5Ye7VPMCDZs2gplJl1Eg.zMLBH-D08ZyoOXUQF2AGJhjUx-ww6NnNP-13A1sYvNMg.PNG/xJEfoNqfkgKZVfdxtWUD.png",
-      career: null,
+      career: [],
     },
     {
       id: 14,
@@ -1335,7 +1335,7 @@ export const players: PlayersDataTypes = {
       position: "ad",
       name: "이승용",
       img: "https://nng-phinf.pstatic.net/MjAyNDAzMTlfMjYx/MDAxNzEwODM1MTAxODYx.D1kX7ormgN-HcgDV-DzpauD05U5zLBUf1pWBP-1aj2gg.Dzhv5PIbBFv7HcEXPFLk7pixDX99r7bvwD77yljBq94g.PNG/anhGHRaIbVBCIemLzzJy.png",
-      career: null,
+      career: [],
     },
     {
       id: 15,
@@ -1343,7 +1343,7 @@ export const players: PlayersDataTypes = {
       position: "ad",
       name: "송선규",
       img: "https://nng-phinf.pstatic.net/MjAyNDAxMjRfMjg5/MDAxNzA2MDkyMTAwNjAy.KYrMzGoMV7GUKbVLoxAL7LzOrfeHhaGU9-lptXw7UWog.Dz-a9AGo-odOlyM6XIjrTwQn3AvUUiayaEVjMuJem1cg.PNG/QoatvyRTWyczUiXuppvr.png",
-      career: null,
+      career: [],
     },
     {
       id: 16,
@@ -1351,7 +1351,7 @@ export const players: PlayersDataTypes = {
       position: "ad",
       name: "변정현",
       img: "https://nng-phinf.pstatic.net/MjAyNDAxMTdfOTQg/MDAxNzA1NDUzOTQzMjMz.bHnuPH-WWVwd283gm_6P2IGBb7vu6EjRtr5_Fk8YNHwg.miGFUWPsx5lQ8p0JlMVGgfK65osJ9-3lJJd5rWjZAP8g.PNG/tozzhSXjQytzWyGrmykq.png",
-      career: null,
+      career: [],
     },
     {
       id: 17,
@@ -1359,7 +1359,7 @@ export const players: PlayersDataTypes = {
       position: "ad",
       name: "조민성",
       img: "https://nng-phinf.pstatic.net/MjAyNDAxMTJfMjE2/MDAxNzA1MDQzNzg1MzIx.w5zwnc4k0E3s2kQao08AO_DfWUa4CyJ9HTKG7w5Dj0Mg.-6hi8zHWNcrtMq6bo6trGsZxn1M38vL2dUaeud6yHNIg.PNG/vzleXLjkmHSdqpiDNbpL.png",
-      career: null,
+      career: [],
     },
     {
       id: 18,
@@ -1387,7 +1387,7 @@ export const players: PlayersDataTypes = {
       position: "ad",
       name: "이채환",
       img: "https://nng-phinf.pstatic.net/MjAyMzEyMTFfODcg/MDAxNzAyMjg1MjIyMzU2.3XfEuYa2C5btk9Oa_kMPX-aD_j-gP7q4YKb2av0I20sg.WW3UrmuW2L4cvg6awTPSt1EPXH3KN7jVf9kwmeNRa6cg.PNG/pEcMQpggMtxvzhQRfHaD.png",
-      career: null,
+      career: [],
     },
     {
       id: 20,
@@ -1410,7 +1410,7 @@ export const players: PlayersDataTypes = {
       position: "ad",
       name: "이재훈",
       img: "https://nng-phinf.pstatic.net/MjAyMjEyMTlfMjMg/MDAxNjcxNDEzMjk1MTU0.Nrjxb7AfoDwd2Yb0VSyDXY2TGpD7ZUCjM5p38ks35sIg.3Ns5FkQ9RQ_KfI5LCLfLyvwlE0hKALxsf1fdOmQZxaMg.PNG/bJPJfgZEVFbaWKKIWqtI.png",
-      career: null,
+      career: [],
     },
     {
       id: 22,
@@ -1418,7 +1418,7 @@ export const players: PlayersDataTypes = {
       position: "ad",
       name: "가민준",
       img: "https://nng-phinf.pstatic.net/MjAyMzA1MjNfMjQy/MDAxNjg0ODA3MDM5OTU4.EJu17nJR8kzxUCS9s6tabc9zdiyca0uAY4mpm-mw07Eg.0SIRk0YYErht346jZrMxAGPMYsaVAwGOuvT-qPEwwgwg.PNG/qMrfOzwSvYKPLcQjxMcv.png",
-      career: null,
+      career: [],
     },
     {
       id: 23,
@@ -1426,7 +1426,7 @@ export const players: PlayersDataTypes = {
       position: "ad",
       name: "윤상훈",
       img: "https://nng-phinf.pstatic.net/MjAyMzEyMjhfMjQx/MDAxNzAzNzMwMzE5NzYz.DNrxaophbbnYzvX-avsxfvPONVX6vLgZTsHiEQgwFoEg.lZpzZiIJaDeXbKJqzpw0QBROFdlbQbOsmW2vyvJiG54g.PNG/EAkWRNncqUioxGExmCMS.png",
-      career: null,
+      career: [],
     },
     {
       id: 24,
@@ -1442,7 +1442,7 @@ export const players: PlayersDataTypes = {
       position: "ad",
       name: "오현택",
       img: "https://nng-phinf.pstatic.net/MjAyMzA4MjlfMjQy/MDAxNjkzMjg0OTg1MDg2.wPO5VxR0bgnpNNmv_W1RR4SLSPAwEbsEEQBr0OlCGvUg.-2erisaDXgT_891zbAdblyb5-XXP3h49h-GRRwkukjYg.PNG/mxcBwvWrMouAwOpkBFCy.png",
-      career: null,
+      career: [],
     },
     {
       id: 26,
@@ -1450,7 +1450,7 @@ export const players: PlayersDataTypes = {
       position: "ad",
       name: "정현우",
       img: "https://nng-phinf.pstatic.net/MjAyMjA2MzBfMTQw/MDAxNjU2NTYyNTE2NTY4.AdeROIk0BiZ7FZvFejc3Xtzft5U-s01DoarzgjVGeYkg.eIrdSPTC5chGoHH9bCKQSUo9SrOell69qzJ5899H5_8g.PNG/ydPoaJhmHayJkyEgTsmv.png",
-      career: null,
+      career: [],
     },
     {
       id: 27,
@@ -1486,7 +1486,7 @@ export const players: PlayersDataTypes = {
       position: "ad",
       name: "문검수",
       img: "https://nng-phinf.pstatic.net/MjAyMzA0MjVfMjgg/MDAxNjgyNDA0MjIyNjc1.D8vsfqDJZyYRvtI5S6f_OD0FpOpObKJz7d5B5TXgHPYg.msoKnnnaCr1Z7thvsB5uu4IInQY-4feDFdn9bKueNuEg.PNG/islvdgfOpvqlosQuaMYJ.png",
-      career: null,
+      career: [],
     },
     {
       id: 30,
@@ -1502,7 +1502,7 @@ export const players: PlayersDataTypes = {
       position: "ad",
       name: "김의주",
       img: "https://nng-phinf.pstatic.net/MjAyMzAxMDVfMjkg/MDAxNjcyODg1MjgxMzE5.VTdH_-b-IHQBxVgWi9yaXFPlApys89guIhyhe574HGsg.IzO53pwKcnIUvcWf83ZJpefPi9jM1JzurC2CZQnwETEg.PNG/RcrLIUdNtgbevsMEAVtH.png",
-      career: null,
+      career: [],
     },
     {
       id: 32,
@@ -1518,7 +1518,7 @@ export const players: PlayersDataTypes = {
       position: "ad",
       name: "서진솔",
       img: "https://nng-phinf.pstatic.net/MjAyMTAyMjRfNTcg/MDAxNjE0MTcyNTcyNzI1.jVA2ReQ95iR9M2uz5ipIrOR7u9_PqUNS_Sbpz3LCbNgg.rQ_JQeJt_WlgnYxpmMylqLKq4HZ-v44JJzCD_3y6Dxkg.PNG/FwaCWtYEwYpeqavWNlqk.png",
-      career: null,
+      career: [],
     },
     {
       id: 34,
@@ -1526,7 +1526,7 @@ export const players: PlayersDataTypes = {
       position: "ad",
       name: "전태권",
       img: "https://nng-phinf.pstatic.net/MjAyMTAyMjRfMTI1/MDAxNjE0MTcyNTc4NDg4.QJ6KBs7wOfidgORVbFRTzB9KneR_jUECdzqXEzYm4IUg.FGuvJfcn_2qOzCevDbwZo_UYe5FlzD2JdviJ6JyB2m8g.PNG/iivkCDlseuAYAWxwQbDz.png",
-      career: null,
+      career: [],
     },
     {
       id: 35,
@@ -1534,7 +1534,7 @@ export const players: PlayersDataTypes = {
       position: "ad",
       name: "권상윤",
       img: "https://nng-phinf.pstatic.net/MjAyMTAyMjRfMTUz/MDAxNjE0MTcyNTcxMDE1.XqvWAh3nt8qx0VMkILjyPjbqday-qkHkYBEWsTYeijEg.0WZ0ERuD9Cv1zh2JAZCMkWjrlkojf1tfU5_kZNGnSGgg.PNG/DjhRFrtcxoWNbMfDejDd.png",
-      career: null,
+      career: [],
     },
     {
       id: 36,
@@ -1567,7 +1567,7 @@ export const players: PlayersDataTypes = {
       position: "ad",
       name: "문원희",
       img: "https://nng-phinf.pstatic.net/MjAyMTAyMjRfMjc2/MDAxNjE0MTcyNTcxOTEx.xv6DSs6a5UE0Gz3W_8DUbsnvdH_EO0O2UVhWPGAGrYAg.rkn6BE0e5tBMAhghMcVVSTgdLa07kSf6TQdQiRPuOnAg.PNG/tVVeDznhffTjvslLlMte.png",
-      career: null,
+      career: [],
     },
   ],
   spt: [
@@ -1604,7 +1604,7 @@ export const players: PlayersDataTypes = {
       position: "spt",
       name: "김진홍",
       img: "https://nng-phinf.pstatic.net/MjAyMzA3MDZfMTEx/MDAxNjg4NjI3NTQyODg2.O5zPc_XhdpmLZkjQrzhe-l0YjIgAUoCh97RBigBM8eQg.MGdSkpJE1KFFknjlv-lIzi1XhlsHy-3ZcEsF6e_JDC8g.PNG/BUWBFGbiomYXVrXMPDmS.png",
-      career: null,
+      career: [],
     },
     {
       id: 4,
@@ -1650,7 +1650,7 @@ export const players: PlayersDataTypes = {
       position: "spt",
       name: "윤세준",
       img: "https://nng-phinf.pstatic.net/MjAyMzA3MDZfNjkg/MDAxNjg4NjI3MTgzOTE4.kT0Z1ITGThCRhTrD_1pZB8ifk3yScT2yH-vZfXgc-9kg.LOeU-C6rqDRT9m59g7rQDZt_6oOwCL6ZHM833w3vhpUg.PNG/REAinRpcdQoZgbhPLBWm.png",
-      career: null,
+      career: [],
     },
     {
       id: 8,
@@ -1658,7 +1658,7 @@ export const players: PlayersDataTypes = {
       position: "spt",
       name: "정윤수",
       img: "https://nng-phinf.pstatic.net/MjAyMzA3MDZfMjI4/MDAxNjg4NjI3Nzg0MTIy.KE1uNehdH-YU1mpVEufg5AUruDJe3eo4ryCza58djWYg.vuLkwclGbTNyGowPEMelaXvixEWWANlEbSWulGsQa7wg.PNG/zNgOYNBMfTrjrwQUPhLJ.png",
-      career: null,
+      career: [],
     },
     {
       id: 9,
@@ -1686,7 +1686,7 @@ export const players: PlayersDataTypes = {
       nickname: "Bible",
       position: "spt",
       img: "https://nng-phinf.pstatic.net/MjAyMzA3MjhfMjIg/MDAxNjkwNTMxNDYwNzUy.f5zv6SCex3xZrtatFwVhRPXh7J6G68Ce1-a8XA7MkV8g.VsRmpiJ9bmMCFenHVrmbrKn5lW-oDSKv-33iP4Mh1p8g.PNG/LUNyYQVIMgEROuuIKdJi.png",
-      career: null,
+      career: [],
     },
     {
       id: 12,
@@ -1694,7 +1694,7 @@ export const players: PlayersDataTypes = {
       position: "spt",
       name: "문관빈",
       img: "https://nng-phinf.pstatic.net/MjAyNDAzMTlfMTM3/MDAxNzEwODQ0MTYyNDIy.-pq4UvfnXMqk5OiGV646Qx7lxI8NGhCr9iaemqoybmMg.M_GK1I7Pkhch7cTXQ-OlVOf40HgDddQbrz2CtaO_xa4g.PNG/NQDSBRHyEBfHjZqEigBj.png",
-      career: null,
+      career: [],
     },
     {
       id: 13,
@@ -1702,7 +1702,7 @@ export const players: PlayersDataTypes = {
       position: "spt",
       name: "정재훈",
       img: "https://nng-phinf.pstatic.net/MjAyMzA3MDdfMjcx/MDAxNjg4NzA2MjAwNTQ2.btcz_I9WUh73XJYH5OGRuztWMkCxB08_xLmC-FC1xEcg.qNazYSk6oerbYDjBg2i0iCg6XWBdY2o_epKitDtrXWog.PNG/PJyGmWxKDFoJUadjrwAP.png",
-      career: null,
+      career: [],
     },
     {
       id: 14,
@@ -1710,7 +1710,7 @@ export const players: PlayersDataTypes = {
       position: "spt",
       name: "한길",
       img: "https://nng-phinf.pstatic.net/MjAyNDAxMTdfMTg3/MDAxNzA1NDUzOTQyNzIx.-5aINnNwaGqqpN2x-oY5isFe-MWkU5AphyBPLAcqglsg.7cCoVvJHITxyBRqRoIGgpmDICMtcprajoeKzBBHfoeYg.PNG/DUiTTtDyYQMmQDQGXNtx.png",
-      career: null,
+      career: [],
     },
     {
       id: 15,
@@ -1718,7 +1718,7 @@ export const players: PlayersDataTypes = {
       position: "spt",
       name: "노회종",
       img: "https://nng-phinf.pstatic.net/MjAyMjExMjJfOTYg/MDAxNjY5MDgyNzc2NTIz.MfHZvC1yCfa5K5PwtsmmhJ87hcZySoAJc_GP9qIfz1Eg.bcUlWVzzhtfbVgYUFCeVQxk1KZDQyq7FNjKVvzUzu8cg.PNG/abowrsmfSeiAzWxZMidl.png",
-      career: null,
+      career: [],
     },
     {
       id: 16,
@@ -1726,7 +1726,7 @@ export const players: PlayersDataTypes = {
       position: "spt",
       name: "오효성",
       img: "https://nng-phinf.pstatic.net/MjAyMjEyMTJfNTgg/MDAxNjcwODA0Mjk1MzQ2.JE1GDh1l2pH99r7mVBP0K8-S5AqRs2SpLj0xoU4zueog.8T0n4zDH0QVBct5UxjySgM3NHU9xLRw-bPg730v2hxYg.PNG/URCsPnCVoYIhDuOPmSkN.png",
-      career: null,
+      career: [],
     },
     {
       id: 17,
@@ -1742,7 +1742,7 @@ export const players: PlayersDataTypes = {
       position: "spt",
       name: "박준형",
       img: "https://nng-phinf.pstatic.net/MjAyMzExMjFfODkg/MDAxNzAwNTI3NzAyNDUx.xhYLYnV8ovCqEwtqAnPNscmfNx9WggckitP8og6WtBcg.aZg2oj-qz1KeAZ7Ra9RznAUyvcFjCnRleeb796296CEg.PNG/CfzwyXvLPxdNhojerEJk.png",
-      career: null,
+      career: [],
     },
     {
       id: 19,
@@ -1750,7 +1750,7 @@ export const players: PlayersDataTypes = {
       position: "spt",
       name: "한진솔",
       img: "https://nng-phinf.pstatic.net/MjAyNDAxMTJfMTgw/MDAxNzA1MDQ0MTQyNzU0.wDmwW6HwyJ6k4YRdTF5wtSsGlwa0-UzGgwzzlJGBnsYg.KuGfvACXTHC4pOYc5Ji0_dfp5fknbYgRI8JX-pLsW1gg.PNG/wnLeAAgXtjEBzRLQmtZF.png",
-      career: null,
+      career: [],
     },
     {
       id: 20,
@@ -1758,7 +1758,7 @@ export const players: PlayersDataTypes = {
       position: "spt",
       name: "김동현",
       img: "https://nng-phinf.pstatic.net/MjAyNDAxMTJfMzQg/MDAxNzA1MDQzNzg1NjUw.iUHDJgFb9Gwd7TVIrGDbU3er4MUkzntIpGWL7aL4E6Qg._QrIWd28dY7ZX75TZBN7t9iC_Qr0l4eyZI_bRpmQsyMg.PNG/vaqVFnHUkSRWoJrcABeE.png",
-      career: null,
+      career: [],
     },
     {
       id: 21,
@@ -1766,7 +1766,7 @@ export const players: PlayersDataTypes = {
       position: "spt",
       name: "이지융",
       img: "https://nng-phinf.pstatic.net/MjAyMzA0MjVfMTAw/MDAxNjgyNDA0MjIyMzM5.7bvI-TLRvd3yz44hAmvlQxMjJDQRnHt0DdpTQW2Wpxcg.OSFhpkao7yVziv-Oqk76iU6ztz722-LIC9dyeh7q0L0g.PNG/czveOOXFCuvcOXbmkrIl.png",
-      career: null,
+      career: [],
     },
     {
       id: 22,
@@ -1782,7 +1782,7 @@ export const players: PlayersDataTypes = {
       position: "spt",
       name: "손민우",
       img: "https://nng-phinf.pstatic.net/MjAyNDAzMDFfMTA5/MDAxNzA5Mjk4MDIyMjY4.tM9F3u7Zcwr721X_FcvucAamvWO0nf_ahdi4pQuXylcg.aPWBFd5MvR4azunIBsyqIaabloAPr4IJGxIbX4nHdfkg.PNG/adRknNcWIIyRjXNmYMaZ.png",
-      career: null,
+      career: [],
     },
     {
       id: 24,
@@ -1790,7 +1790,7 @@ export const players: PlayersDataTypes = {
       position: "spt",
       name: "김도영",
       img: "https://nng-phinf.pstatic.net/MjAyMjA2MDNfMTUw/MDAxNjU0MjMzMzE1Njk3.3da_kMbF-YrE6sNfFMESxVUlDulwQfER107f7A4-do0g.J3dQjvrlxHDYue92wPI4DcIFmW6wuf0Ghk-0VpTQdWMg.PNG/UVadVDtwaIhfkUXXFvgm.png",
-      career: null,
+      career: [],
     },
     {
       id: 25,
@@ -1831,7 +1831,7 @@ export const players: PlayersDataTypes = {
       position: "spt",
       name: "김도엽",
       img: "https://nng-phinf.pstatic.net/MjAyMTAyMjRfMTk0/MDAxNjE0MTcyNTcyNzc1.9OkSwgNMemiv3PWdC_U3vhqRkXHezZG9qIituKCqyGQg.OFJxNrejxCvxV8bqzn7u_3z87tuCrvuXO-QjvsOl3Log.PNG/IjCjWQYtvlDwLrCgDhgR.png",
-      career: null,
+      career: [],
     },
     {
       id: 29,
@@ -1839,7 +1839,7 @@ export const players: PlayersDataTypes = {
       position: "spt",
       name: "박기선",
       img: "https://nng-phinf.pstatic.net/MjAyMTAyMjRfMTQ3/MDAxNjE0MTcyNTcxNTY5.GGJ-uOtBAapTxbW3A8gtuPg0hZOMVz1MOdOLG4Xxf7wg.5KruKSZUR6oh6wQiVqgdYvh-xm0AWqGjoZbxoeJT_lwg.PNG/LeSeijKQRhuoJCouNHpg.png",
-      career: null,
+      career: [],
     },
     {
       id: 30,
@@ -1871,7 +1871,7 @@ export const players: PlayersDataTypes = {
       position: "spt",
       name: "손호경",
       img: "https://nng-phinf.pstatic.net/MjAyMjA5MTNfMjY0/MDAxNjYzMDQ2NDE4MzM1.H21--m_btRsWkgVc-IUbdiuZcJm0-swbC3wt0qHnRP8g.--lGQEd6p2PVmZ6Ckh3551eOj1kdM4OTnknjp3vDsIQg.PNG/UqiEBZWkQrSdlbuDVkWL.png",
-      career: null,
+      career: [],
     },
     {
       id: 34,
@@ -1879,7 +1879,7 @@ export const players: PlayersDataTypes = {
       position: "spt",
       name: "조재읍",
       img: "https://nng-phinf.pstatic.net/MjAyMjA5MTNfMjY0/MDAxNjYzMDQ2NDE4MzM1.H21--m_btRsWkgVc-IUbdiuZcJm0-swbC3wt0qHnRP8g.--lGQEd6p2PVmZ6Ckh3551eOj1kdM4OTnknjp3vDsIQg.PNG/UqiEBZWkQrSdlbuDVkWL.png",
-      career: null,
+      career: [],
     },
     {
       id: 35,
@@ -1902,7 +1902,7 @@ export const players: PlayersDataTypes = {
       position: "spt",
       name: "김한기",
       img: "https://nng-phinf.pstatic.net/MjAyMTAyMjRfMjAx/MDAxNjE0MTcyNTczMjMz.v6Eqvro6tS_ltaYf5mKiZcodAJAS9AhwNkR94hS4dXAg.6lokO3DkQIH6uE817Y9uWW1KD93GEcJW7d20tehrup8g.PNG/YReOiSaOpoKqSDzjTsjw.png",
-      career: null,
+      career: [],
     },
     {
       id: 37,
@@ -1910,7 +1910,7 @@ export const players: PlayersDataTypes = {
       position: "spt",
       name: "박희석",
       img: "https://nng-phinf.pstatic.net/MjAyMTA2MDFfMjc4/MDAxNjIyNTI4MzYwODA3.gk7PPM35UV-lnIeVzgKV3OmkY2JrbkRwopTYVZEbVBIg.xpW5JtyRN-5ODE2Oorxzs3LmKiKlc8MZ77I92YCXHUsg.PNG/qBSLbgHWluZoXCBdDAPb.png",
-      career: null,
+      career: [],
     },
     {
       id: 38,
@@ -1918,7 +1918,7 @@ export const players: PlayersDataTypes = {
       position: "spt",
       name: "박찬호",
       img: "https://nng-phinf.pstatic.net/MjAyMTAyMjRfMjE5/MDAxNjE0MTcyNTc2NjU5.TPyhwSW4OLCxvwpx1SW7xYDX7Tz_UrxNONxj_JH1hn4g.GnSc8mYVyJ0IxJxgfyuhnCMX81ptPMM9krms3cWlX9kg.PNG/AyrryhQuFcRJzZgZtoaA.png",
-      career: null,
+      career: [],
     },
     {
       id: 39,
@@ -1926,7 +1926,7 @@ export const players: PlayersDataTypes = {
       position: "spt",
       name: "이정재",
       img: "https://nng-phinf.pstatic.net/MjAyMTAyMjRfMTQg/MDAxNjE0MTcyNTc2MzM1.FTLOi2Ar7_w-Yo7JFJRzyp0P8_JDr6SI-m8Cnw3bmq0g._78NJ9b1V4_T_agBjRz6y5VZ-0blLLXUOKrHI19UHIMg.PNG/vFtfZEQmMHmJXCUzleba.png",
-      career: null,
+      career: [],
     },
     {
       id: 40,
@@ -1960,7 +1960,7 @@ export const players: PlayersDataTypes = {
       position: "spt",
       name: "이동근",
       img: "https://nng-phinf.pstatic.net/MjAyNDAxMDNfMjkz/MDAxNzA0MjQ4MTg0NTAy.-DEMyXM_jPG8On6n5UGB8iWSCoOvEpPyeUpwEF3AXmkg.ZY5IIlD2c8jPDAHW_UgAeUZn22k5Wnjn6gN6kScqbb4g.PNG/UjnYXtjGObcOuZYHmDnZ.png",
-      career: null,
+      career: [],
     },
     {
       id: 43,
@@ -1968,7 +1968,7 @@ export const players: PlayersDataTypes = {
       position: "spt",
       name: "손정환",
       img: "https://nng-phinf.pstatic.net/MjAyNDAzMjFfMjc5/MDAxNzExMDIwODYxMjQ1.BixL0kCDCe23AJHdcLL2_P71p3_Nwmv4V2lBVuRoHzQg.h-R1LsDvG3EBODXh26imtLTRLvvLOH4ydNBzdMdQaJ0g.PNG/uKJujrBfrVvzIOkZxCvl.png",
-      career: null,
+      career: [],
     },
     {
       id: 44,
@@ -1976,7 +1976,7 @@ export const players: PlayersDataTypes = {
       position: "spt",
       name: "오동규",
       img: "https://nng-phinf.pstatic.net/MjAyNDAyMDNfOTYg/MDAxNzA2OTUzMTAyNzc4.oJ1S38zqytwCvAYWyIq5Q_gLW25kLhLXxVFjSbrAx3Ag.ZFZyFR6BSQA95HF8DLmhThSZ2TN69FO9sbRU-zS21yYg.PNG/EsRMeQmeBzCHptIspInV.png",
-      career: null,
+      career: [],
     },
   ],
 }

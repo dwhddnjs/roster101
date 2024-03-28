@@ -15,7 +15,7 @@ export const useRosterStore = create<useRosterStoreTypes>((set, get) => ({
       position: "top",
       nickname: "",
       name: "",
-      career: null,
+      career: [],
     },
     {
       id: 2,
@@ -23,7 +23,7 @@ export const useRosterStore = create<useRosterStoreTypes>((set, get) => ({
       position: "jgl",
       nickname: "",
       name: "",
-      career: null,
+      career: [],
     },
     {
       id: 3,
@@ -31,7 +31,7 @@ export const useRosterStore = create<useRosterStoreTypes>((set, get) => ({
       position: "mid",
       nickname: "",
       name: "",
-      career: null,
+      career: [],
     },
     {
       id: 4,
@@ -39,7 +39,7 @@ export const useRosterStore = create<useRosterStoreTypes>((set, get) => ({
       position: "ad",
       nickname: "",
       name: "",
-      career: null,
+      career: [],
     },
     {
       id: 5,
@@ -47,7 +47,7 @@ export const useRosterStore = create<useRosterStoreTypes>((set, get) => ({
       position: "spt",
       nickname: "",
       name: "",
-      career: null,
+      career: [],
     },
   ],
 
@@ -129,7 +129,7 @@ export const useRosterStore = create<useRosterStoreTypes>((set, get) => ({
           position: "top",
           nickname: "",
           name: "",
-          career: null,
+          career: [],
         },
         {
           id: 2,
@@ -137,7 +137,7 @@ export const useRosterStore = create<useRosterStoreTypes>((set, get) => ({
           position: "jgl",
           nickname: "",
           name: "",
-          career: null,
+          career: [],
         },
         {
           id: 3,
@@ -145,7 +145,7 @@ export const useRosterStore = create<useRosterStoreTypes>((set, get) => ({
           position: "mid",
           nickname: "",
           name: "",
-          career: null,
+          career: [],
         },
         {
           id: 4,
@@ -153,7 +153,7 @@ export const useRosterStore = create<useRosterStoreTypes>((set, get) => ({
           position: "ad",
           nickname: "",
           name: "",
-          career: null,
+          career: [],
         },
         {
           id: 5,
@@ -161,7 +161,7 @@ export const useRosterStore = create<useRosterStoreTypes>((set, get) => ({
           position: "spt",
           nickname: "",
           name: "",
-          career: null,
+          career: [],
         },
       ],
     })

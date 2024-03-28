@@ -4,5 +4,5 @@ export type PlayerTypes = {
   position: string
   nickname: string
   name: string
-  career: string[] | null
+  career: string[]
 }

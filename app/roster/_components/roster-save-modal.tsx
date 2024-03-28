@@ -12,6 +12,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
+import { useRosterStore } from "@/hooks/useRosterStore"
 import { useSaveRosterModalStore } from "@/hooks/useSaveRosterModalStore"
 import { DialogClose } from "@radix-ui/react-dialog"
 
@@ -20,13 +21,14 @@ import React, { useState } from "react"
 export const RosterSaveModal = () => {
   const { isOpen, onClose } = useSaveRosterModalStore()
   const [inputValue, setInputValue] = useState("")
+  const { roster } = useRosterStore()
 
   const onChangeText = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value)
   }
 
   const onSaveRoster = () => {
-    saveRoster([], "asdasdasd")
+    saveRoster(roster, inputValue)
   }
 
   return (

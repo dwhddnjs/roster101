@@ -12,23 +12,53 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
+
+import { useRoster } from "@/hooks/useRoster"
+import { useRosterBoxStore } from "@/hooks/useRosterBoxStore"
 import { useRosterStore } from "@/hooks/useRosterStore"
 import { useSaveRosterModalStore } from "@/hooks/useSaveRosterModalStore"
-import { DialogClose } from "@radix-ui/react-dialog"
+import { revalidatePath, unstable_cache } from "next/cache"
+import { useRouter } from "next/navigation"
 
-import React, { useState } from "react"
+import React, { useState, useTransition } from "react"
 
 export const RosterSaveModal = () => {
   const { isOpen, onClose } = useSaveRosterModalStore()
   const [inputValue, setInputValue] = useState("")
-  const { roster } = useRosterStore()
+  const { roster } = useRosterBoxStore()
+  const router = useRouter()
+  const [isPending, startTransition] = useTransition()
+  const { rosters, onUpdateRoster } = useRoster()
+
+  // const { onUpdateRoster } = useRosterStore()
 
   const onChangeText = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value)
   }
 
+  // const onSaveRoster = () => {
+  //   try {
+  //     const res = await saveRoster(roster, inputValue)
+  //     console.log("res: ", res)
+  //     if (res) {
+  //       onClose()
+  //       onUpdateRoster(res.data)
+  //     }
+  //   } catch (error) {
+  //     console.log(error)
+  //   } finally {
+  //     router.refresh()
+  //   }
+  // }
+
   const onSaveRoster = () => {
-    saveRoster(roster, inputValue)
+    startTransition(() => {
+      saveRoster(roster, inputValue).then((data) => {
+        onUpdateRoster([data.data, ...(rosters as any)])
+      })
+      router.refresh()
+      onClose()
+    })
   }
 
   return (
@@ -39,22 +69,27 @@ export const RosterSaveModal = () => {
             저장하실 로스터 이름을 입력해주세요.
           </DialogTitle>
         </DialogHeader>
-        <Input
-          className="bg-[#1e1e1e] border-[#1a1a1a] text-white h-[48px] text-sm placeholder:text-[#555555] "
-          onChange={(e) => onChangeText(e)}
-          placeholder="최대 12글자 작성 가능"
-          value={inputValue}
-          maxLength={12}
-        />
-        <DialogFooter className="mt-3">
-          <Button
-            onClick={onSaveRoster}
-            size="lg"
-            className="bg-[#555555] text-[#eeeeee]"
-          >
-            저장
-          </Button>
-        </DialogFooter>
+        <form action={onSaveRoster}>
+          <Input
+            className="bg-[#1e1e1e] border-[#1a1a1a] text-white h-[48px] text-sm placeholder:text-[#555555] "
+            onChange={(e) => onChangeText(e)}
+            placeholder="최대 12글자 작성 가능"
+            value={inputValue}
+            maxLength={12}
+            // disabled={isLoading}
+          />
+          <DialogFooter className="mt-3">
+            <Button
+              type="submit"
+              // onClick={onSaveRoster}
+              size="lg"
+              className="bg-[#555555] text-[#eeeeee]"
+              // disabled={isLoading}
+            >
+              저장
+            </Button>
+          </DialogFooter>
+        </form>
       </DialogContent>
     </Dialog>
   )

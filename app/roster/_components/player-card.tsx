@@ -9,14 +9,14 @@ import {
 } from "@/components/ui/hover-card"
 import { Medal } from "lucide-react"
 import { PlayerTypes } from "../../../types/player-types"
-import { useRosterStore } from "@/hooks/useRosterStore"
+import { useRosterBoxStore } from "@/hooks/useRosterBoxStore"
 
 interface PlayerCardProps {
   player: PlayerTypes
 }
 
 export const PlayerCard = ({ player }: PlayerCardProps) => {
-  const { onSelectPlayer } = useRosterStore()
+  const { onSelectPlayer } = useRosterBoxStore()
 
   if (!player) {
     return null
@@ -57,7 +57,7 @@ export const PlayerCard = ({ player }: PlayerCardProps) => {
           <h3 className="font-semibold text-white text-sm">주요 경력</h3>
         </div>
         <div className="space-y-0.5 ml-[4px]">
-          {!player?.career ? (
+          {player?.career.length === 0 ? (
             <p className="text-[#c4c4c4] text-xs">없음</p>
           ) : (
             player?.career?.map((career) => (

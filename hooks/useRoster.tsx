@@ -5,10 +5,11 @@ import { useUser } from "./useUser"
 import { roster } from "@/actions/roster"
 import { Player, Roster } from "@prisma/client"
 
-export const useMyRoster = () => {
-  const [myRoster, setMyRoster] = useState<Roster[]>()
-  const [loading, setLoading] = useState(false)
+export type RosterTypes = Roster & { players: Player[] }
 
+export const useRoster = () => {
+  const [rosters, setRosters] = useState<RosterTypes[]>()
+  const [loading, setLoading] = useState(false)
   const user = useUser()
 
   useEffect(() => {
@@ -17,7 +18,7 @@ export const useMyRoster = () => {
       ;(async () => {
         try {
           const res = await roster()
-          setMyRoster(res)
+          setRosters(res)
         } catch (error) {
           console.error(error)
         } finally {
@@ -25,10 +26,15 @@ export const useMyRoster = () => {
         }
       })()
     }
-  }, [user])
+  }, [user, rosters])
+
+  const onUpdateRoster = (roster: any) => {
+    setRosters(roster)
+  }
 
   return {
-    rosters: myRoster,
+    rosters,
     isLoading: loading,
+    onUpdateRoster: onUpdateRoster,
   }
 }

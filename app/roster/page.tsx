@@ -10,7 +10,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { PlayerCard } from "./_components/player-card"
 import { PlayersContainer } from "./_components/players-container"
 import { RosterBox } from "./_components/roster-box"
-import { useMyRoster } from "@/hooks/useMyRoster"
+
 import { RosterSidebar } from "./_components/roster-sidebar"
 
 function RosterPage() {

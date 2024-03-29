@@ -6,13 +6,13 @@ import React, { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 
 import { Check, RotateCcw, ChevronsDown, ChevronsUp } from "lucide-react"
-import { useRosterStore } from "@/hooks/useRosterStore"
+import { useRosterBoxStore } from "@/hooks/useRosterBoxStore"
 import { renderPositionImg } from "@/lib/function"
 import { useSaveRosterModalStore } from "@/hooks/useSaveRosterModalStore"
 import { saveRoster } from "@/actions/save-roster"
 
 export const RosterBox = () => {
-  const { roster, onResetRoster } = useRosterStore()
+  const { roster, onResetRoster } = useRosterBoxStore()
   const { onOpen } = useSaveRosterModalStore()
 
   return (

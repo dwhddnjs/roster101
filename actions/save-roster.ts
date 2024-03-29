@@ -4,6 +4,7 @@ import { currentUser } from "@/lib/auth"
 import { db } from "@/lib/db"
 
 import { PlayerTypes } from "@/types/player-types"
+import { revalidatePath } from "next/cache"
 
 export const saveRoster = async (roster: PlayerTypes[], title: string) => {
   const user = await currentUser()
@@ -38,5 +39,26 @@ export const saveRoster = async (roster: PlayerTypes[], title: string) => {
     data: mapPlayers,
   })
 
-  return { success: "로스터가 생성 되었습니다" }
+  // const getRoster = await db.user.findUnique({
+  //   where: { id: user.id },
+  //   select: {
+  //     roster: {
+  //       orderBy: {
+  //         id: "desc",
+  //       },
+  //       include: {
+  //         players: true,
+  //       },
+  //     },
+  //   },
+  // })
+
+  const result = await db.roster.findUnique({
+    where: { id: newRoster.id },
+    include: {
+      players: true,
+    },
+  })
+
+  return { success: "로스터가 생성 되었습니다", data: result }
 }

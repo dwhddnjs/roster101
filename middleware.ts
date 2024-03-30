@@ -13,7 +13,7 @@ import next from "next"
 export default auth((req) => {
   const { nextUrl } = req
   const isLoggedIn = !!req.auth
-  console.log("isLoggedIn: ", isLoggedIn)
+  // console.log("isLoggedIn: ", isLoggedIn)
 
   const isApiAuthRoute = nextUrl.pathname.startsWith(apiAuthPrefix)
   const isPublicRoutes = publicRoutes.includes(nextUrl.pathname)

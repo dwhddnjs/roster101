@@ -12,8 +12,7 @@ export const useRosterStore = create<useRosterTypes>((set) => ({
   rosters: [],
   action: async () => {
     const res = await roster()
-    console.log("res: ", res)
-    set({ rosters: res })
+    set({ rosters: res as Array<Roster & { players: Player[] }> })
   },
   onUpdateRoster: (roster: any) => set({ rosters: roster }),
 }))

@@ -12,6 +12,8 @@ import { PlayersContainer } from "./_components/players-container"
 import { RosterBox } from "./_components/roster-box"
 
 import { RosterSidebar } from "./_components/roster-sidebar"
+import { useRosterStore } from "@/hooks/useRosterStore"
+import { useOp } from "@/hooks/useOp"
 
 function RosterPage() {
   return (

@@ -12,6 +12,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
+import { useOp } from "@/hooks/useOp"
 
 import { useRoster } from "@/hooks/useRoster"
 import { useRosterBoxStore } from "@/hooks/useRosterBoxStore"
@@ -28,7 +29,8 @@ export const RosterSaveModal = () => {
   const { roster } = useRosterBoxStore()
   const router = useRouter()
   const [isPending, startTransition] = useTransition()
-  const { rosters, onUpdateRoster } = useRoster()
+  // const { rosters, onUpdateRoster } = useRoster()
+  const { rosters, onUpdate } = useOp()
 
   // const { onUpdateRoster } = useRosterStore()
 
@@ -36,27 +38,12 @@ export const RosterSaveModal = () => {
     setInputValue(e.target.value)
   }
 
-  // const onSaveRoster = () => {
-  //   try {
-  //     const res = await saveRoster(roster, inputValue)
-  //     console.log("res: ", res)
-  //     if (res) {
-  //       onClose()
-  //       onUpdateRoster(res.data)
-  //     }
-  //   } catch (error) {
-  //     console.log(error)
-  //   } finally {
-  //     router.refresh()
-  //   }
-  // }
-
   const onSaveRoster = () => {
     startTransition(() => {
-      saveRoster(roster, inputValue).then((data) => {
-        onUpdateRoster([data.data, ...(rosters as any)])
-      })
-      router.refresh()
+      saveRoster(roster, inputValue)
+      onUpdate({ id: rosters.length + 1, title: inputValue, players: roster })
+
+      // router.refresh()
       onClose()
     })
   }

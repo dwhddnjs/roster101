@@ -17,6 +17,12 @@ export const saveRoster = async (roster: PlayerTypes[], title: string) => {
     return { error: "로스터 이름을 작성해주세요" }
   }
 
+  for (let player of roster) {
+    if (!player.img || !player.name || !player.nickname) {
+      return { error: "로스터 이름을 작성해주세요" }
+    }
+  }
+
   const newRoster = await db.roster.create({
     data: {
       title,
@@ -38,20 +44,6 @@ export const saveRoster = async (roster: PlayerTypes[], title: string) => {
   await db.player.createMany({
     data: mapPlayers,
   })
-
-  // const getRoster = await db.user.findUnique({
-  //   where: { id: user.id },
-  //   select: {
-  //     roster: {
-  //       orderBy: {
-  //         id: "desc",
-  //       },
-  //       include: {
-  //         players: true,
-  //       },
-  //     },
-  //   },
-  // })
 
   const result = await db.roster.findUnique({
     where: { id: newRoster.id },

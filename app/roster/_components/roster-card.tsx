@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils"
 import { Player, Roster } from "@prisma/client"
 import { renderPositionImg } from "@/lib/function"
 import { Avatar, AvatarImage } from "@/components/ui/avatar"
-import { RosterTypes } from "@/hooks/useRoster"
+import { RosterTypes } from "@/hooks/useRosterStore"
 
 interface RosterCardProps {
   roster: RosterTypes

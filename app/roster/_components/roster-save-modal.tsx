@@ -12,38 +12,61 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
-import { useOp } from "@/hooks/useOp"
 
-import { useRoster } from "@/hooks/useRoster"
 import { useRosterBoxStore } from "@/hooks/useRosterBoxStore"
 import { useRosterStore } from "@/hooks/useRosterStore"
 import { useSaveRosterModalStore } from "@/hooks/useSaveRosterModalStore"
+import { useUser } from "@/hooks/useUser"
 import { revalidatePath, unstable_cache } from "next/cache"
 import { useRouter } from "next/navigation"
 
 import React, { useState, useTransition } from "react"
+import { toast } from "sonner"
 
 export const RosterSaveModal = () => {
   const { isOpen, onClose } = useSaveRosterModalStore()
   const [inputValue, setInputValue] = useState("")
   const { roster } = useRosterBoxStore()
-  const router = useRouter()
+  const { onUpdateRoster, rosters, action } = useRosterStore()
   const [isPending, startTransition] = useTransition()
-  // const { rosters, onUpdateRoster } = useRoster()
-  const { rosters, onUpdate } = useOp()
-
-  // const { onUpdateRoster } = useRosterStore()
+  const user = useUser()
 
   const onChangeText = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value)
   }
 
   const onSaveRoster = () => {
-    startTransition(() => {
-      saveRoster(roster, inputValue)
-      onUpdate({ id: rosters.length + 1, title: inputValue, players: roster })
+    if (inputValue.length === 0) {
+      return toast("로스터 이름을 입력해주세요.")
+    }
 
-      // router.refresh()
+    for (let player of roster) {
+      if (!player.img || !player.name || !player.nickname) {
+        return toast("로스터를 채워주세요")
+      }
+    }
+
+    startTransition(() => {
+      onUpdateRoster({
+        id: rosters.length + 1,
+        title: inputValue,
+        players: roster.map((player) => ({
+          ...player,
+          rosterId: rosters.length + 1,
+        })),
+        userId: user?.id as string,
+      })
+      saveRoster(roster, inputValue)
+        .then((data) => {
+          if (data.success) {
+            toast(data.success)
+          }
+          if (data.error) {
+            toast(data.error)
+            action()
+          }
+        })
+        .catch((error) => console.log(error))
       onClose()
     })
   }
@@ -63,15 +86,14 @@ export const RosterSaveModal = () => {
             placeholder="최대 12글자 작성 가능"
             value={inputValue}
             maxLength={12}
-            // disabled={isLoading}
+            disabled={isPending}
           />
           <DialogFooter className="mt-3">
             <Button
               type="submit"
-              // onClick={onSaveRoster}
               size="lg"
               className="bg-[#555555] text-[#eeeeee]"
-              // disabled={isLoading}
+              disabled={isPending}
             >
               저장
             </Button>

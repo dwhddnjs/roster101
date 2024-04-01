@@ -1,27 +1,88 @@
 "use client"
 
 import Image from "next/image"
-import React, { FC, useState } from "react"
+import React, { FC, useState, useTransition } from "react"
 import { Button } from "@/components/ui/button"
 import { X } from "lucide-react"
-
 import { cn } from "@/lib/utils"
 import { Player, Roster } from "@prisma/client"
 import { renderPositionImg } from "@/lib/function"
 import { Avatar, AvatarImage } from "@/components/ui/avatar"
-import { RosterTypes } from "@/hooks/useRosterStore"
+import { RosterTypes, useRosterStore } from "@/hooks/useRosterStore"
+import { removeRoster } from "@/actions/remove-roster"
+import { toast } from "sonner"
+import { useRosterBoxStore } from "@/hooks/useRosterBoxStore"
 
 interface RosterCardProps {
   roster: RosterTypes
 }
 
 export const RosterCard = ({ roster }: RosterCardProps) => {
+  const [isPending, startTransition] = useTransition()
+  const { onRemove, action } = useRosterStore()
+  const {
+    onSetPlayers,
+    onSetRosterId,
+    rosterId,
+    onResetRoster,
+    roster: any,
+  } = useRosterBoxStore()
+
+  console.log("roster: ", any)
+  console.log("rosterId: ", rosterId)
+
+  const onSetPlayersToRosterBox = () => {
+    onSetRosterId(roster.id)
+
+    const players = roster.players.map((player) => {
+      const { id, rosterId, ...rest } = player
+      let result
+      switch (rest.position) {
+        case "top":
+          result = { id: 1, ...rest }
+          break
+        case "jgl":
+          result = { id: 2, ...rest }
+          break
+        case "mid":
+          result = { id: 3, ...rest }
+          break
+        case "ad":
+          result = { id: 4, ...rest }
+          break
+        default:
+          result = { id: 5, ...rest }
+          break
+      }
+      return result
+    })
+    onSetPlayers(players)
+  }
+
+  const onRemoveRoster = () => {
+    onRemove(roster.id)
+    startTransition(() => {
+      removeRoster(roster.id)
+        .then((data) => {
+          if (data.success) {
+            return toast(data.success)
+          }
+          if (data.error) {
+            action()
+            return toast(data.error)
+          }
+        })
+        .catch((error) => console.log(error))
+    })
+  }
+
   return (
     <div
-      // onClick={() => onSelectCard(roster)}
       className={cn(
-        "bg-[#1e1e1e] rounded-lg pt-[8px] px-[12px] pb-[10px] relative shadow-lg border-2 border-[#27272a]"
+        "bg-[#1e1e1e] rounded-lg pt-[8px] px-[12px] pb-[10px] relative shadow-lg border-2 border-[#27272a]",
+        rosterId === roster.id && "border-[#eeeeee]"
       )}
+      onClick={onSetPlayersToRosterBox}
     >
       <div className="flex justify-between items-center mb-[4px]">
         <h3 className="text-[white] font-bold text-md ml-[4px] ">
@@ -30,7 +91,8 @@ export const RosterCard = ({ roster }: RosterCardProps) => {
         <Button
           size={"xs"}
           className="bg-transparent"
-          // onClick={(e) => onRemoveRoster(e)}
+          onClick={onRemoveRoster}
+          disabled={isPending}
         >
           <X width={16} height={16} color="#c4c4c4" />
         </Button>

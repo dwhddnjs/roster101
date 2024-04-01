@@ -45,12 +45,5 @@ export const saveRoster = async (roster: PlayerTypes[], title: string) => {
     data: mapPlayers,
   })
 
-  const result = await db.roster.findUnique({
-    where: { id: newRoster.id },
-    include: {
-      players: true,
-    },
-  })
-
-  return { success: "로스터가 생성 되었습니다", data: result }
+  return { success: "로스터가 생성 되었습니다" }
 }

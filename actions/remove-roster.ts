@@ -10,7 +10,7 @@ export const removeRoster = async (rosterId: number) => {
     return { error: "Unauthorized" }
   }
 
-  if (rosterId) {
+  if (!rosterId) {
     return { error: "로스터를 존재하지 않습니다" }
   }
 

@@ -27,7 +27,7 @@ export const RosterSaveModal = () => {
   const { isOpen, onClose } = useSaveRosterModalStore()
   const [inputValue, setInputValue] = useState("")
   const { roster } = useRosterBoxStore()
-  const { onUpdateRoster, rosters, action } = useRosterStore()
+  const { onUpdate, rosters, action } = useRosterStore()
   const [isPending, startTransition] = useTransition()
   const user = useUser()
 
@@ -47,7 +47,7 @@ export const RosterSaveModal = () => {
     }
 
     startTransition(() => {
-      onUpdateRoster({
+      onUpdate({
         id: rosters.length + 1,
         title: inputValue,
         players: roster.map((player) => ({

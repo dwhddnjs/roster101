@@ -2,9 +2,12 @@ import { PlayerTypes } from "@/types/player-types"
 import { create } from "zustand"
 
 export interface useRosterBoxStoreTypes {
-  roster: Array<PlayerTypes & { id: number }>
+  roster: PlayerTypes[]
   onSelectPlayer: (player: PlayerTypes) => void
   onResetRoster: () => void
+  onSetPlayers: (players: PlayerTypes[]) => void
+  rosterId: number | null
+  onSetRosterId: (rosterId: number | null) => void
 }
 
 export const useRosterBoxStore = create<useRosterBoxStoreTypes>((set, get) => ({
@@ -51,7 +54,13 @@ export const useRosterBoxStore = create<useRosterBoxStoreTypes>((set, get) => ({
     },
   ],
 
-  onSelectPlayer: (player: PlayerTypes) => {
+  onSetPlayers: (players) => {
+    set({
+      roster: players,
+    })
+  },
+
+  onSelectPlayer: (player) => {
     const prevRoster = get().roster
 
     const findPlayer = prevRoster.find(
@@ -164,6 +173,23 @@ export const useRosterBoxStore = create<useRosterBoxStoreTypes>((set, get) => ({
           career: [],
         },
       ],
+      rosterId: null,
     })
+  },
+  rosterId: null,
+
+  onSetRosterId: (rosterId) => {
+    const prevId = get().rosterId
+    const reset = get().onResetRoster
+    if (prevId && prevId === rosterId) {
+      set({
+        rosterId: null,
+      })
+      reset()
+    } else {
+      set({
+        rosterId,
+      })
+    }
   },
 }))

@@ -10,13 +10,15 @@ import {
 import { Medal } from "lucide-react"
 import { PlayerTypes } from "../../../types/player-types"
 import { useRosterBoxStore } from "@/hooks/useRosterBoxStore"
+import { cn } from "@/lib/utils"
+import { selectedPlayerStyle } from "@/lib/function"
 
 interface PlayerCardProps {
   player: PlayerTypes
 }
 
 export const PlayerCard = ({ player }: PlayerCardProps) => {
-  const { onSelectPlayer } = useRosterBoxStore()
+  const { onSelectPlayer, roster } = useRosterBoxStore()
 
   if (!player) {
     return null
@@ -27,7 +29,10 @@ export const PlayerCard = ({ player }: PlayerCardProps) => {
       <HoverCardTrigger>
         <div
           onClick={() => onSelectPlayer(player)}
-          className="bg-[#272727] rounded-md border-[1px] border-[#191919] hover:translate-y-2  duration-200 ease-linear shadow-md relative"
+          className={cn(
+            "bg-[#272727] rounded-md border-[1px] border-[#191919] hover:translate-y-2  duration-200 ease-linear shadow-md relative ",
+            selectedPlayerStyle(roster, player)
+          )}
         >
           <div className="flex items-center justify-center">
             <Image src={player.img} width={120} height={80} alt="" />

@@ -1,6 +1,7 @@
 "use client"
 
 import { saveRoster } from "@/actions/save-roster"
+import { updateRoster } from "@/actions/update-roster"
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -26,7 +27,7 @@ import { toast } from "sonner"
 export const RosterSaveModal = () => {
   const { isOpen, onClose } = useSaveRosterModalStore()
   const [inputValue, setInputValue] = useState("")
-  const { roster } = useRosterBoxStore()
+  const { roster, rosterId } = useRosterBoxStore()
   const { onUpdate, rosters, action } = useRosterStore()
   const [isPending, startTransition] = useTransition()
   const user = useUser()
@@ -47,26 +48,30 @@ export const RosterSaveModal = () => {
     }
 
     startTransition(() => {
-      onUpdate({
-        id: rosters.length + 1,
-        title: inputValue,
-        players: roster.map((player) => ({
-          ...player,
-          rosterId: rosters.length + 1,
-        })),
-        userId: user?.id as string,
-      })
-      saveRoster(roster, inputValue)
-        .then((data) => {
-          if (data.success) {
-            toast(data.success)
-          }
-          if (data.error) {
-            toast(data.error)
-            action()
-          }
-        })
-        .catch((error) => console.log(error))
+      // onUpdate({
+      //   id: rosters.length + 1,
+      //   title: inputValue,
+      //   players: roster.map((player) => ({
+      //     ...player,
+      //     rosterId: rosters.length + 1,
+      //   })),
+      //   userId: user?.id as string,
+      // })
+      if (rosterId) {
+        updateRoster(rosterId, inputValue, roster)
+      }
+
+      // saveRoster(roster, inputValue)
+      //   .then((data) => {
+      //     if (data.success) {
+      //       toast(data.success)
+      //     }
+      //     if (data.error) {
+      //       toast(data.error)
+      //       action()
+      //     }
+      //   })
+      //   .catch((error) => console.log(error))
       onClose()
     })
   }
@@ -103,3 +108,4 @@ export const RosterSaveModal = () => {
     </Dialog>
   )
 }
+;``

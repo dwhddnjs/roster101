@@ -34,29 +34,33 @@ export const RosterCard = ({ roster }: RosterCardProps) => {
   const onSetPlayersToRosterBox = () => {
     onSetRosterId(roster.id)
 
-    const players = roster.players.map((player) => {
-      const { id, rosterId, ...rest } = player
-      let result
-      switch (rest.position) {
-        case "top":
-          result = { id: 1, ...rest }
-          break
-        case "jgl":
-          result = { id: 2, ...rest }
-          break
-        case "mid":
-          result = { id: 3, ...rest }
-          break
-        case "ad":
-          result = { id: 4, ...rest }
-          break
-        default:
-          result = { id: 5, ...rest }
-          break
-      }
-      return result
-    })
-    onSetPlayers(players)
+    if (!rosterId) {
+      const players = roster.players.map((player) => {
+        const { id, rosterId, ...rest } = player
+        let result
+        switch (rest.position) {
+          case "top":
+            result = { id: 1, ...rest }
+            break
+          case "jgl":
+            result = { id: 2, ...rest }
+            break
+          case "mid":
+            result = { id: 3, ...rest }
+            break
+          case "ad":
+            result = { id: 4, ...rest }
+            break
+          default:
+            result = { id: 5, ...rest }
+            break
+        }
+        return result
+      })
+      onSetPlayers(players)
+    } else {
+      onResetRoster()
+    }
   }
 
   const onRemoveRoster = () => {

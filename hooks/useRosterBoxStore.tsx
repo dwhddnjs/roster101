@@ -179,17 +179,8 @@ export const useRosterBoxStore = create<useRosterBoxStoreTypes>((set, get) => ({
   rosterId: null,
 
   onSetRosterId: (rosterId) => {
-    const prevId = get().rosterId
-    const reset = get().onResetRoster
-    if (prevId && prevId === rosterId) {
-      set({
-        rosterId: null,
-      })
-      reset()
-    } else {
-      set({
-        rosterId,
-      })
-    }
+    set({
+      rosterId,
+    })
   },
 }))

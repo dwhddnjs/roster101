@@ -30,32 +30,35 @@ export const updateRoster = async (
     },
   })
 
-  if (prevPlayers) {
-    const newPlayers = roster.map((player) => {
-      const find = prevPlayers.players.find(
-        (prevPlayer) => player.position === prevPlayer.position
-      )
-      if (find) {
-        return {
-          ...player,
-          id: find.id,
-          rosterId: rosterId,
-        }
-      }
-    })
+  const mapPlayers = roster.map((player) => {
+    const { id, ...rest } = player
 
-    // console.log("newPlayers: ", newPlayers)
+    return {
+      ...rest,
+      rosterId,
+    }
+  })
 
-    await db.roster.update({
-      where: {
-        id: rosterId,
-        userId: user.id,
+  await db.player.deleteMany({
+    where: {
+      rosterId: rosterId,
+    },
+  })
+
+  const newRoster = await db.player.createMany({
+    data: mapPlayers,
+  })
+  // console.log("newRoster: ", newRoster)
+
+  await db.roster.update({
+    where: {
+      id: rosterId,
+      userId: user.id,
+    },
+    data: {
+      players: {
+        set: newRoster as any,
       },
-      data: {
-        players: {
-          set: newPlayers as any,
-        },
-      },
-    })
-  }
+    },
+  })
 }

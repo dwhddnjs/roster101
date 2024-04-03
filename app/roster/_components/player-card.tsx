@@ -19,6 +19,7 @@ interface PlayerCardProps {
 
 export const PlayerCard = ({ player }: PlayerCardProps) => {
   const { onSelectPlayer, roster } = useRosterBoxStore()
+  console.log("roster: ", roster)
 
   if (!player) {
     return null

@@ -56,11 +56,15 @@ export const selectedPlayerStyle = (
   roster: PlayerTypes[],
   player: PlayerTypes
 ) => {
-  const find = roster.some(
-    (selectedPlayer: any) => selectedPlayer.nickname === player.nickname
-  )
-  if (find) {
-    return "border-[#eeeeee] border-[2px]"
+  let result
+
+  for (let currentPlayer of roster) {
+    if (currentPlayer.nickname === player.nickname) {
+      result = "border-[#eeeeee] border-[2px]"
+    } else {
+      result
+    }
   }
-  return ""
+
+  return result
 }

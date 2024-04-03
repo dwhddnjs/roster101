@@ -87,7 +87,9 @@ export const useRosterBoxStore = create<useRosterBoxStoreTypes>((set, get) => ({
       })
       return
     }
+
     let result
+
     switch (player.position) {
       case "top":
         result = {

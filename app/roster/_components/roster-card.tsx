@@ -20,16 +20,8 @@ interface RosterCardProps {
 export const RosterCard = ({ roster }: RosterCardProps) => {
   const [isPending, startTransition] = useTransition()
   const { onRemove, action } = useRosterStore()
-  const {
-    onSetPlayers,
-    onSetRosterId,
-    rosterId,
-    onResetRoster,
-    roster: any,
-  } = useRosterBoxStore()
-
-  console.log("roster: ", any)
-  console.log("rosterId: ", rosterId)
+  const { onSetPlayers, onSetRosterId, rosterId, onResetRoster } =
+    useRosterBoxStore()
 
   const onSetPlayersToRosterBox = () => {
     onSetRosterId(roster.id)

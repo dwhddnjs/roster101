@@ -20,35 +20,11 @@ export const updateRoster = async (
     return { error: "로스터 이름을 작성해주세요" }
   }
 
-  const prevPlayers = await db.roster.findUnique({
-    where: {
-      id: rosterId,
-      userId: user.id,
-    },
-    select: {
-      players: true,
-    },
-  })
-
-  const mapPlayers = roster.map((player) => {
-    const { id, ...rest } = player
-
-    return {
-      ...rest,
-      rosterId,
-    }
-  })
-
   await db.player.deleteMany({
     where: {
       rosterId: rosterId,
     },
   })
-
-  const newRoster = await db.player.createMany({
-    data: mapPlayers,
-  })
-  // console.log("newRoster: ", newRoster)
 
   await db.roster.update({
     where: {
@@ -56,9 +32,16 @@ export const updateRoster = async (
       userId: user.id,
     },
     data: {
+      title,
       players: {
-        set: newRoster as any,
+        createMany: {
+          data: roster,
+        },
       },
     },
   })
+
+  return {
+    success: "로스터가 변경되었습니다",
+  }
 }

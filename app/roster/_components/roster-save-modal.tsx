@@ -28,7 +28,7 @@ export const RosterSaveModal = () => {
   const { isOpen, onClose } = useSaveRosterModalStore()
   const [inputValue, setInputValue] = useState("")
   const { roster, rosterId } = useRosterBoxStore()
-  const { onUpdate, rosters, action } = useRosterStore()
+  const { onSave, rosters, action } = useRosterStore()
   const [isPending, startTransition] = useTransition()
   const user = useUser()
 
@@ -48,30 +48,38 @@ export const RosterSaveModal = () => {
     }
 
     startTransition(() => {
-      // onUpdate({
-      //   id: rosters.length + 1,
-      //   title: inputValue,
-      //   players: roster.map((player) => ({
-      //     ...player,
-      //     rosterId: rosters.length + 1,
-      //   })),
-      //   userId: user?.id as string,
-      // })
       if (rosterId) {
-        updateRoster(rosterId, inputValue, roster)
+        updateRoster(rosterId, inputValue, roster).then((data) => {
+          if (data.success) {
+            toast(data.success)
+          }
+          if (data.error) {
+            toast(data.error)
+            action()
+          }
+        })
+      } else {
+        onSave({
+          id: rosters.length + 1,
+          title: inputValue,
+          players: roster.map((player) => ({
+            ...player,
+            rosterId: rosters.length + 1,
+          })),
+          userId: user?.id as string,
+        })
+        saveRoster(roster, inputValue)
+          .then((data) => {
+            if (data.success) {
+              toast(data.success)
+            }
+            if (data.error) {
+              toast(data.error)
+              action()
+            }
+          })
+          .catch((error) => console.log(error))
       }
-
-      // saveRoster(roster, inputValue)
-      //   .then((data) => {
-      //     if (data.success) {
-      //       toast(data.success)
-      //     }
-      //     if (data.error) {
-      //       toast(data.error)
-      //       action()
-      //     }
-      //   })
-      //   .catch((error) => console.log(error))
       onClose()
     })
   }

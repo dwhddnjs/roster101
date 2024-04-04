@@ -7,7 +7,7 @@ export type RosterTypes = Roster & { players: Player[] }
 type useRosterTypes = {
   rosters: Array<RosterTypes>
   action: () => void
-  onUpdate: (roster: RosterTypes) => void
+  onSave: (roster: RosterTypes) => void
   isLoading: boolean
   onRemove: (rosterId: number) => void
 }
@@ -26,12 +26,14 @@ export const useRosterStore = create<useRosterTypes>((set, get) => ({
       set({ isLoading: false })
     }
   },
-  onUpdate: (roster: RosterTypes) => {
+
+  onSave: (roster: RosterTypes) => {
     const prevRoster = get().rosters
     set({
       rosters: [roster, ...prevRoster],
     })
   },
+  onUpdate: () => {},
   onRemove: (rosterId: number) => {
     const prevRosters = get().rosters
     set({

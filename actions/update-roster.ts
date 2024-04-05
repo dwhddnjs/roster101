@@ -34,9 +34,16 @@ export const updateRoster = async (
     data: {
       title,
       players: {
-        createMany: {
-          data: roster,
-        },
+        connectOrCreate: roster.map((player) => {
+          return {
+            where: {
+              id: rosterId,
+            },
+            create: {
+              ...player,
+            },
+          }
+        }),
       },
     },
   })

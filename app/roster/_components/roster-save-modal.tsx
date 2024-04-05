@@ -28,7 +28,9 @@ export const RosterSaveModal = () => {
   const { isOpen, onClose } = useSaveRosterModalStore()
   const [inputValue, setInputValue] = useState("")
   const { roster, rosterId } = useRosterBoxStore()
-  const { onSave, rosters, action } = useRosterStore()
+  console.log("rosterId: ", rosterId)
+  const { onSave, rosters, action, onUpdate } = useRosterStore()
+  console.log("rosters: ", rosters)
   const [isPending, startTransition] = useTransition()
   const user = useUser()
 
@@ -48,7 +50,25 @@ export const RosterSaveModal = () => {
     }
 
     startTransition(() => {
+      const responseData = {
+        id: rosters.length + 1,
+        title: inputValue,
+        players: roster.map((player) => ({
+          ...player,
+          rosterId: rosters.length + 1,
+        })),
+        userId: user?.id as string,
+      }
+
       if (rosterId) {
+        onUpdate(rosterId, {
+          ...responseData,
+          id: rosterId,
+          players: roster.map((player) => ({
+            ...player,
+            rosterId: rosterId,
+          })),
+        })
         updateRoster(rosterId, inputValue, roster).then((data) => {
           if (data.success) {
             toast(data.success)
@@ -59,15 +79,7 @@ export const RosterSaveModal = () => {
           }
         })
       } else {
-        onSave({
-          id: rosters.length + 1,
-          title: inputValue,
-          players: roster.map((player) => ({
-            ...player,
-            rosterId: rosters.length + 1,
-          })),
-          userId: user?.id as string,
-        })
+        onSave(responseData)
         saveRoster(roster, inputValue)
           .then((data) => {
             if (data.success) {

@@ -20,7 +20,7 @@ export const RosterSidebar = () => {
           <FadeLoader color="#555555" />
         </div>
       )}
-      {rosters.length > 0 && (
+      {rosters.length < 0 && (
         <div className="flex items-center justify-center mt-[300px]">
           <Image
             src="/images/esports_icon.svg"

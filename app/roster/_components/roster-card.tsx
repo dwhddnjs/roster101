@@ -94,11 +94,13 @@ export const RosterCard = ({ roster }: RosterCardProps) => {
         </Button>
       </div>
       <div className="flex space-x-2 mb-2 items-center justify-center">
-        {roster?.players?.map((player) => (
-          <Avatar key={player.id} className="w-[48px] h-[48px] bg-[#27272a]">
-            <AvatarImage src={player.img} />
-          </Avatar>
-        ))}
+        {roster?.players
+          ?.sort((a, b) => a.id - b.id)
+          .map((player) => (
+            <Avatar key={player.id} className="w-[48px] h-[48px] bg-[#27272a]">
+              <AvatarImage src={player.img} />
+            </Avatar>
+          ))}
       </div>
       <div className="grid grid-cols-2 grid-flow-row space-y-[2px] ">
         {roster.players.map((player) => (

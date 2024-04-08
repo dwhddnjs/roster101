@@ -35,12 +35,13 @@ export const updateRoster = async (
       title,
       players: {
         connectOrCreate: roster.map((player) => {
+          const { id, ...result } = player
           return {
             where: {
               id: rosterId,
             },
             create: {
-              ...player,
+              ...result,
             },
           }
         }),
@@ -48,7 +49,17 @@ export const updateRoster = async (
     },
   })
 
+  const result = await db.roster.findUnique({
+    where: {
+      id: rosterId,
+    },
+    include: {
+      players: true,
+    },
+  })
+
   return {
     success: "로스터가 변경되었습니다",
+    data: result,
   }
 }

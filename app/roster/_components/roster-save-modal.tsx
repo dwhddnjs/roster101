@@ -13,24 +13,18 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
-
 import { useRosterBoxStore } from "@/hooks/useRosterBoxStore"
 import { useRosterStore } from "@/hooks/useRosterStore"
 import { useSaveRosterModalStore } from "@/hooks/useSaveRosterModalStore"
 import { useUser } from "@/hooks/useUser"
-import { revalidatePath, unstable_cache } from "next/cache"
-import { useRouter } from "next/navigation"
-
-import React, { useState, useTransition } from "react"
+import React, { useRef, useState, useTransition } from "react"
 import { toast } from "sonner"
 
 export const RosterSaveModal = () => {
   const { isOpen, onClose } = useSaveRosterModalStore()
   const [inputValue, setInputValue] = useState("")
-  const { roster, rosterId } = useRosterBoxStore()
-  console.log("rosterId: ", rosterId)
-  const { onSave, rosters, action, onUpdate } = useRosterStore()
-  console.log("rosters: ", rosters)
+  const { roster, rosterId, onResetRoster } = useRosterBoxStore()
+  const { onSave, rosters, action, onUpdate, onResponse } = useRosterStore()
   const [isPending, startTransition] = useTransition()
   const user = useUser()
 
@@ -71,29 +65,36 @@ export const RosterSaveModal = () => {
         })
         updateRoster(rosterId, inputValue, roster).then((data) => {
           if (data.success) {
+            console.log("data.data: ", data.data)
+
             toast(data.success)
+            onResponse(data.data, "update")
           }
           if (data.error) {
             toast(data.error)
             action()
           }
         })
-      } else {
-        onSave(responseData)
-        saveRoster(roster, inputValue)
-          .then((data) => {
-            if (data.success) {
-              toast(data.success)
-            }
-            if (data.error) {
-              toast(data.error)
-              action()
-            }
-          })
-          .catch((error) => console.log(error))
+        return
       }
-      onClose()
+
+      onSave(responseData)
+      saveRoster(roster, inputValue)
+        .then((data) => {
+          if (data.success) {
+            toast(data.success)
+            onResponse(data.data, "save")
+          }
+          if (data.error) {
+            toast(data.error)
+            action()
+          }
+        })
+        .catch((error) => console.log(error))
     })
+    setInputValue("")
+    onResetRoster()
+    onClose()
   }
 
   return (

@@ -87,7 +87,10 @@ export const RosterCard = ({ roster }: RosterCardProps) => {
         <Button
           size={"xs"}
           className="bg-transparent"
-          onClick={onRemoveRoster}
+          onClick={(e) => {
+            e.stopPropagation()
+            onRemoveRoster()
+          }}
           disabled={isPending}
         >
           <X width={16} height={16} color="#c4c4c4" />

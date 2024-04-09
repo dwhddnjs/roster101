@@ -16,9 +16,8 @@ type useRosterTypes = {
 
 export const useRosterStore = create<useRosterTypes>((set, get) => ({
   rosters: [],
-  isLoading: false,
+  isLoading: true,
   action: async () => {
-    set({ isLoading: true })
     try {
       const res = await roster()
       set({ rosters: res as Array<RosterTypes> })

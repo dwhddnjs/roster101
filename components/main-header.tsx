@@ -10,6 +10,7 @@ import { Button } from "./ui/button"
 import { signOut, useSession } from "next-auth/react"
 import { toast } from "sonner"
 import { UserButton } from "./user-button"
+import { LogInIcon } from "lucide-react"
 
 export const MainHeader = ({
   className,
@@ -25,12 +26,6 @@ export const MainHeader = ({
       href: `/roster`,
       label: "Roster",
       active: pathname === `/roster`,
-    },
-
-    {
-      href: `/tier`,
-      label: "Tier",
-      active: pathname === `/tier`,
     },
     {
       href: `/news`,
@@ -73,7 +68,13 @@ export const MainHeader = ({
           variant="ghost"
           className="text-[#eeeeee] hover:bg-[#1a1a1a] hover:text-[#eeeeee]/80"
         >
-          <Link href="/auth/login">Login</Link>
+          <LogInIcon className="h-4 w-4 mr-2 text-[#eeeeee]" />
+          <Link
+            href="/auth/login"
+            className="text-[#eeeeee] font-semibold cursor-pointer"
+          >
+            Login
+          </Link>
         </Button>
       )}
       {status === "authenticated" && <UserButton />}

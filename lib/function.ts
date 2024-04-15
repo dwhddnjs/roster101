@@ -51,20 +51,3 @@ export const renderPositionImg = (position: string) => {
   }
   return result
 }
-
-export const selectedPlayerStyle = (
-  roster: PlayerTypes[],
-  player: PlayerTypes
-) => {
-  let result
-
-  for (let currentPlayer of roster) {
-    if (currentPlayer.nickname === player.nickname) {
-      result = "border-[#eeeeee] border-[2px]"
-    } else {
-      result
-    }
-  }
-
-  return result
-}

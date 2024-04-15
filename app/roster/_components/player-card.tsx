@@ -19,10 +19,15 @@ interface PlayerCardProps {
 
 export const PlayerCard = ({ player }: PlayerCardProps) => {
   const { onSelectPlayer, roster } = useRosterBoxStore()
+  console.log("roster: ", roster)
 
   if (!player) {
     return null
   }
+
+  const selectedPlayer = roster.filter(
+    (item) => item.position === player.position
+  )[0]
 
   return (
     <HoverCard>
@@ -30,8 +35,9 @@ export const PlayerCard = ({ player }: PlayerCardProps) => {
         <div
           onClick={() => onSelectPlayer(player)}
           className={cn(
-            "bg-[#272727] rounded-md border-[1px] border-[#191919] hover:translate-y-2  duration-200 ease-linear shadow-md relative ",
-            selectedPlayerStyle(roster, player)
+            "bg-[#272727] rounded-md border-[2px] border-[#191919] hover:translate-y-2  duration-200 ease-linear shadow-md relative ",
+            selectedPlayer.nickname === player.nickname &&
+              "border-[#eeeeee] border-[2px]"
           )}
         >
           <div className="flex items-center justify-center">

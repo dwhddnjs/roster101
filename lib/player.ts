@@ -37,6 +37,7 @@ export const players: PlayersDataTypes = {
         "2023 LCK Summer 준우승",
         "2022 항저우 아시안 게임 금메달",
         "2023 Worlds 우승",
+        "2024 LCK Spring 준우승",
       ],
     },
     {
@@ -64,6 +65,7 @@ export const players: PlayersDataTypes = {
       career: [
         "2018 LCK Spring 준우승",
         "2018 자카르타팔렘방 아시안게임 은메달",
+        "2024 LCK Spring 우승",
       ],
     },
     {
@@ -396,6 +398,7 @@ export const players: PlayersDataTypes = {
         "2023 LCK Spring 준우승",
         "2023 LCK Summer 준우승",
         "2023 Worlds 우승",
+        "2024 LCK Spring 준우승",
       ],
     },
     {
@@ -419,6 +422,7 @@ export const players: PlayersDataTypes = {
         "2021 MSI 준우승",
         "2021 LCK Summer 우승",
         "2021 Worlds 준우승",
+        "2024 LCK Spring 우승",
       ],
     },
     {
@@ -791,6 +795,7 @@ export const players: PlayersDataTypes = {
         "2023 LCK Spring 우승",
         "2023 LCK Summer 우승",
         "2022 항저우 아시안 게임 금메달",
+        "2024 LCK Spring 우승",
       ],
     },
     {
@@ -827,6 +832,7 @@ export const players: PlayersDataTypes = {
         "2023 LCK Summer 준우승",
         "2018 자카르타 팔렘방 아시안 게임 은메달",
         "2022 항저우 아시안 게임 금메달",
+        "2024 LCK Spring 준우승",
       ],
     },
     {
@@ -1199,7 +1205,11 @@ export const players: PlayersDataTypes = {
       position: "ad",
       name: "김수환",
       img: "https://nng-phinf.pstatic.net/MjAyNDAxMTdfMjkw/MDAxNzA1NDcwNjIzODMx.A-2YsVv7nDynxRnLsHP21BKkOjhgIooRAw2goyplMKgg.LN11mrRnf1nPvOsDG237hsHkKlFflC0OsUKQDmHGs30g.PNG/KYEGfRPMGJktLXdrWeXS.png",
-      career: ["2023 LCK Spring 우승", "2023 LCK Summer 우승"],
+      career: [
+        "2023 LCK Spring 우승",
+        "2023 LCK Summer 우승",
+        "2024 LCK Spring 우승",
+      ],
     },
     {
       id: 2,
@@ -1217,6 +1227,7 @@ export const players: PlayersDataTypes = {
         "2023 LCK Spring 준우승",
         "2023 LCK Summer 준우승",
         "2023 Worlds 우승",
+        "2024 LCK Spring 준우승",
       ],
     },
     {
@@ -1596,6 +1607,7 @@ export const players: PlayersDataTypes = {
         "2023 LCK Summer 준우승",
         "2022 항저우 아시안 게임 금메달",
         "2023 Worlds 우승",
+        "2024 LCK Spring 준우승",
       ],
     },
     {
@@ -1626,6 +1638,7 @@ export const players: PlayersDataTypes = {
         "2019 LCK Summer 준우승",
         "2022 LCK Spring 준우승",
         "2022 LCK Summer 우승",
+        "2024 LCK Spring 우승",
       ],
     },
     {

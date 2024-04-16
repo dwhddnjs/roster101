@@ -9,9 +9,13 @@ import { RosterCard } from "./roster-card"
 import { Roster } from "@prisma/client"
 import { useRosterStore } from "@/hooks/useRosterStore"
 import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
+import { useRosterBoxStore } from "@/hooks/useRosterBoxStore"
 
 export const RosterSidebar = () => {
   const { rosters, isLoading } = useRosterStore()
+  const { rosterId } = useRosterBoxStore()
 
   if (!rosters || (!isLoading && rosters?.length === 0)) {
     return (
@@ -34,6 +38,15 @@ export const RosterSidebar = () => {
 
   return (
     <div className="w-[18%] bg-[#191919] pt-[95px] px-[18px] h-full space-y-4 max-h-[1750px] min-h-[1750px] overflow-scroll">
+      <div>
+        <Button>
+          {!rosterId ? (
+            <p>상세보기</p>
+          ) : (
+            <Link href={`/roster/${rosterId}`}>상세보기</Link>
+          )}
+        </Button>
+      </div>
       {isLoading && (
         <div className="flex items-center justify-center mt-[300px]">
           <FadeLoader color="#555555" />

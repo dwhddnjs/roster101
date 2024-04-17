@@ -1,4 +1,4 @@
-import { roster } from "@/actions/roster"
+import { rosters } from "@/actions/rosters"
 import { Player, Roster } from "@prisma/client"
 import { create } from "zustand"
 
@@ -19,7 +19,7 @@ export const useRosterStore = create<useRosterTypes>((set, get) => ({
   isLoading: true,
   action: async () => {
     try {
-      const res = await roster()
+      const res = await rosters()
       set({ rosters: res as Array<RosterTypes> })
     } catch (error) {
       console.log(error)

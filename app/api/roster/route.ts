@@ -1,5 +1,5 @@
 import { error } from "console"
-import { roster } from "@/actions/roster"
+import { roster } from "@/actions/rosters"
 import { NextApiRequest, NextApiResponse } from "next"
 import { NextResponse } from "next/server"
 

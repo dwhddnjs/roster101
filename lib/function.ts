@@ -51,3 +51,35 @@ export const renderPositionImg = (position: string) => {
   }
   return result
 }
+
+export const getCountByAward = (careers: any) => {
+  const data: Record<number, number> = {
+    2018: 0,
+    2019: 0,
+    2020: 0,
+    2021: 0,
+    2022: 0,
+    2023: 0,
+    2024: 0,
+  }
+
+  careers.forEach((career: string) => {
+    const yearMatch = career.match(/\d{4}/)
+    if (yearMatch) {
+      const year = parseInt(yearMatch[0])
+      const splitCareer = career.split(" ")
+
+      if (splitCareer.includes("우승")) {
+        data[year] = (data[year] || 0) + 1
+      }
+    }
+  })
+  console.log(data)
+
+  const result = Object.entries(data).map(([year, count]) => ({
+    name: year,
+    total: count,
+  }))
+
+  return result
+}

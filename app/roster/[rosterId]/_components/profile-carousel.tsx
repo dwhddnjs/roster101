@@ -26,7 +26,7 @@ export const ProfileCarousel = ({ setApi, players }: ProfileCarouselProps) => {
   return (
     <Carousel
       setApi={setApi}
-      className="h-fit w-[50%] border-2 border-[#1e1e1e] drop-shadow-lg "
+      className="w-[50.3%] h-fit  border-2 border-[#1e1e1e] drop-shadow-lg "
     >
       <CarouselPrevious />
       <CarouselNext />

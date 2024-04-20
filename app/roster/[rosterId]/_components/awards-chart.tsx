@@ -1,5 +1,6 @@
 "use client"
 
+import { getCountByAward } from "@/lib/function"
 import { Player } from "@prisma/client"
 import { Trophy } from "lucide-react"
 import React from "react"
@@ -47,47 +48,11 @@ export const AwardsChart = ({ players, current }: AwardsChart) => {
   }
   const currentPlayer = players[current - 1]
 
-  const getCountByAward = (careers: any) => {
-    const data: Record<number, number> = {
-      2018: 0,
-      2019: 0,
-      2020: 0,
-      2021: 0,
-      2022: 0,
-      2023: 0,
-      2024: 0,
-    }
-
-    careers.forEach((career: string) => {
-      const yearMatch = career.match(/\d{4}/)
-      if (yearMatch) {
-        const year = parseInt(yearMatch[0])
-        const splitCareer = career.split(" ")
-
-        if (splitCareer.includes("우승")) {
-          data[year] = (data[year] || 0) + 1
-        }
-      }
-    })
-    console.log(data)
-
-    const result = Object.entries(data).map(([year, count]) => ({
-      name: year,
-      total: count,
-    }))
-
-    return result
-  }
-  console.log(
-    "getCountByAward(currentPlayer.career): ",
-    getCountByAward(currentPlayer.career)
-  )
-
   return (
     <div className="w-full h-fit relative ">
       <div className="absolute z-10 flex justify-center items-center space-x-1 top-4 right-4">
-        <Trophy color="#555555" className="w-5 h-5 font-bold" />
-        <p className="text-[#555555] font-bold text-sm">우승횟수</p>
+        <Trophy color="#c4c4c4" className="w-5 h-5 font-bold" />
+        <p className="text-[#c4c4c4] font-bold text-sm">우승횟수</p>
       </div>
       <ResponsiveContainer
         width="100%"

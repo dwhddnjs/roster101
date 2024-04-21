@@ -59,7 +59,7 @@ export const AwardsChart = ({ players, current }: AwardsChart) => {
         height={440}
         className="bg-[#1e1e1e] drop-shadow-lg pt-[24px] "
       >
-        <BarChart data={getCountByAward(currentPlayer.career)}>
+        <BarChart data={getCountByAward(currentPlayer?.career)}>
           <XAxis
             dataKey="name"
             stroke="#555555"

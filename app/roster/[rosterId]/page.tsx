@@ -11,6 +11,7 @@ import { PlayerTable } from "./_components/player-table"
 
 import { Player } from ".prisma/client"
 import { MemoBox } from "./_components/memo-box"
+import { FadeLoader } from "react-spinners"
 
 function RosterIdPage() {
   const { rosterId } = useParams()
@@ -43,6 +44,14 @@ function RosterIdPage() {
       setCurrent(api.selectedScrollSnap() + 1)
     })
   }, [api])
+
+  if (!item) {
+    return (
+      <div className="w-full h-full pt-48 flex flex-col items-center">
+        <FadeLoader color="#555555" />
+      </div>
+    )
+  }
 
   return (
     <div className="w-full h-fit pt-24 flex flex-col p-[48px] space-y-4 ">

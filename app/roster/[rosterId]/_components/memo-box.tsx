@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
-import React from "react"
+import React, { useState } from "react"
 
 export const MemoBox = () => {
+  const [inputValue, setInputValue] = useState("")
+
   return (
     <div className="flex-1  h-[450px] bg-[#1e1e1e] px-[24px] pt-[24px] space-y-4 drop-shadow-lg">
       <div className="flex justify-between items-center">
@@ -14,6 +16,8 @@ export const MemoBox = () => {
       <Textarea
         className="h-full max-h-[350px] bg-[#1a1a1a] border-[#1e1e1e] text-lg text-[#eeeeee]"
         placeholder="로스터에 대한 평가를 적어보세요"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
       />
     </div>
   )

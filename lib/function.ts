@@ -52,7 +52,7 @@ export const renderPositionImg = (position: string) => {
   return result
 }
 
-export const getCountByAward = (careers: any) => {
+export const getCountByAward = (careers: string[]) => {
   const data: Record<number, number> = {
     2018: 0,
     2019: 0,
@@ -63,23 +63,23 @@ export const getCountByAward = (careers: any) => {
     2024: 0,
   }
 
-  careers.forEach((career: string) => {
-    const yearMatch = career.match(/\d{4}/)
-    if (yearMatch) {
-      const year = parseInt(yearMatch[0])
-      const splitCareer = career.split(" ")
+  if (careers) {
+    careers.forEach((career: string) => {
+      const yearMatch = career.match(/\d{4}/)
+      if (yearMatch) {
+        const year = parseInt(yearMatch[0])
+        const splitCareer = career.split(" ")
 
-      if (splitCareer.includes("우승")) {
-        data[year] = (data[year] || 0) + 1
+        if (splitCareer.includes("우승")) {
+          data[year] = (data[year] || 0) + 1
+        }
       }
-    }
-  })
-  console.log(data)
+    })
 
-  const result = Object.entries(data).map(([year, count]) => ({
-    name: year,
-    total: count,
-  }))
-
-  return result
+    const result = Object.entries(data).map(([year, count]) => ({
+      name: year,
+      total: count,
+    }))
+    return result
+  }
 }

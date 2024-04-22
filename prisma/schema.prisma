@@ -50,6 +50,7 @@ model Roster {
   players Player[] @relation("RosterToPlayers")
   userId String
   user User @relation("UserToRosters",fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  memo Json?
 
   @@index([userId])
 }

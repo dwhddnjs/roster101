@@ -12,10 +12,17 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { useRosterBoxStore } from "@/hooks/useRosterBoxStore"
+import { toast } from "sonner"
 
 export const RosterSidebar = () => {
   const { rosters, isLoading } = useRosterStore()
   const { rosterId } = useRosterBoxStore()
+
+  const onClickOpenButton = () => {
+    if (!rosterId) {
+      return toast("로스터 카드를 선택해주세요")
+    }
+  }
 
   if (!rosters || (!isLoading && rosters?.length === 0)) {
     return (
@@ -38,12 +45,16 @@ export const RosterSidebar = () => {
 
   return (
     <div className="w-[18%] bg-[#191919] pt-[95px] px-[18px] h-full space-y-4 max-h-[1750px] min-h-[1750px] overflow-scroll">
-      <div>
-        <Button>
+      <div className="w-full flex justify-end">
+        <Button size={"sm"} className="rounded-[50px] bg-[#272727] ">
           {!rosterId ? (
-            <p>상세보기</p>
+            <span onClick={onClickOpenButton} className="text-xs">
+              OPEN
+            </span>
           ) : (
-            <Link href={`/roster/${rosterId}`}>상세보기</Link>
+            <Link className="text-xs" href={`/roster/${rosterId}`}>
+              OPEN
+            </Link>
           )}
         </Button>
       </div>

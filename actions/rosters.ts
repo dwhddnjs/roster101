@@ -2,7 +2,6 @@
 
 import { currentUser } from "@/lib/auth"
 import { db } from "@/lib/db"
-import { error } from "console"
 
 export const rosters = async () => {
   const user = await currentUser()

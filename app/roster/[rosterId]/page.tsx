@@ -18,7 +18,6 @@ function RosterIdPage() {
   const [item, setItem] = useState<null | RosterTypes>(null)
   const [api, setApi] = useState<CarouselApi>()
   const [current, setCurrent] = useState(0)
-
   const [count, setCount] = useState(0)
 
   useEffect(() => {

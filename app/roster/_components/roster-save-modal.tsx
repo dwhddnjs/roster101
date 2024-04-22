@@ -17,6 +17,7 @@ import { useRosterBoxStore } from "@/hooks/useRosterBoxStore"
 import { useRosterStore } from "@/hooks/useRosterStore"
 import { useSaveRosterModalStore } from "@/hooks/useSaveRosterModalStore"
 import { useUser } from "@/hooks/useUser"
+import { useRouter } from "next/navigation"
 import React, { useRef, useState, useTransition } from "react"
 import { toast } from "sonner"
 
@@ -26,6 +27,7 @@ export const RosterSaveModal = () => {
   const { roster, rosterId, onResetRoster } = useRosterBoxStore()
   const { onSave, rosters, action, onUpdate, onResponse } = useRosterStore()
   const [isPending, startTransition] = useTransition()
+  const { replace } = useRouter()
   const user = useUser()
 
   const onChangeText = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,6 +35,14 @@ export const RosterSaveModal = () => {
   }
 
   const onSaveRoster = () => {
+    if (!user) {
+      onClose()
+      toast("로그인이 필요합니다")
+      replace("/auth/login")
+      setInputValue("")
+      return
+    }
+
     if (inputValue.length === 0) {
       return toast("로스터 이름을 입력해주세요.")
     }
@@ -65,8 +75,6 @@ export const RosterSaveModal = () => {
         })
         updateRoster(rosterId, inputValue, roster).then((data) => {
           if (data.success) {
-            console.log("data.data: ", data.data)
-
             toast(data.success)
             onResponse(data.data, "update")
           }

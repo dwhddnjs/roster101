@@ -13,7 +13,6 @@ import next from "next"
 export default auth((req) => {
   const { nextUrl } = req
   const isLoggedIn = !!req.auth
-  // console.log("isLoggedIn: ", isLoggedIn)
 
   const isApiAuthRoute = nextUrl.pathname.startsWith(apiAuthPrefix)
   const isPublicRoutes = publicRoutes.includes(nextUrl.pathname)
@@ -30,9 +29,9 @@ export default auth((req) => {
     return
   }
 
-  // if (!isLoggedIn && !isPublicRoutes) {
-  //   return Response.redirect(new URL("/auth/login", nextUrl))
-  // }
+  if (!isLoggedIn && !isPublicRoutes) {
+    return Response.redirect(new URL("/roster", nextUrl))
+  }
   return
 })
 

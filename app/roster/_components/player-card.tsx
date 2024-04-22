@@ -11,7 +11,6 @@ import { Medal } from "lucide-react"
 import { PlayerTypes } from "../../../types/player-types"
 import { useRosterBoxStore } from "@/hooks/useRosterBoxStore"
 import { cn } from "@/lib/utils"
-import { selectedPlayerStyle } from "@/lib/function"
 
 interface PlayerCardProps {
   player: PlayerTypes
@@ -19,7 +18,6 @@ interface PlayerCardProps {
 
 export const PlayerCard = ({ player }: PlayerCardProps) => {
   const { onSelectPlayer, roster } = useRosterBoxStore()
-  console.log("roster: ", roster)
 
   if (!player) {
     return null

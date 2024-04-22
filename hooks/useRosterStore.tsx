@@ -1,8 +1,10 @@
 import { rosters } from "@/actions/rosters"
-import { Player, Roster } from "@prisma/client"
+import { Player, Prisma, Roster } from "@prisma/client"
 import { create } from "zustand"
 
-export type RosterTypes = Roster & { players: Player[] }
+export type RosterTypes = Omit<Roster, "memo"> & { memo?: Prisma.JsonValue } & {
+  players: Player[]
+}
 
 type useRosterTypes = {
   rosters: Array<RosterTypes>

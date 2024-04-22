@@ -13,12 +13,15 @@ import { LogOutIcon } from "lucide-react"
 import { signOut } from "next-auth/react"
 import { toast } from "sonner"
 import { useUser } from "@/hooks/useUser"
+import { useRouter } from "next/navigation"
+import Link from "next/link"
 
 export const UserButton = () => {
   const user = useUser()
+  const { replace, push } = useRouter()
 
-  const onLogout = () => {
-    signOut()
+  const onLogout = async () => {
+    await signOut()
   }
 
   return (
@@ -37,7 +40,12 @@ export const UserButton = () => {
       >
         <DropdownMenuItem onClick={onLogout}>
           <LogOutIcon className="h-4 w-4 mr-2 text-[#eeeeee]" />
-          <p className="text-[#eeeeee] font-semibold cursor-pointer">Logout</p>
+          <Link
+            href="/roster"
+            className="text-[#eeeeee] font-semibold cursor-pointer"
+          >
+            Logout
+          </Link>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

@@ -22,7 +22,6 @@ import { LoginSchema } from "../schemas"
 import { login } from "@/actions/login"
 import { toast } from "sonner"
 import { signIn } from "next-auth/react"
-import { error } from "console"
 
 function LoginPage() {
   const { push } = useRouter()

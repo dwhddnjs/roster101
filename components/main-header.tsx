@@ -27,11 +27,6 @@ export const MainHeader = ({
       label: "Roster",
       active: pathname === `/roster`,
     },
-    {
-      href: `/news`,
-      label: "News",
-      active: pathname === `/news`,
-    },
   ]
 
   if (pathname === "/auth/login" || pathname === "/auth/register") {

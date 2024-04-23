@@ -22,8 +22,8 @@ export const PlayersContainer = () => {
   }
 
   return (
-    <div className="border-[4px] border-[#1e1e1e] drop-shadow-md ">
-      <div className=" w-full bg-[#1e1e1e] py-3 px-4 flex justify-between">
+    <div className="border-[4px] border-[#1e1e1e] drop-shadow-md  w-full">
+      <div className="w-full bg-[#1e1e1e] py-3 px-4 flex justify-between ">
         <div className="w-fit flex items-center justify-center">
           <Button
             variant="ghost"
@@ -96,18 +96,14 @@ export const PlayersContainer = () => {
           onChangeSearchValue={onChangeSearchValue}
         />
       </div>
-      <div className="grid grid-flow-row grid-cols-9 gap-4 p-4 bg-[#1a1a1a] min-h-[300px]">
-        {searchValue.length === 0 ? (
-          players[position].map((player) => (
-            <PlayerCard player={player} key={player.id} />
-          ))
-        ) : (
-          <PlayerCard
-            player={
-              findPlayerByNicknameOrName(players, searchValue) as PlayerTypes
-            }
-          />
-        )}
+      <div className="grid grid-flow-row grid-cols-9 gap-4 p-4 bg-[#1a1a1a] min-h-[300px] 3xl:grid-cols-12">
+        {searchValue.length === 0
+          ? players[position].map((player) => (
+              <PlayerCard player={player} key={player.id} />
+            ))
+          : findPlayerByNicknameOrName(players, searchValue).map((player) => (
+              <PlayerCard key={player.id} player={player} />
+            ))}
       </div>
     </div>
   )

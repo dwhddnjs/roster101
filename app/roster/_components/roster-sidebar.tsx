@@ -26,7 +26,7 @@ export const RosterSidebar = () => {
 
   if (!rosters || (!isLoading && rosters?.length === 0)) {
     return (
-      <div className="w-[18%] bg-[#191919] pt-[95px] px-[18px] h-full space-y-4 max-h-[1750px] min-h-[1750px] overflow-scroll">
+      <div className="w-[18%]  bg-[#191919] pt-[95px] px-[18px] h-full space-y-4 max-h-[1750px] min-h-[1750px] overflow-scroll">
         <div className="flex flex-col items-center justify-center mt-[300px]  z-1000 space-y-3">
           <Image
             src="/images/empty_esport_icon.svg"
@@ -44,7 +44,7 @@ export const RosterSidebar = () => {
   }
 
   return (
-    <div className="w-[18%] bg-[#191919] pt-[95px] px-[18px] h-full space-y-4 max-h-[1750px] min-h-[1750px] overflow-scroll">
+    <div className="w-[18%] max-w-[350px] bg-[#191919] pt-[95px] px-[18px] h-full space-y-4 max-h-[1750px] min-h-[1750px] overflow-scroll">
       <div className="w-full flex justify-end">
         <Button size={"sm"} className="rounded-[50px] bg-[#272727] ">
           {!rosterId ? (

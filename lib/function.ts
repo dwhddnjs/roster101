@@ -14,14 +14,12 @@ export const findPlayerByNicknameOrName = (
 
   const playersArray: PlayerTypes[] = objToValuesArr.flat()
 
-  for (const player of playersArray) {
-    if (
-      player.nickname.toLowerCase() === name.toLowerCase() ||
-      player.name.toLowerCase() === name.toLowerCase()
-    ) {
-      return player
-    }
-  }
+  const result = playersArray.filter(
+    (el) =>
+      el.name.toLowerCase().includes(name.toLowerCase()) ||
+      el.nickname.toLowerCase().includes(name.toLowerCase())
+  )
+  return result.map((el, i) => ({ ...el, id: i + 1 }))
 }
 
 export const removeHtmlAndQuote = (text: string) => {

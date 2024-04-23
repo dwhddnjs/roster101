@@ -262,7 +262,7 @@ export const players: PlayersDataTypes = {
       id: 26,
       nickname: "CuVee",
       position: "top",
-      name: "김동하",
+      name: "이성진",
       img: "https://nng-phinf.pstatic.net/MjAyMTAyMjRfMTAy/MDAxNjE0MTcyNTcxNDc3.dngvfD0DoczcPFNPXIJWIAunS4HQ7L2SebF11IzQw20g.HetFF1P6PSKW_KNcz28mwaToUPjuCqZE9KXJDtFGHNUg.PNG/pPuOTxCJEKHAuWNLoQDK.png",
       career: [],
     },

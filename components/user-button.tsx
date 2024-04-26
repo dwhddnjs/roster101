@@ -15,19 +15,22 @@ import { toast } from "sonner"
 import { useUser } from "@/hooks/useUser"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
+import { useMediaQuery } from "usehooks-ts"
+import { cn } from "@/lib/utils"
 
 export const UserButton = () => {
   const user = useUser()
   const { replace, push } = useRouter()
+  const isMobile = useMediaQuery("(max-width: 768px)")
 
-  const onLogout = async () => {
-    await signOut()
+  const onLogout = () => {
+    signOut()
   }
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <Avatar>
+        <Avatar className={cn("", isMobile && "w-7 h-7")}>
           <AvatarImage src={user?.image || ""} />
           <AvatarFallback className="bg-[#555555]">
             <FaUser className="text-white" />

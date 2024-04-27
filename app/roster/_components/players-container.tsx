@@ -26,12 +26,7 @@ export const PlayersContainer = () => {
   }
 
   return (
-    <div
-      className={cn(
-        "border-[4px] border-[#1e1e1e] drop-shadow-md w-full",
-        isMobile && "h-[600px] overflow-y-scroll"
-      )}
-    >
+    <div className={cn("drop-shadow-md w-full ")}>
       <div className="w-full bg-[#1e1e1e] py-1.5 px-3 flex justify-between ">
         <div className="w-fit flex items-center justify-center">
           <Button
@@ -109,8 +104,8 @@ export const PlayersContainer = () => {
       </div>
       <div
         className={cn(
-          "grid grid-flow-row grid-cols-9 gap-4 p-4 bg-[#1a1a1a] min-h-[300px] 3xl:grid-cols-12",
-          isMobile && "grid-cols-3 gap-2 p-2"
+          "grid grid-flow-row grid-cols-9 gap-4 p-4 bg-[#1a1a1a]  min-h-[300px] border-2 border-[#1e1e1e] 3xl:grid-cols-12 ",
+          isMobile && "grid-cols-3 gap-2 p-2 h-[370px] overflow-y-scroll"
         )}
       >
         {searchValue.length === 0

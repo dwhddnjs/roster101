@@ -42,7 +42,7 @@ export const MainHeader = ({
         isMobile && "h-12 px-5"
       )}
     >
-      <div className="space-x-10 flex items-center">
+      <div className="space-x-8 flex items-center">
         <div
           className="flex space-x-2 cursor-pointer"
           onClick={() => replace("/")}

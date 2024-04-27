@@ -11,12 +11,14 @@ import { Medal, Trophy } from "lucide-react"
 import { PlayerTypes } from "../../../types/player-types"
 import { useRosterBoxStore } from "@/hooks/useRosterBoxStore"
 import { cn } from "@/lib/utils"
+import { useMediaQuery } from "usehooks-ts"
 
 interface PlayerCardProps {
   player: PlayerTypes
 }
 
 export const PlayerCard = ({ player }: PlayerCardProps) => {
+  const isMobile = useMediaQuery("(max-width: 768px)")
   const { onSelectPlayer, roster } = useRosterBoxStore()
 
   if (!player) {
@@ -41,12 +43,29 @@ export const PlayerCard = ({ player }: PlayerCardProps) => {
           <div className="flex items-center justify-center">
             <Image src={player.img} width={120} height={80} alt="" />
           </div>
-          <div className="p-3 flex justify-between items-end ">
+          <div
+            className={cn(
+              "px-3 py-2 flex justify-between items-end ",
+              isMobile && "px-2 py-1.5"
+            )}
+          >
             <div>
-              <h2 className="text-[#eeeeee] font-bold text-md">
+              <h2
+                className={cn(
+                  "text-[#eeeeee] font-bold text-md",
+                  isMobile && "text-sm"
+                )}
+              >
                 {player.nickname}
               </h2>
-              <p className="text-[#c4c4c4] text-xs">{player.name}</p>
+              <p
+                className={cn(
+                  "text-[#c4c4c4] text-xs",
+                  isMobile && "text-[10px]"
+                )}
+              >
+                {player.name}
+              </p>
             </div>
           </div>
           <div className="absolute bottom-2 right-2">

@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { signOut } from "next-auth/react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
@@ -17,7 +17,6 @@ import { RosterMobile } from "./_components/roster-mobile"
 
 function RosterPage() {
   const isMobile = useMediaQuery("(max-width: 768px)")
-  console.log("isMobile: ", isMobile)
 
   return (
     <>

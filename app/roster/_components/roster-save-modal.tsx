@@ -17,9 +17,11 @@ import { useRosterBoxStore } from "@/hooks/useRosterBoxStore"
 import { useRosterStore } from "@/hooks/useRosterStore"
 import { useSaveRosterModalStore } from "@/hooks/useSaveRosterModalStore"
 import { useUser } from "@/hooks/useUser"
+import { cn } from "@/lib/utils"
 import { useRouter } from "next/navigation"
 import React, { useRef, useState, useTransition } from "react"
 import { toast } from "sonner"
+import { useMediaQuery } from "usehooks-ts"
 
 export const RosterSaveModal = () => {
   const { isOpen, onClose } = useSaveRosterModalStore()
@@ -29,6 +31,7 @@ export const RosterSaveModal = () => {
   const [isPending, startTransition] = useTransition()
   const { replace } = useRouter()
   const user = useUser()
+  const isMobile = useMediaQuery("(max-width: 768px)")
 
   const onChangeText = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value)
@@ -107,7 +110,12 @@ export const RosterSaveModal = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="bg-[#272727] border-[#1e1e1e] text-[#c4c4c4]">
+      <DialogContent
+        className={cn(
+          "bg-[#272727] border-[#1e1e1e] text-[#c4c4c4]",
+          isMobile && "w-[350px]"
+        )}
+      >
         <DialogHeader>
           <DialogTitle className="text-[#c4c4c4] font-semibold text-[16px] pl-[8px] ">
             저장하실 로스터 이름을 입력해주세요.

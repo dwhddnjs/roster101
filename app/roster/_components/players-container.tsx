@@ -8,10 +8,14 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { SearchPlayerInput } from "./search-player-Input"
 import { findPlayerByNicknameOrName } from "@/lib/function"
+import { useMediaQuery } from "usehooks-ts"
+import { cn } from "@/lib/utils"
 
 export const PlayersContainer = () => {
   const [position, setPosition] = useState("top")
   const [searchValue, setSearchValue] = useState("")
+
+  const isMobile = useMediaQuery("(max-width: 768px)")
 
   const onSelectPosition = (position: string) => {
     setPosition(position)
@@ -22,8 +26,13 @@ export const PlayersContainer = () => {
   }
 
   return (
-    <div className="border-[4px] border-[#1e1e1e] drop-shadow-md  w-full">
-      <div className="w-full bg-[#1e1e1e] py-3 px-4 flex justify-between ">
+    <div
+      className={cn(
+        "border-[4px] border-[#1e1e1e] drop-shadow-md w-full",
+        isMobile && "h-[600px] overflow-y-scroll"
+      )}
+    >
+      <div className="w-full bg-[#1e1e1e] py-1.5 px-3 flex justify-between ">
         <div className="w-fit flex items-center justify-center">
           <Button
             variant="ghost"
@@ -33,8 +42,8 @@ export const PlayersContainer = () => {
           >
             <Image
               src="/images/top_icon_p.svg"
-              width={position === "top" ? 36 : 26}
-              height={position === "top" ? 36 : 26}
+              width={position === "top" ? 32 : 24}
+              height={position === "top" ? 32 : 24}
               alt=""
             />
           </Button>
@@ -46,8 +55,8 @@ export const PlayersContainer = () => {
           >
             <Image
               src="/images/jgl_icon_p.svg"
-              width={position === "jgl" ? 36 : 26}
-              height={position === "jgl" ? 36 : 26}
+              width={position === "jgl" ? 32 : 24}
+              height={position === "jgl" ? 32 : 24}
               alt=""
             />
           </Button>
@@ -59,8 +68,8 @@ export const PlayersContainer = () => {
           >
             <Image
               src="/images/mid_icon_p.svg"
-              width={position === "mid" ? 36 : 26}
-              height={position === "mid" ? 36 : 26}
+              width={position === "mid" ? 32 : 24}
+              height={position === "mid" ? 32 : 24}
               alt=""
             />
           </Button>
@@ -72,8 +81,8 @@ export const PlayersContainer = () => {
           >
             <Image
               src="/images/ad_icon_p.svg"
-              width={position === "ad" ? 36 : 26}
-              height={position === "ad" ? 36 : 26}
+              width={position === "ad" ? 32 : 24}
+              height={position === "ad" ? 32 : 24}
               alt=""
             />
           </Button>
@@ -85,18 +94,25 @@ export const PlayersContainer = () => {
           >
             <Image
               src="/images/spt_icon_p.svg"
-              width={position === "spt" ? 36 : 26}
-              height={position === "spt" ? 36 : 26}
+              width={position === "spt" ? 32 : 24}
+              height={position === "spt" ? 32 : 24}
               alt=""
             />
           </Button>
         </div>
-        <SearchPlayerInput
-          searchValue={searchValue}
-          onChangeSearchValue={onChangeSearchValue}
-        />
+        {!isMobile && (
+          <SearchPlayerInput
+            searchValue={searchValue}
+            onChangeSearchValue={onChangeSearchValue}
+          />
+        )}
       </div>
-      <div className="grid grid-flow-row grid-cols-9 gap-4 p-4 bg-[#1a1a1a] min-h-[300px] 3xl:grid-cols-12">
+      <div
+        className={cn(
+          "grid grid-flow-row grid-cols-9 gap-4 p-4 bg-[#1a1a1a] min-h-[300px] 3xl:grid-cols-12",
+          isMobile && "grid-cols-3 gap-2 p-2"
+        )}
+      >
         {searchValue.length === 0
           ? players[position].map((player) => (
               <PlayerCard player={player} key={player.id} />

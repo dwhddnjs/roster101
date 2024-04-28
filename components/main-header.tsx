@@ -39,7 +39,7 @@ export const MainHeader = ({
     <div
       className={cn(
         "w-full px-7 h-16 flex fixed justify-between items-center bg-[#1a1a1a] z-20 ",
-        isMobile && "h-12 px-5"
+        isMobile && "h-12 pl-5 pr-3"
       )}
     >
       <div className="space-x-8 flex items-center">
@@ -83,10 +83,15 @@ export const MainHeader = ({
           variant="ghost"
           className="text-[#eeeeee] hover:bg-[#1a1a1a] hover:text-[#eeeeee]/80"
         >
-          <LogInIcon className="h-4 w-4 mr-2 text-[#eeeeee]" />
+          <LogInIcon
+            className={cn("h-4 w-4 mr-2 text-[#eeeeee]", isMobile && "h-3 w-3")}
+          />
           <Link
             href="/auth/login"
-            className="text-[#eeeeee] font-semibold cursor-pointer"
+            className={cn(
+              "text-[#eeeeee] font-semibold cursor-pointer",
+              isMobile && "text-xs"
+            )}
           >
             Login
           </Link>

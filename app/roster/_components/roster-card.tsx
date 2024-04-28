@@ -12,6 +12,7 @@ import { RosterTypes, useRosterStore } from "@/hooks/useRosterStore"
 import { removeRoster } from "@/actions/remove-roster"
 import { toast } from "sonner"
 import { useRosterBoxStore } from "@/hooks/useRosterBoxStore"
+import { useMediaQuery } from "usehooks-ts"
 
 interface RosterCardProps {
   roster: RosterTypes
@@ -22,6 +23,7 @@ export const RosterCard = ({ roster }: RosterCardProps) => {
   const { onRemove, action } = useRosterStore()
   const { onSetPlayers, onSetRosterId, rosterId, onResetRoster } =
     useRosterBoxStore()
+  const isMobile = useMediaQuery("(max-width: 768px)")
 
   const onSetPlayersToRosterBox = () => {
     onSetRosterId(roster.id)
@@ -75,8 +77,9 @@ export const RosterCard = ({ roster }: RosterCardProps) => {
   return (
     <div
       className={cn(
-        "bg-[#1e1e1e] rounded-lg pt-[8px] px-[12px] pb-[10px] relative shadow-lg border-2 border-[#27272a]",
-        rosterId === roster.id && "border-[#eeeeee]"
+        "bg-[#1e1e1e] rounded-lg pt-[8px] px-[12px] pb-[10px] relative shadow-lg border-2 border-[#27272a] w-[280px]",
+        rosterId === roster.id && "border-[#eeeeee]",
+        isMobile && "w-[230px]"
       )}
       onClick={onSetPlayersToRosterBox}
     >
@@ -100,7 +103,13 @@ export const RosterCard = ({ roster }: RosterCardProps) => {
         {roster?.players
           ?.sort((a, b) => a.id - b.id)
           .map((player) => (
-            <Avatar key={player.id} className="w-[48px] h-[48px] bg-[#27272a]">
+            <Avatar
+              key={player.id}
+              className={cn(
+                "w-[46px] h-[46px] bg-[#27272a]",
+                isMobile && "w-[36px] h-[36px]"
+              )}
+            >
               <AvatarImage src={player.img} />
             </Avatar>
           ))}

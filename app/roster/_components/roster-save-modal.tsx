@@ -113,7 +113,7 @@ export const RosterSaveModal = () => {
       <DialogContent
         className={cn(
           "bg-[#272727] border-[#1e1e1e] text-[#c4c4c4]",
-          isMobile && "w-[350px]"
+          isMobile && "w-[330px]"
         )}
       >
         <DialogHeader>

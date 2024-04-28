@@ -105,7 +105,7 @@ export const PlayersContainer = () => {
       <div
         className={cn(
           "grid grid-flow-row grid-cols-9 gap-4 p-4 bg-[#1a1a1a]  min-h-[300px] border-2 border-[#1e1e1e] 3xl:grid-cols-12 ",
-          isMobile && "grid-cols-3 gap-2 p-2 h-[370px] overflow-y-scroll"
+          isMobile && "grid-cols-3 gap-2 p-2 h-[380px] overflow-y-scroll"
         )}
       >
         {searchValue.length === 0

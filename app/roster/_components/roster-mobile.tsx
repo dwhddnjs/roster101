@@ -20,6 +20,7 @@ import { useRosterBoxStore } from "@/hooks/useRosterBoxStore"
 import { toast } from "sonner"
 import { FadeLoader } from "react-spinners"
 import Image from "next/image"
+import { useUser } from "@/hooks/useUser"
 
 export const RosterMobile = () => {
   const [open, setOpen] = useState(false)
@@ -55,7 +56,7 @@ export const RosterMobile = () => {
       <RosterBox />
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetContent className="bg-[#191919] border-none space-y-3 pt-[55px] text-[#eeeeee] font-bold">
-          {rosters?.length === 0 && (
+          {!rosters && (
             <div className="flex flex-col items-center justify-center mt-[200px]  z-1000 space-y-3">
               <Image
                 src="/images/empty_esport_icon.svg"
@@ -69,7 +70,21 @@ export const RosterMobile = () => {
               </p>
             </div>
           )}
-          {rosters.length > 0 && (
+          {rosters && rosters.length === 0 && (
+            <div className="flex flex-col items-center justify-center mt-[200px]  z-1000 space-y-3">
+              <Image
+                src="/images/empty_esport_icon.svg"
+                width={60}
+                height={60}
+                alt=""
+              />
+              <p className="text-[#c4c4c4] text-center font-semibold text-sm">
+                저장된 로스터가 <br />
+                없습니다.
+              </p>
+            </div>
+          )}
+          {rosters && rosters.length > 0 && (
             <>
               {rosters?.map((roster) => (
                 <RosterCard key={roster.id} roster={roster} />

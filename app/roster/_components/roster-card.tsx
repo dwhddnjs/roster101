@@ -79,7 +79,7 @@ export const RosterCard = ({ roster }: RosterCardProps) => {
       className={cn(
         "bg-[#1e1e1e] rounded-lg pt-[8px] px-[12px] pb-[10px] relative shadow-lg border-2 border-[#27272a] w-[280px]",
         rosterId === roster.id && "border-[#eeeeee]",
-        isMobile && "w-[230px]"
+        isMobile && "w-[240px]"
       )}
       onClick={onSetPlayersToRosterBox}
     >

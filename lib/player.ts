@@ -1898,7 +1898,7 @@ export const players: PlayersDataTypes = {
       id: 35,
       nickname: "Mata",
       position: "spt",
-      name: "",
+      name: "조세형",
       img: "https://nng-phinf.pstatic.net/MjAyNDAyMjFfMTI3/MDAxNzA4NDg4MjYyNjMy.bLZHGsr7iClitpzfcwOnydhtTTLZ4tQPlpWRTrpBUR4g.TMxITenjk5WclLvUAyI6MOay0pwRSv8YkFpkj1vpN_Yg.PNG/ZuiqNPivHzDYdrOEPSZu.png",
       career: [
         "2013 LCK Spring 우승",

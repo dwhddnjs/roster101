@@ -10,12 +10,14 @@ import {
 } from "@/components/ui/carousel"
 import { RosterTypes } from "@/hooks/useRosterStore"
 import { renderPositionImg } from "@/lib/function"
+import { cn } from "@/lib/utils"
 import { PlayerTypes } from "@/types/player-types"
 import { Player } from "@prisma/client"
 import { Trophy, User } from "lucide-react"
 
 import Image from "next/image"
 import React from "react"
+import { useMediaQuery } from "usehooks-ts"
 
 interface ProfileCarouselProps {
   setApi: (api: CarouselApi) => void
@@ -23,10 +25,13 @@ interface ProfileCarouselProps {
 }
 
 export const ProfileCarousel = ({ setApi, players }: ProfileCarouselProps) => {
+  const isMobile = useMediaQuery("(max-width: 768px)")
   return (
     <Carousel
       setApi={setApi}
-      className="w-[50.3%] h-fit  border-2 border-[#1e1e1e] drop-shadow-lg "
+      className={cn(
+        "w-[50.3%] h-full border-2 border-[#1e1e1e] drop-shadow-lg"
+      )}
     >
       <CarouselPrevious />
       <CarouselNext />
@@ -34,7 +39,7 @@ export const ProfileCarousel = ({ setApi, players }: ProfileCarouselProps) => {
         {players?.map((player) => (
           <CarouselItem
             key={player.id}
-            className="flex h-full bg-[#1e1e1e] relative"
+            className="flex w-full h-full bg-[#1e1e1e] relative"
           >
             <div className="flex bg-[#191919]">
               <Image src={player.img} width={350} height={350} alt="" />
@@ -82,6 +87,10 @@ export const ProfileCarousel = ({ setApi, players }: ProfileCarouselProps) => {
               />
             </div>
           </CarouselItem>
+          // <CarouselItem
+          //   key={player.id}
+          //   className="w-full h-[200px] border-2"
+          // ></CarouselItem>
         ))}
       </CarouselContent>
     </Carousel>

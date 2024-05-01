@@ -41,7 +41,7 @@ export const MemoBox = () => {
   }
 
   return (
-    <div className="flex-1  h-[450px] bg-[#1e1e1e] px-[24px] pt-[24px]  drop-shadow-lg">
+    <div className="w-1/2  h-[450px] bg-[#1e1e1e] px-[24px] pt-[24px]  drop-shadow-lg">
       <form action={onSubmitMemo} className="h-full space-y-4">
         <div className="flex justify-between items-center">
           <h3 className="text-xl text-[#eeeeee] font-bold">메모</h3>

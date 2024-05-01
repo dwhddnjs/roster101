@@ -73,13 +73,13 @@ function RosterIdPage() {
       <div
         className={cn(
           "w-full h-full flex flex-col px-[48px] py-[24px] bg-[#1a1a1a] space-y-8",
-          isMobile && "px-[18px]"
+          isMobile && "px-[18px] space-y-4"
         )}
       >
         <div
           className={cn(
-            "flex space-x-8  w-full",
-            isMobile && "flex-col space-x-0"
+            "flex space-x-8 w-full",
+            isMobile && "flex-col space-x-0 space-y-4"
           )}
         >
           <ProfileCarousel setApi={setApi} players={item?.players} />
@@ -91,8 +91,8 @@ function RosterIdPage() {
             isMobile && "flex-col space-x-0"
           )}
         >
-          <MemoBox />
           <PlayerTable players={item?.players} />
+          <MemoBox />
         </div>
       </div>
     </div>

@@ -40,7 +40,7 @@ export const PlayerTable = ({ players }: PlayerTableProps) => {
   }
 
   return (
-    <div className="flex-1 h-[450px] border-2 border-[#1e1e1e] bg-[#1e1e1e] flex flex-col justify-center drop-shadow-lg">
+    <div className="w-1/2 min-w-[803px] h-[450px] border-2 border-[#1e1e1e] bg-[#1e1e1e] flex flex-col justify-center drop-shadow-lg ">
       {players.map((player) => (
         <div
           key={player.id}

@@ -30,8 +30,8 @@ export const ProfileCarousel = ({ setApi, players }: ProfileCarouselProps) => {
     <Carousel
       setApi={setApi}
       className={cn(
-        "w-[50.3%] h-full border-2 border-[#1e1e1e] drop-shadow-lg",
-        isMobile && "w-full"
+        "w-1/2 h-full border-2 border-[#1e1e1e] drop-shadow-lg flex min-w-[803px]",
+        isMobile && "w-full min-w-0"
       )}
     >
       <CarouselPrevious className={cn("", isMobile && "w-7 h-7")} />
@@ -42,10 +42,10 @@ export const ProfileCarousel = ({ setApi, players }: ProfileCarouselProps) => {
             {isMobile ? (
               <CarouselItem
                 key={player.id}
-                className="w-full h-[200px] bg-[#1e1e1e] flex"
+                className="w-full flex h-[200px] bg-[#1e1e1e]  "
               >
-                <div className="flex bg-[#191919] w-3/7">
-                  <Image src={player.img} width={150} height={300} alt="" />
+                <div className="flex  bg-[#191919] w-3/7">
+                  <Image src={player.img} width={150} height={50} alt="" />
                 </div>
                 <div className="w-1/2 px-3 py-2">
                   <h4 className="font-bold text-md text-[#eeeeee]">
@@ -84,12 +84,12 @@ export const ProfileCarousel = ({ setApi, players }: ProfileCarouselProps) => {
             ) : (
               <CarouselItem
                 key={player.id}
-                className="flex w-full h-full bg-[#1e1e1e] relative"
+                className="flex w-1/2 h-full bg-[#1e1e1e] relative "
               >
-                <div className="flex bg-[#191919] ">
-                  <Image src={player.img} width={355} height={100} alt="" />
+                <div className="bg-[#191919] w-fit h-fit ">
+                  <Image src={player.img} width={350} height={350} alt="" />
                 </div>
-                <div className="px-[23px] py-[12px] space-y-1 relative">
+                <div className="px-[23px] py-[12px] space-y-1 relative ">
                   <h4 className="font-bold text-[48px] text-[#eeeeee]">
                     {player.nickname}
                   </h4>

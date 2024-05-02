@@ -1,15 +1,19 @@
 import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import { Card } from "@/components/ui/card"
 import { renderPositionImg } from "@/lib/function"
+import { cn } from "@/lib/utils"
 import { Player } from "@prisma/client"
 import Image from "next/image"
 import React from "react"
+import { useMediaQuery } from "usehooks-ts"
 
 interface PlayerTableProps {
   players?: Player[]
 }
 
 export const PlayerTable = ({ players }: PlayerTableProps) => {
+  const isMobile = useMediaQuery("(max-width: 768px)")
+
   if (!players) {
     return null
   }
@@ -40,35 +44,79 @@ export const PlayerTable = ({ players }: PlayerTableProps) => {
   }
 
   return (
-    <div className="w-1/2 min-w-[803px] h-[450px] border-2 border-[#1e1e1e] bg-[#1e1e1e] flex flex-col justify-center drop-shadow-lg ">
+    <div
+      className={cn(
+        "w-1/2 min-w-[803px] h-[450px] border-2 border-[#1e1e1e] bg-[#1e1e1e] flex flex-col justify-center drop-shadow-lg ",
+        isMobile && "min-w-0 w-full h-[200px] "
+      )}
+    >
       {players.map((player) => (
         <div
           key={player.id}
-          className="flex px-[24px] py-[17px] items-center space-x-12"
+          className={cn(
+            "flex px-[24px] py-[17px] items-center space-x-12",
+            isMobile && "px-4 py-0 space-x-0"
+          )}
         >
           <div className="flex justify-center items-end space-x-4">
-            <Avatar className="bg-[#191919] w-[53px] h-[53px]">
+            <Avatar
+              className={cn(
+                "bg-[#191919] w-[53px] h-[53px]",
+                isMobile && "w-[32px] h-[32px]"
+              )}
+            >
               <AvatarImage src={player.img} />
             </Avatar>
-            <div className="w-[80px]">
-              <h3 className="text-[#eeeeee] text-md font-semibold">
+            <div className="w-[90px]">
+              <h3
+                className={cn(
+                  "text-[#eeeeee] text-md font-semibold",
+                  isMobile && "text-sm"
+                )}
+              >
                 {player.nickname}
               </h3>
-              <p className="text-[#555555]">{player.name}</p>
+              <p className={cn("text-[#555555]", isMobile && "text-xs")}>
+                {player.name}
+              </p>
             </div>
           </div>
 
-          <div className="flex justify-between w-full">
+          <div className="flex justify-between w-full items-center">
             <div className="flex space-x-20">
               <div className="flex flex-col justify-center items-center">
-                <h3 className="text-[#eeeeee] text-md font-semibold">우승</h3>
-                <p className="text-[#555555] font-semibold">
+                <h3
+                  className={cn(
+                    "text-[#eeeeee] text-md font-semibold",
+                    isMobile && "text-xs"
+                  )}
+                >
+                  우승
+                </h3>
+                <p
+                  className={cn(
+                    "text-[#555555] font-semibold",
+                    isMobile && "text-xs"
+                  )}
+                >
                   {getTotalCountByAward("championship", player.career)}
                 </p>
               </div>
               <div className="flex flex-col justify-center items-center">
-                <h3 className="text-[#eeeeee] text-md font-semibold">준우승</h3>
-                <p className="text-[#555555] font-semibold">
+                <h3
+                  className={cn(
+                    "text-[#eeeeee] text-md font-semibold",
+                    isMobile && "text-xs"
+                  )}
+                >
+                  준우승
+                </h3>
+                <p
+                  className={cn(
+                    "text-[#555555] font-semibold",
+                    isMobile && "text-xs"
+                  )}
+                >
                   {getTotalCountByAward("runnerUp", player.career)}
                 </p>
               </div>
@@ -76,8 +124,8 @@ export const PlayerTable = ({ players }: PlayerTableProps) => {
             <div>
               <Image
                 src={renderPositionImg(player.position)}
-                width={32}
-                height={32}
+                width={isMobile ? 18 : 32}
+                height={isMobile ? 18 : 32}
                 alt=""
               />
             </div>

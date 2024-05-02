@@ -88,7 +88,7 @@ function RosterIdPage() {
         <div
           className={cn(
             "flex space-x-8 w-full h-full",
-            isMobile && "flex-col space-x-0"
+            isMobile && "flex-col space-x-0 space-y-4"
           )}
         >
           <PlayerTable players={item?.players} />

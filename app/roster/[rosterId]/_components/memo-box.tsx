@@ -4,11 +4,14 @@ import { memo } from "@/actions/memo"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { useRosterStore } from "@/hooks/useRosterStore"
+import { cn } from "@/lib/utils"
 import { useParams } from "next/navigation"
 import React, { useEffect, useRef, useState, useTransition } from "react"
 import { toast } from "sonner"
+import { useMediaQuery } from "usehooks-ts"
 
 export const MemoBox = () => {
+  const isMobile = useMediaQuery("(max-width: 768px)")
   const { rosterId } = useParams()
   const [isPending, startTrasition] = useTransition()
   const ref = useRef<any>(null)
@@ -41,21 +44,36 @@ export const MemoBox = () => {
   }
 
   return (
-    <div className="w-1/2  h-[450px] bg-[#1e1e1e] px-[24px] pt-[24px]  drop-shadow-lg">
-      <form action={onSubmitMemo} className="h-full space-y-4">
+    <div
+      className={cn(
+        "w-1/2 h-[450px] bg-[#1e1e1e] px-[24px] pt-[24px] drop-shadow-lg",
+        isMobile && "w-full h-[200px] px-[18px] py-[14px]"
+      )}
+    >
+      <form action={onSubmitMemo} className="h-full space-y-3">
         <div className="flex justify-between items-center">
-          <h3 className="text-xl text-[#eeeeee] font-bold">메모</h3>
+          <h3
+            className={cn(
+              "text-xl text-[#eeeeee] font-bold",
+              isMobile && "text-lg"
+            )}
+          >
+            메모
+          </h3>
           <Button
-            size={"sm"}
-            className="bg-[#272727]"
+            size={isMobile ? "xs" : "sm"}
+            className="bg-[#272727] p-3"
             type="submit"
             disabled={isPending}
           >
-            저장
+            <p className="text-sm">저장</p>
           </Button>
         </div>
         <Textarea
-          className="h-full max-h-[350px] bg-[#1a1a1a] border-[#1e1e1e] text-lg text-[#eeeeee]"
+          className={cn(
+            "h-full max-h-[350px] bg-[#1a1a1a] border-[#1e1e1e] text-lg text-[#eeeeee]",
+            isMobile && "max-h-[130px] text-sm"
+          )}
           placeholder="로스터에 대한 평가를 적어보세요"
           ref={ref}
           disabled={isPending}

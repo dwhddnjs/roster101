@@ -58,7 +58,7 @@ function RosterIdPage() {
   return (
     <div
       className={cn(
-        "w-full h-fit flex flex-col p-[48px] space-y-4",
+        "w-full h-fit flex flex-col p-[48px]  space-y-4",
         isMobile && "text-xl px-0"
       )}
     >

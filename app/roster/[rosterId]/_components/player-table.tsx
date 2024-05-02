@@ -55,7 +55,7 @@ export const PlayerTable = ({ players }: PlayerTableProps) => {
           key={player.id}
           className={cn(
             "flex px-[24px] py-[17px] items-center space-x-12",
-            isMobile && "px-4 py-0 space-x-0"
+            isMobile && "px-[18px] py-0 space-x-0"
           )}
         >
           <div className="flex justify-center items-end space-x-4">

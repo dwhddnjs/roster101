@@ -26,6 +26,7 @@ interface ProfileCarouselProps {
 
 export const ProfileCarousel = ({ setApi, players }: ProfileCarouselProps) => {
   const isMobile = useMediaQuery("(max-width: 768px)")
+
   return (
     <Carousel
       setApi={setApi}

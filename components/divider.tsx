@@ -8,7 +8,7 @@ interface DividerProps {
 
 export const Divider = ({ isAuth }: DividerProps) => {
   return (
-    <div className=" flex justify-center items-center space-x-3 py-3">
+    <div className=" flex justify-center items-center space-x-3 py-2">
       {isAuth ? (
         <>
           <div className="w-full bg-[#c4c4c4] h-[1px] " />

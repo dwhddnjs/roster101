@@ -10,9 +10,10 @@ import { FcGoogle } from "react-icons/fc"
 
 interface SocialButtonProps {
   disabled?: boolean
+  isMobile?: boolean
 }
 
-export const SocialButton = ({ disabled }: SocialButtonProps) => {
+export const SocialButton = ({ disabled, isMobile }: SocialButtonProps) => {
   const onClick = (provider: "google" | "github") => {
     signIn(provider, {
       callbackUrl: DEFAULT_LOGIN_REDIRECT,
@@ -22,7 +23,7 @@ export const SocialButton = ({ disabled }: SocialButtonProps) => {
   return (
     <div className="flex items-center w-full gap-x-3">
       <Button
-        size="lg"
+        size={isMobile ? "default" : "lg"}
         className="w-full bg-[#ffffff] hover:bg-[#ffffff]/80"
         disabled={disabled}
         onClick={(e) => {
@@ -33,7 +34,7 @@ export const SocialButton = ({ disabled }: SocialButtonProps) => {
         <FcGoogle className="h-5 w-5" />
       </Button>
       <Button
-        size="lg"
+        size={isMobile ? "default" : "lg"}
         disabled={disabled}
         className="w-full bg-[#1a1a1a] hover:bg-[#1a1a1a]/60"
         onClick={(e) => {

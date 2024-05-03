@@ -25,7 +25,6 @@ import { useUser } from "@/hooks/useUser"
 export const RosterMobile = () => {
   const [open, setOpen] = useState(false)
   const { rosters, isLoading } = useRosterStore()
-  console.log("rosters: ", rosters)
   const { rosterId } = useRosterBoxStore()
 
   const onClickOpenButton = () => {

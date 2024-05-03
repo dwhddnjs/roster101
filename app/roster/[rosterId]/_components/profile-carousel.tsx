@@ -45,8 +45,8 @@ export const ProfileCarousel = ({ setApi, players }: ProfileCarouselProps) => {
                 key={player.id}
                 className="w-full flex h-[200px] bg-[#1e1e1e]  "
               >
-                <div className="flex  bg-[#191919] w-3/7">
-                  <Image src={player.img} width={150} height={50} alt="" />
+                <div className="flex  bg-[#191919] w-3/7 min-h-200">
+                  <Image src={player.img} width={150} height={200} alt="" />
                 </div>
                 <div className="w-1/2 px-3 py-2">
                   <h4 className="font-bold text-md text-[#eeeeee]">

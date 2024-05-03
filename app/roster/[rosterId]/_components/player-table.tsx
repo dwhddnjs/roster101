@@ -58,7 +58,7 @@ export const PlayerTable = ({ players }: PlayerTableProps) => {
             isMobile && "px-[18px] py-0 space-x-0"
           )}
         >
-          <div className="flex justify-center items-end space-x-4">
+          <div className="flex justify-center items-center space-x-4">
             <Avatar
               className={cn(
                 "bg-[#191919] w-[53px] h-[53px]",
@@ -83,7 +83,7 @@ export const PlayerTable = ({ players }: PlayerTableProps) => {
           </div>
 
           <div className="flex justify-between w-full items-center">
-            <div className="flex space-x-20">
+            <div className={cn("flex space-x-20", isMobile && "space-x-12")}>
               <div className="flex flex-col justify-center items-center">
                 <h3
                   className={cn(

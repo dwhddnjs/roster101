@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react"
+import React, { SetStateAction } from "react"
 import Image from "next/image"
 import {
   HoverCard,
@@ -15,9 +15,15 @@ import { useMediaQuery } from "usehooks-ts"
 
 interface PlayerCardProps {
   player: PlayerTypes
+  setSearchValue: React.Dispatch<SetStateAction<string>>
+  onSelectPosition: (position: string) => void
 }
 
-export const PlayerCard = ({ player }: PlayerCardProps) => {
+export const PlayerCard = ({
+  player,
+  setSearchValue,
+  onSelectPosition,
+}: PlayerCardProps) => {
   const isMobile = useMediaQuery("(max-width: 768px)")
   const { onSelectPlayer, roster } = useRosterBoxStore()
 
@@ -29,11 +35,17 @@ export const PlayerCard = ({ player }: PlayerCardProps) => {
     (item) => item.position === player.position
   )[0]
 
+  const onSelectPlayerWithResetSearch = () => {
+    onSelectPlayer(player)
+    onSelectPosition(player.position)
+    setSearchValue("")
+  }
+
   return (
     <HoverCard>
       <HoverCardTrigger>
         <div
-          onClick={() => onSelectPlayer(player)}
+          onClick={onSelectPlayerWithResetSearch}
           className={cn(
             "bg-[#272727] rounded-md border-[2px] border-[#191919] hover:translate-y-2  duration-200 ease-linear shadow-md relative",
             selectedPlayer?.nickname === player?.nickname &&

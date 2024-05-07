@@ -8,6 +8,16 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { SearchPlayerInput } from "./search-player-Input"
 import { findPlayerByNicknameOrName } from "@/lib/function"
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer"
 import { useMediaQuery } from "usehooks-ts"
 import { cn } from "@/lib/utils"
 
@@ -95,11 +105,34 @@ export const PlayersContainer = () => {
             />
           </Button>
         </div>
-        {!isMobile && (
+        {!isMobile ? (
           <SearchPlayerInput
             searchValue={searchValue}
             onChangeSearchValue={onChangeSearchValue}
           />
+        ) : (
+          <Drawer>
+            <DrawerTrigger>Open</DrawerTrigger>
+            <DrawerContent>
+              <DrawerHeader>
+                <DrawerTitle>
+                  <SearchPlayerInput
+                    searchValue={searchValue}
+                    onChangeSearchValue={onChangeSearchValue}
+                  />
+                </DrawerTitle>
+                <DrawerDescription>
+                  This action cannot be undone.
+                </DrawerDescription>
+              </DrawerHeader>
+              <DrawerFooter>
+                <Button>Submit</Button>
+                <DrawerClose>
+                  <Button variant="outline">Cancel</Button>
+                </DrawerClose>
+              </DrawerFooter>
+            </DrawerContent>
+          </Drawer>
         )}
       </div>
       <div
@@ -110,10 +143,20 @@ export const PlayersContainer = () => {
       >
         {searchValue.length === 0
           ? players[position].map((player) => (
-              <PlayerCard player={player} key={player.id} />
+              <PlayerCard
+                player={player}
+                key={player.id}
+                onSelectPosition={onSelectPosition}
+                setSearchValue={setSearchValue}
+              />
             ))
           : findPlayerByNicknameOrName(players, searchValue).map((player) => (
-              <PlayerCard key={player.id} player={player} />
+              <PlayerCard
+                key={player.id}
+                player={player}
+                setSearchValue={setSearchValue}
+                onSelectPosition={onSelectPosition}
+              />
             ))}
       </div>
     </div>

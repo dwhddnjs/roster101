@@ -20,7 +20,6 @@ import { useRosterBoxStore } from "@/hooks/useRosterBoxStore"
 import { toast } from "sonner"
 import { FadeLoader } from "react-spinners"
 import Image from "next/image"
-import { useUser } from "@/hooks/useUser"
 
 export const RosterMobile = () => {
   const [open, setOpen] = useState(false)

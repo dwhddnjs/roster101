@@ -113,7 +113,7 @@ export const RosterSaveModal = () => {
       <DialogContent
         className={cn(
           "bg-[#272727] border-[#1e1e1e] text-[#c4c4c4]",
-          isMobile && "w-[330px]"
+          isMobile && "w-[330px]  mb-[50px]"
         )}
       >
         <DialogHeader>
@@ -130,10 +130,9 @@ export const RosterSaveModal = () => {
             maxLength={12}
             disabled={isPending}
           />
-          <DialogFooter className="mt-3">
+          <DialogFooter className="mt-4">
             <Button
               type="submit"
-              size="lg"
               className="bg-[#555555] text-[#eeeeee]"
               disabled={isPending}
             >

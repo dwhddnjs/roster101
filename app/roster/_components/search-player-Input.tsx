@@ -19,7 +19,7 @@ export const SearchPlayerInput = ({
         <SearchIcon size={18} className="" color="#c4c4c4" />
       </div>
       <Input
-        placeholder="Ex:) 이상혁 or faker"
+        placeholder="Ex :)  이상혁  or  faker"
         className="min-w-[240px]  bg-[#1e1e1e] border-none focus:outline-0 text-[#c4c4c4] text-xs"
         value={searchValue}
         onChange={onChangeSearchValue}

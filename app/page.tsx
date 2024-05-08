@@ -50,7 +50,7 @@ export default function HomePage() {
                 )}
               </div>
             </div>
-            <div className=" shadow-[#272727] shadow-xl border-2 border-[#1e1e1e] absolute -bottom-32">
+            <div className=" shadow-[#272727] shadow-xl border-2 border-[#1e1e1e] absolute -bottom-44">
               <Image
                 src="/images/rending_mobile.png"
                 width={320}

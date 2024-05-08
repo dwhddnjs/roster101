@@ -44,9 +44,9 @@ export const RosterSidebar = () => {
   }
 
   return (
-    <div className="w-[18%] max-w-[350px] bg-[#191919] pt-[95px] px-[18px] h-full space-y-4 max-h-[1750px] min-h-[1750px] overflow-scroll">
+    <div className="w-[18%] min-w-[300px] bg-[#191919] pt-[95px] px-[18px] h-full space-y-4 max-h-[1750px] min-h-[1750px] overflow-y-auto">
       <div className="w-full flex justify-end">
-        <Button size={"sm"} className="rounded-[50px] bg-[#272727] ">
+        <Button size={"sm"} className="rounded-xl bg-[#272727] ">
           {!rosterId ? (
             <span onClick={onClickOpenButton} className="text-xs">
               OPEN

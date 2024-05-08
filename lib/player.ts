@@ -1568,7 +1568,7 @@ export const players: PlayersDataTypes = {
       id: 37,
       nickname: "Gango",
       position: "ad",
-      name: "",
+      name: "변세훈",
       img: "https://nng-phinf.pstatic.net/MjAyMTAyMjRfMjY4/MDAxNjE0MTcyNTc3MDIx.CFjB4nt0u-S5ZwxKC4DdKeSU1DQQT8vRjiuxtTjzjAsg.cVv4fMfA_Nqa9fFr6UQKOHHwlWLnwcIPNJ0a6tO0l4kg.PNG/FzMVyzShZhNQPIToFuiB.png",
       career: ["2014 Worlds 우승"],
     },

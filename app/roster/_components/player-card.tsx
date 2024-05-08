@@ -47,7 +47,7 @@ export const PlayerCard = ({
         <div
           onClick={onSelectPlayerWithResetSearch}
           className={cn(
-            "bg-[#272727] rounded-md border-[2px] border-[#191919] hover:translate-y-2  duration-200 ease-linear shadow-md relative",
+            "bg-[#272727] rounded-lg border-[2px] border-[#191919] hover:translate-y-2  duration-200 ease-linear shadow-md relative",
             selectedPlayer?.nickname === player?.nickname &&
               "border-[#eeeeee] border-[2px]"
           )}
@@ -61,7 +61,7 @@ export const PlayerCard = ({
               isMobile && "px-2 py-1.5"
             )}
           >
-            <div>
+            <div className="space-y-0.5">
               <h2
                 className={cn(
                   "text-[#eeeeee] font-bold text-md",
@@ -80,7 +80,7 @@ export const PlayerCard = ({
               </p>
             </div>
           </div>
-          <div className="absolute bottom-2 right-2">
+          <div className="absolute bottom-2.5 right-2.5">
             <Image
               src={`/images/${player.position}_icon_p.svg`}
               width={18}

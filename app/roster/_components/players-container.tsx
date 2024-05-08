@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/drawer"
 import { useMediaQuery } from "usehooks-ts"
 import { cn } from "@/lib/utils"
+import { SearchIcon } from "lucide-react"
 
 export const PlayersContainer = () => {
   const [position, setPosition] = useState("top")
@@ -112,23 +113,25 @@ export const PlayersContainer = () => {
           />
         ) : (
           <Drawer>
-            <DrawerTrigger>Open</DrawerTrigger>
-            <DrawerContent>
+            <DrawerTrigger>
+              <SearchIcon className="w-5 h-5 text-[#eeeeee] font-extrabold" />
+            </DrawerTrigger>
+            <DrawerContent className="bg-[#1e1e1e] border-[#1a1a1a]">
               <DrawerHeader>
-                <DrawerTitle>
+                <DrawerTitle className="mb-1.5">
                   <SearchPlayerInput
                     searchValue={searchValue}
                     onChangeSearchValue={onChangeSearchValue}
                   />
                 </DrawerTitle>
-                <DrawerDescription>
-                  This action cannot be undone.
+                <DrawerDescription className="text-xs">
+                  플레이어의 이름(한글) 혹은 닉네임(영어)를 <br />
+                  작성해주세요.
                 </DrawerDescription>
               </DrawerHeader>
               <DrawerFooter>
-                <Button>Submit</Button>
                 <DrawerClose>
-                  <Button variant="outline">Cancel</Button>
+                  <Button className="w-full">검색</Button>
                 </DrawerClose>
               </DrawerFooter>
             </DrawerContent>
@@ -137,7 +140,7 @@ export const PlayersContainer = () => {
       </div>
       <div
         className={cn(
-          "grid grid-flow-row grid-cols-9 gap-4 p-4 bg-[#1a1a1a]  min-h-[300px] border-2 border-[#1e1e1e] 3xl:grid-cols-12 ",
+          "grid grid-flow-row gap-4 p-4 bg-[#1a1a1a]  min-h-[300px] border-2 border-[#1e1e1e] 3xl:grid-cols-12 2xl:grid-cols-8 xl:grid-cols-6 lg:grid-cols-4 md:grid-cols-3",
           isMobile && "grid-cols-3 gap-2 p-2 h-[380px] overflow-y-scroll"
         )}
       >

@@ -116,7 +116,7 @@ export const PlayersContainer = () => {
             <DrawerTrigger>
               <SearchIcon className="w-5 h-5 text-[#eeeeee] font-extrabold" />
             </DrawerTrigger>
-            <DrawerContent className="bg-[#1a1a1a] border-[#1e1e1e] h-3/4">
+            <DrawerContent className="bg-[#1a1a1a] border-[#1e1e1e] ">
               <DrawerHeader>
                 <DrawerTitle className="mb-1.5">
                   <SearchPlayerInput

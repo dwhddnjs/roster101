@@ -81,3 +81,64 @@ export const getCountByAward = (careers: string[]) => {
     return result
   }
 }
+
+export type TotalCountParamTypes =
+  | "runnerUp"
+  | "championship"
+  | "lck"
+  | "worlds"
+  | "msi"
+
+export const getTotalCountByAward = (
+  type: TotalCountParamTypes,
+  careers: string[]
+) => {
+  let runnerUpCount = 0
+  let championshipCount = 0
+  let lck = 0
+  let worlds = 0
+  let msi = 0
+  let result
+
+  careers.forEach((career: string) => {
+    const splitCareer = career.split(" ")
+
+    if (splitCareer.includes("우승")) {
+      championshipCount = championshipCount + 1
+      if (splitCareer.includes("LCK")) {
+        lck = lck + 1
+      }
+
+      if (splitCareer.includes("MSI")) {
+        msi = msi + 1
+      }
+
+      if (splitCareer.includes("Worlds")) {
+        worlds = worlds + 1
+      }
+    }
+
+    if (splitCareer.includes("준우승")) {
+      runnerUpCount = runnerUpCount + 1
+    }
+  })
+
+  switch (type) {
+    case "runnerUp":
+      result = runnerUpCount
+      break
+    case "championship":
+      result = championshipCount
+      break
+    case "lck":
+      result = lck
+      break
+    case "worlds":
+      result = worlds
+      break
+    default:
+      result = msi
+      break
+  }
+  return result
+}

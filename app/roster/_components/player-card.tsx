@@ -47,13 +47,19 @@ export const PlayerCard = ({
         <div
           onClick={onSelectPlayerWithResetSearch}
           className={cn(
-            "bg-[#272727] rounded-lg border-[2px] border-[#191919] hover:translate-y-2  duration-200 ease-linear shadow-md relative",
+            "bg-[#272727] rounded-lg  border-[2px] border-[#191919] hover:translate-y-2  duration-200 ease-linear shadow-md relative",
             selectedPlayer?.nickname === player?.nickname &&
               "border-[#eeeeee] border-[2px]"
           )}
         >
-          <div className="flex items-center justify-center">
-            <Image src={player.img} width={120} height={80} alt="" />
+          <div className="flex items-end justify-center">
+            <Image
+              src={player.img ? player.img : "/images/empty_user.svg"}
+              className={cn("pt-0", !player.img && "pt-[20px]")}
+              width={130}
+              height={130}
+              alt=""
+            />
           </div>
           <div
             className={cn(
@@ -61,7 +67,7 @@ export const PlayerCard = ({
               isMobile && "px-2 py-1.5"
             )}
           >
-            <div className="space-y-0.5">
+            <div>
               <h2
                 className={cn(
                   "text-[#eeeeee] font-bold text-md",
@@ -80,7 +86,7 @@ export const PlayerCard = ({
               </p>
             </div>
           </div>
-          <div className="absolute bottom-2.5 right-2.5">
+          <div className="absolute bottom-1.5 right-1.5">
             <Image
               src={`/images/${player.position}_icon_p.svg`}
               width={18}

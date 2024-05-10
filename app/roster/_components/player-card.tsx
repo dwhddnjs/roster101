@@ -53,13 +53,7 @@ export const PlayerCard = ({
           )}
         >
           <div className="flex items-end justify-center">
-            <Image
-              src={player.img ? player.img : "/images/empty_user.svg"}
-              className={cn("pt-0", !player.img && "pt-[20px]")}
-              width={130}
-              height={130}
-              alt=""
-            />
+            <Image src={player.img} width={130} height={130} alt="" />
           </div>
           <div
             className={cn(

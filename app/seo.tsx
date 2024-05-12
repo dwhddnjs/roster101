@@ -17,7 +17,6 @@ export default function Seo({ title }: { title: string }) {
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://lolstar.vercel.app/" />
       <meta property="og:image" content={icon} />
-      <meta property="og:article:author" content="lolstar" />
     </Head>
   )
 }

@@ -10,6 +10,7 @@ import { usePathname } from "next/navigation"
 import { headers } from "next/headers"
 import { ModalProvider } from "@/providers/modal-provider"
 import Seo from "./seo"
+import icon from "../public/images/esport_icon.svg"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -18,6 +19,13 @@ export const metadata: Metadata = {
   description: "당신의 로스터를 만들어 보세요!",
   verification: {
     google: process.env.GOOGLE_SEARCH_CONSOLE_VALUE,
+  },
+  keywords: "lolstar, lck, 로스터, 롤선수, 롤구단, 롤스타",
+  openGraph: {
+    title: "lolstar",
+    type: "website",
+    url: "https://lolstar.vercel.app/",
+    images: icon,
   },
 }
 

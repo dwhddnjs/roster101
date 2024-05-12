@@ -9,7 +9,6 @@ import { MainHeader } from "@/components/main-header"
 import { usePathname } from "next/navigation"
 import { headers } from "next/headers"
 import { ModalProvider } from "@/providers/modal-provider"
-import Seo from "./seo"
 import icon from "../public/images/esport_icon.svg"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -46,7 +45,6 @@ export default async function RootLayout({
   return (
     <SessionProvider session={session}>
       <html lang="en">
-        <Seo title="lolstar" />
         <body className={inter.className}>
           <MainHeader />
           <ModalProvider />

@@ -14,15 +14,15 @@ import icon from "../public/images/esport_icon.svg"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "이종원짱짱123",
+  title: "lolstar",
   description: "당신의 로스터를 만들어 보세요!",
   verification: {
     google: process.env.GOOGLE_SEARCH_CONSOLE_VALUE,
   },
   keywords:
-    "lolstar, lck, 로스터, 롤선수, 롤구단, 롤스타, 로스터만들기, 이종원짱짱",
+    "lolstar, lck, 로스터, 롤선수, 롤구단, 롤스타, 로스터만들기, 구단만들기",
   openGraph: {
-    title: "이종원짱짱123",
+    title: "lolstar",
     type: "website",
     url: "https://lolstar.vercel.app/",
     images: icon,

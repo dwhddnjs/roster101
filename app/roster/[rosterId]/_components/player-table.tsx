@@ -76,7 +76,7 @@ export const PlayerTable = ({ players }: PlayerTableProps) => {
                 src={renderPositionImg(player.position)}
                 width={isMobile ? 16 : 32}
                 height={isMobile ? 16 : 32}
-                alt=""
+                alt="position_icon"
               />
             </div>
           </div>

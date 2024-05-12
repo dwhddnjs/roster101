@@ -60,7 +60,7 @@ export const RosterMobile = () => {
                 src="/images/empty_esport_icon.svg"
                 width={60}
                 height={60}
-                alt=""
+                alt="esport_empty_icon"
               />
               <p className="text-[#c4c4c4] text-center font-semibold text-sm">
                 저장된 로스터가 <br />
@@ -74,7 +74,7 @@ export const RosterMobile = () => {
                 src="/images/empty_esport_icon.svg"
                 width={60}
                 height={60}
-                alt=""
+                alt="esport_empty_icon"
               />
               <p className="text-[#c4c4c4] text-center font-semibold text-sm">
                 저장된 로스터가 <br />

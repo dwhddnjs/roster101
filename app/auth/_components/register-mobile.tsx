@@ -38,7 +38,7 @@ export const RegisterMobile = ({
             src="/images/esport_icon.svg"
             height={100}
             width={100}
-            alt=""
+            alt="esport_icon"
           />
         </div>
         <div className=" w-full px-[48px] space-y-1.5 pl-[52px]">

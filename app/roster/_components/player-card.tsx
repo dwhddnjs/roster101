@@ -53,7 +53,12 @@ export const PlayerCard = ({
           )}
         >
           <div className="flex items-end justify-center">
-            <Image src={player.img} width={130} height={130} alt="" />
+            <Image
+              src={player.img}
+              width={130}
+              height={130}
+              alt="player_image"
+            />
           </div>
           <div
             className={cn(
@@ -85,7 +90,7 @@ export const PlayerCard = ({
               src={`/images/${player.position}_icon_p.svg`}
               width={18}
               height={18}
-              alt=""
+              alt="position_icon"
             />
           </div>
         </div>

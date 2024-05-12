@@ -53,7 +53,7 @@ export const RosterBox = () => {
           )}
         >
           <div className="flex flex-col justify-center items-center space-y-1">
-            <Image src={esportIcon} width={32} height={32} alt="" />
+            <Image src={esportIcon} width={32} height={32} alt="esport_icon" />
             <p className="text-[white] font-bold text-md">Roster</p>
           </div>
           <div className="space-x-2 flex">
@@ -89,10 +89,10 @@ export const RosterBox = () => {
                 src={renderPositionImg(player?.position)}
                 width={18}
                 height={18}
-                alt=""
+                alt="position_icon"
               />
             </div>
-            {player?.img && <Image src={player?.img} fill alt="" />}
+            {player?.img && <Image src={player?.img} fill alt="player_image" />}
             {player?.nickname && (
               <p className="absolute bottom-1 right-1 text-white font-bold text-xs drop-shadow-[1px_1px_2px_#000000]">
                 {player?.nickname}

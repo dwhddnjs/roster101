@@ -66,7 +66,7 @@ function RegisterPage() {
                 src="/images/esport_icon.svg"
                 width={300}
                 height={300}
-                alt="logo"
+                alt="esport_icon"
               />
             </div>
             <div className="w-[55%] bg-[#272727] px-24 py-32 space-y-6">

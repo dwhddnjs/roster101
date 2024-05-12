@@ -47,7 +47,12 @@ export const ProfileCarousel = ({ setApi, players }: ProfileCarouselProps) => {
               >
                 {/* 테스트 필요 */}
                 <div className="flex items-end bg-[#191919] w-3/7 min-h-200">
-                  <Image src={player.img} width={150} height={200} alt="" />
+                  <Image
+                    src={player.img}
+                    width={150}
+                    height={200}
+                    alt="player_image"
+                  />
                 </div>
                 <div className="w-1/2 px-3 py-2">
                   <h4 className="font-bold text-md text-[#eeeeee]">
@@ -62,7 +67,7 @@ export const ProfileCarousel = ({ setApi, players }: ProfileCarouselProps) => {
                       src="/images/empty_esport_icon.svg"
                       width={12}
                       height={12}
-                      alt=""
+                      alt="esport_empty_icon"
                     />
                     <p className="text-[#c4c4c4] text-xs ">
                       {player.position.toUpperCase()}
@@ -89,7 +94,12 @@ export const ProfileCarousel = ({ setApi, players }: ProfileCarouselProps) => {
                 className="flex w-1/2 h-full bg-[#1e1e1e] relative "
               >
                 <div className="bg-[#191919] w-fit h-fit ">
-                  <Image src={player.img} width={350} height={350} alt="" />
+                  <Image
+                    src={player.img}
+                    width={350}
+                    height={350}
+                    alt="player_image"
+                  />
                 </div>
                 <div className="px-[23px] py-[12px] space-y-1 relative ">
                   <h4 className="font-bold text-[48px] text-[#eeeeee]">
@@ -104,7 +114,7 @@ export const ProfileCarousel = ({ setApi, players }: ProfileCarouselProps) => {
                       src="/images/empty_esport_icon.svg"
                       width={18}
                       height={18}
-                      alt=""
+                      alt="esport_empty_icon"
                     />
                     <p className="text-[#c4c4c4] text-md ">
                       {player.position.toUpperCase()}
@@ -128,7 +138,7 @@ export const ProfileCarousel = ({ setApi, players }: ProfileCarouselProps) => {
                 <div className="absolute bottom-5 right-5">
                   <Image
                     src={renderPositionImg(player.position)}
-                    alt=""
+                    alt="position_icon"
                     height={48}
                     width={48}
                   />

@@ -1,4 +1,4 @@
-배포: https://lolstar.vercel.app/
+배포: https://roster101.vercel.app/
 
 구버전 레포
 

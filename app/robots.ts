@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/private/",
     },
-    sitemap: "https://lolstar.vercel.app/sitemap.xml",
+    sitemap: "https://roster101.vercel.app/sitemap.xml",
   }
 }

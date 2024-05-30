@@ -8,7 +8,6 @@ import EsportIcon from "@/public/images/esport_icon.svg"
 import Image from "next/image"
 import { Button } from "./ui/button"
 import { signOut, useSession } from "next-auth/react"
-import { toast } from "sonner"
 import { UserButton } from "./user-button"
 import { LogInIcon } from "lucide-react"
 import { useMediaQuery } from "usehooks-ts"
@@ -63,7 +62,7 @@ export const MainHeader = ({
               hideOnMobile && "text-[14px]"
             )}
           >
-            LoLStar
+            Roster101
           </h1>
         </div>
         <nav className="flex items-center space-x-5">

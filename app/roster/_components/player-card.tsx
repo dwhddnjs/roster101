@@ -57,7 +57,7 @@ export const PlayerCard = ({
               src={player.img}
               width={130}
               height={130}
-              alt="player_image"
+              alt="roster101 player_image"
             />
           </div>
           <div
@@ -90,7 +90,7 @@ export const PlayerCard = ({
               src={`/images/${player.position}_icon_p.svg`}
               width={18}
               height={18}
-              alt="position_icon"
+              alt="roster101 position_icon"
             />
           </div>
         </div>

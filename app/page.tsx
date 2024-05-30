@@ -55,7 +55,7 @@ export default function HomePage() {
                 src="/images/rending_mobile.png"
                 width={320}
                 height={200}
-                alt="rending_mobile_icon"
+                alt="roster101 rending_mobile_icon"
               />
             </div>
           </div>
@@ -96,7 +96,7 @@ export default function HomePage() {
                 src="/images/rending.png"
                 width={1200}
                 height={400}
-                alt="rending_icon"
+                alt="roster101 rending_icon "
               />
             </div>
           </div>
@@ -106,7 +106,7 @@ export default function HomePage() {
                 src="/images/empty_esport_icon.svg"
                 width={16}
                 height={16}
-                alt="rending_empty_icon"
+                alt="roster101 rending_empty_icon"
               />
               <p className="text-[#c4c4c4] text-sm">syd1215no@gmail.com</p>
             </div>

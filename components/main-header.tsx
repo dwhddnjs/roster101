@@ -54,7 +54,7 @@ export const MainHeader = ({
             src={EsportIcon}
             width={hideOnMobile ? 18 : 24}
             height={hideOnMobile ? 18 : 24}
-            alt="esport_icon"
+            alt="roster101 esport_icon"
           />
           <h1
             className={cn(

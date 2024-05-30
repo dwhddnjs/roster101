@@ -124,7 +124,7 @@ export const RosterCard = ({ roster }: RosterCardProps) => {
               src={renderPositionImg(player.position)}
               height={16}
               width={16}
-              alt="position_icon"
+              alt="roster101 position_icon"
             />
             <p className="text-[10px] font-medium">{player?.nickname}</p>
           </div>

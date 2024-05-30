@@ -50,7 +50,7 @@ export const PlayersContainer = () => {
               src="/images/top_icon_p.svg"
               width={position === "top" ? 32 : 24}
               height={position === "top" ? 32 : 24}
-              alt="position_top_icon"
+              alt="roster101 position_top_icon"
             />
           </Button>
           <Button
@@ -63,7 +63,7 @@ export const PlayersContainer = () => {
               src="/images/jgl_icon_p.svg"
               width={position === "jgl" ? 32 : 24}
               height={position === "jgl" ? 32 : 24}
-              alt="position_jgl_icon"
+              alt="roster101 position_jgl_icon"
             />
           </Button>
           <Button
@@ -76,7 +76,7 @@ export const PlayersContainer = () => {
               src="/images/mid_icon_p.svg"
               width={position === "mid" ? 32 : 24}
               height={position === "mid" ? 32 : 24}
-              alt="position_mid_icon"
+              alt="roster101 position_mid_icon"
             />
           </Button>
           <Button
@@ -89,7 +89,7 @@ export const PlayersContainer = () => {
               src="/images/ad_icon_p.svg"
               width={position === "ad" ? 32 : 24}
               height={position === "ad" ? 32 : 24}
-              alt="position_ad_icon"
+              alt="roster101 position_ad_icon"
             />
           </Button>
           <Button
@@ -102,7 +102,7 @@ export const PlayersContainer = () => {
               src="/images/spt_icon_p.svg"
               width={position === "spt" ? 32 : 24}
               height={position === "spt" ? 32 : 24}
-              alt="position_spt_icon"
+              alt="roster101 position_spt_icon"
             />
           </Button>
         </div>

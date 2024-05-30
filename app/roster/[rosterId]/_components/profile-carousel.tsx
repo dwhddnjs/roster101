@@ -51,7 +51,7 @@ export const ProfileCarousel = ({ setApi, players }: ProfileCarouselProps) => {
                     src={player.img}
                     width={150}
                     height={200}
-                    alt="player_image"
+                    alt="roster101 player_image"
                   />
                 </div>
                 <div className="w-1/2 px-3 py-2">
@@ -67,7 +67,7 @@ export const ProfileCarousel = ({ setApi, players }: ProfileCarouselProps) => {
                       src="/images/empty_esport_icon.svg"
                       width={12}
                       height={12}
-                      alt="esport_empty_icon"
+                      alt="roster101 esport_empty_icon"
                     />
                     <p className="text-[#c4c4c4] text-xs ">
                       {player.position.toUpperCase()}
@@ -98,7 +98,7 @@ export const ProfileCarousel = ({ setApi, players }: ProfileCarouselProps) => {
                     src={player.img}
                     width={350}
                     height={350}
-                    alt="player_image"
+                    alt="roster101 player_image"
                   />
                 </div>
                 <div className="px-[23px] py-[12px] space-y-1 relative ">
@@ -114,7 +114,7 @@ export const ProfileCarousel = ({ setApi, players }: ProfileCarouselProps) => {
                       src="/images/empty_esport_icon.svg"
                       width={18}
                       height={18}
-                      alt="esport_empty_icon"
+                      alt="roster101 esport_empty_icon"
                     />
                     <p className="text-[#c4c4c4] text-md ">
                       {player.position.toUpperCase()}
@@ -138,7 +138,7 @@ export const ProfileCarousel = ({ setApi, players }: ProfileCarouselProps) => {
                 <div className="absolute bottom-5 right-5">
                   <Image
                     src={renderPositionImg(player.position)}
-                    alt="position_icon"
+                    alt="roster101 position_icon"
                     height={48}
                     width={48}
                   />

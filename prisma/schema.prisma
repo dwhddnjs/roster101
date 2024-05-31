@@ -21,6 +21,7 @@ model User {
   image         String?
   password      String?
   accounts      Account[]
+  playerList    Json?
   roster Roster[] @relation("UserToRosters")
 }
 

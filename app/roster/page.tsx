@@ -14,9 +14,15 @@ import { RosterSidebar } from "./_components/roster-sidebar"
 import { useRosterStore } from "@/hooks/useRosterStore"
 import { useMediaQuery } from "usehooks-ts"
 import { RosterMobile } from "./_components/roster-mobile"
+import { useUser } from "@/hooks/useUser"
+import dd from "@/playerData.json"
 
 function RosterPage() {
   const isMobile = useMediaQuery("(max-width: 768px)")
+  const user = useUser()
+  console.log("user: ", user)
+
+  console.log("playerData: ", typeof JSON.stringify(dd))
 
   return (
     <>

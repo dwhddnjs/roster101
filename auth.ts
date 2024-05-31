@@ -3,6 +3,8 @@ import authConfig from "./auth.config"
 import { PrismaAdapter } from "@auth/prisma-adapter"
 import { db } from "./lib/db"
 import { getUserById } from "./prisma/data/user"
+import playerList from "./playerData.json"
+import { ExtendedUser } from "./next-auth"
 
 export const {
   handlers: { GET, POST },
@@ -14,7 +16,10 @@ export const {
     async linkAccount({ user }) {
       await db.user.update({
         where: { id: user.id },
-        data: { emailVerified: new Date() },
+        data: {
+          emailVerified: new Date(),
+          playerList: JSON.stringify(playerList),
+        },
       })
     },
   },

@@ -1,28 +1,19 @@
 "use client"
 
 import React, { useEffect, useState } from "react"
-import { signOut } from "next-auth/react"
-import { Button } from "@/components/ui/button"
-import Image from "next/image"
-import { players } from "@/lib/player"
-import { Avatar, AvatarImage } from "@/components/ui/avatar"
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
-import { PlayerCard } from "./_components/player-card"
 import { PlayersContainer } from "./_components/players-container"
 import { RosterBox } from "./_components/roster-box"
 import { RosterSidebar } from "./_components/roster-sidebar"
 import { useRosterStore } from "@/hooks/useRosterStore"
 import { useMediaQuery } from "usehooks-ts"
 import { RosterMobile } from "./_components/roster-mobile"
-import { useUser } from "@/hooks/useUser"
-import dd from "@/playerData.json"
+import { usePlayerList } from "@/hooks/usePlayerList"
 
 function RosterPage() {
   const isMobile = useMediaQuery("(max-width: 768px)")
-  const user = useUser()
-  console.log("user: ", user)
 
-  console.log("playerData: ", typeof JSON.stringify(dd))
+  const { data } = usePlayerList()
+  console.log("data: ", data)
 
   return (
     <>

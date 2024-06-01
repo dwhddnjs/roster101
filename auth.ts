@@ -5,6 +5,7 @@ import { db } from "./lib/db"
 import { getUserById } from "./prisma/data/user"
 import playerList from "./playerData.json"
 import { ExtendedUser } from "./next-auth"
+import { playerList as players } from "./actions/player-list"
 
 export const {
   handlers: { GET, POST },

@@ -1,20 +1,18 @@
 import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
-import { ThemeProvider } from "@/providers/theme-provider"
 import { Toaster } from "@/components/ui/sonner"
 import { auth } from "@/auth"
 import { SessionProvider } from "next-auth/react"
 import { MainHeader } from "@/components/main-header"
-import { usePathname } from "next/navigation"
-import { headers } from "next/headers"
 import { ModalProvider } from "@/providers/modal-provider"
 import icon from "../public/images/esport_icon.svg"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "roster101",
+  title: "Roster101",
   description: "당신의 로스터를 만들어 보세요!",
   verification: {
     google: process.env.GOOGLE_SEARCH_CONSOLE_VALUE,
@@ -36,6 +34,8 @@ export const viewport: Viewport = {
   userScalable: false,
 }
 
+const queryClient = new QueryClient()
+
 export default async function RootLayout({
   children,
 }: Readonly<{
@@ -45,14 +45,16 @@ export default async function RootLayout({
 
   return (
     <SessionProvider session={session}>
-      <html lang="en">
-        <body className={inter.className}>
-          <MainHeader />
-          <ModalProvider />
-          {children}
-          <Toaster />
-        </body>
-      </html>
+      <QueryClientProvider client={queryClient}>
+        <html lang="en">
+          <body className={inter.className}>
+            <MainHeader />
+            <ModalProvider />
+            {children}
+            <Toaster />
+          </body>
+        </html>
+      </QueryClientProvider>
     </SessionProvider>
   )
 }

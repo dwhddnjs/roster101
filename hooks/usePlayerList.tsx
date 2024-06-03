@@ -1,14 +1,17 @@
-import { getUserfromPlayerList } from "@/prisma/data/user"
+"use clinet"
+
+// import { getUserfromPlayerList } from "@/prisma/data/user"
 import { useQuery } from "@tanstack/react-query"
 import { useUser } from "./useUser"
+import { playerList } from "@/actions/player-list"
 
 export const usePlayerList = () => {
-  const user = useUser()
-
   const { data, isLoading, isError } = useQuery({
     queryKey: ["playerList"],
-    queryFn: () => getUserfromPlayerList(user?.id as string),
+    queryFn: playerList,
   })
+
+  console.log("data: ", data)
 
   return {
     data,

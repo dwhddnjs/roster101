@@ -7,7 +7,8 @@ import { SessionProvider } from "next-auth/react"
 import { MainHeader } from "@/components/main-header"
 import { ModalProvider } from "@/providers/modal-provider"
 import icon from "../public/images/esport_icon.svg"
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+
+import { ReactQueryProvider } from "@/providers/react-query-provider"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -34,8 +35,6 @@ export const viewport: Viewport = {
   userScalable: false,
 }
 
-const queryClient = new QueryClient()
-
 export default async function RootLayout({
   children,
 }: Readonly<{
@@ -45,16 +44,16 @@ export default async function RootLayout({
 
   return (
     <SessionProvider session={session}>
-      <QueryClientProvider client={queryClient}>
-        <html lang="en">
-          <body className={inter.className}>
-            <MainHeader />
-            <ModalProvider />
-            {children}
-            <Toaster />
-          </body>
-        </html>
-      </QueryClientProvider>
+      {/* <ReactQueryProvider> */}
+      <html lang="en">
+        <body className={inter.className}>
+          <MainHeader />
+          <ModalProvider />
+          {children}
+          <Toaster />
+        </body>
+      </html>
+      {/* </ReactQueryProvider> */}
     </SessionProvider>
   )
 }

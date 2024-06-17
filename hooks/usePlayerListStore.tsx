@@ -27,8 +27,7 @@ export const usePlayerListStore = create<usePlayerListStoreTypes>(
           const parseData = JSON.parse(res.playerList as any)
           set({ playerList: parseData })
         } else {
-          const parseData = JSON.parse(playerData as any)
-          set({ playerList: parseData })
+          set({ playerList: playerData })
         }
       } catch (error) {
         console.log(error)

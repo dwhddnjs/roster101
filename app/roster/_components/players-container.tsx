@@ -21,10 +21,13 @@ import {
 import { useMediaQuery } from "usehooks-ts"
 import { cn } from "@/lib/utils"
 import { SearchIcon } from "lucide-react"
+import { usePlayerListStore } from "@/hooks/usePlayerList"
 
 export const PlayersContainer = () => {
   const [position, setPosition] = useState("top")
   const [searchValue, setSearchValue] = useState("")
+  const { playerList } = usePlayerListStore()
+  console.log("playerList: ", playerList)
 
   const isMobile = useMediaQuery("(max-width: 768px)")
 
@@ -144,8 +147,8 @@ export const PlayersContainer = () => {
           isMobile && "grid-cols-3 gap-2 p-2 h-[380px] overflow-y-scroll"
         )}
       >
-        {searchValue.length === 0
-          ? players[position].map((player) => (
+        {/* {playerList && searchValue.length === 0
+          ? playerList[position]?.map((player: any) => (
               <PlayerCard
                 player={player}
                 key={player.id}
@@ -153,14 +156,36 @@ export const PlayersContainer = () => {
                 setSearchValue={setSearchValue}
               />
             ))
-          : findPlayerByNicknameOrName(players, searchValue).map((player) => (
-              <PlayerCard
-                key={player.id}
-                player={player}
-                setSearchValue={setSearchValue}
-                onSelectPosition={onSelectPosition}
-              />
-            ))}
+          : findPlayerByNicknameOrName(playerList, searchValue).map(
+              (player) => (
+                <PlayerCard
+                  key={player.id}
+                  player={player}
+                  setSearchValue={setSearchValue}
+                  onSelectPosition={onSelectPosition}
+                />
+              )
+            )} */}
+        {playerList &&
+          searchValue.length === 0 &&
+          playerList[position]?.map((player: any) => (
+            <PlayerCard
+              player={player}
+              key={player.id}
+              onSelectPosition={onSelectPosition}
+              setSearchValue={setSearchValue}
+            />
+          ))}
+        {playerList &&
+          searchValue.length > 0 &&
+          findPlayerByNicknameOrName(playerList, searchValue).map((player) => (
+            <PlayerCard
+              key={player.id}
+              player={player}
+              setSearchValue={setSearchValue}
+              onSelectPosition={onSelectPosition}
+            />
+          ))}
       </div>
     </div>
   )

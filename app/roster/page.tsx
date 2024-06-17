@@ -7,13 +7,11 @@ import { RosterSidebar } from "./_components/roster-sidebar"
 import { useRosterStore } from "@/hooks/useRosterStore"
 import { useMediaQuery } from "usehooks-ts"
 import { RosterMobile } from "./_components/roster-mobile"
-import { usePlayerList } from "@/hooks/usePlayerList"
 import { playerList } from "@/actions/player-list"
+import { usePlayerListStore } from "@/hooks/usePlayerList"
 
 function RosterPage() {
   const isMobile = useMediaQuery("(max-width: 768px)")
-  // const asd = usePlayerList()
-  // console.log("asd: ", asd)
 
   return (
     <>

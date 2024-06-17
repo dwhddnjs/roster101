@@ -8,7 +8,7 @@ import { useRosterStore } from "@/hooks/useRosterStore"
 import { useMediaQuery } from "usehooks-ts"
 import { RosterMobile } from "./_components/roster-mobile"
 import { playerList } from "@/actions/player-list"
-import { usePlayerListStore } from "@/hooks/usePlayerList"
+import { usePlayerListStore } from "@/hooks/usePlayerListStore"
 
 function RosterPage() {
   const isMobile = useMediaQuery("(max-width: 768px)")

@@ -6,6 +6,7 @@ import { useUser } from "./useUser"
 import { currentUser } from "@/lib/auth"
 import { PlayerTypes } from "@/types/player-types"
 import { players } from "@/lib/player"
+import playerData from "@/playerData.json"
 
 type usePlayerListStoreTypes = {
   playerList: {
@@ -26,7 +27,8 @@ export const usePlayerListStore = create<usePlayerListStoreTypes>(
           const parseData = JSON.parse(res.playerList as any)
           set({ playerList: parseData })
         } else {
-          set({ playerList: players })
+          const parseData = JSON.parse(playerData as any)
+          set({ playerList: parseData })
         }
       } catch (error) {
         console.log(error)

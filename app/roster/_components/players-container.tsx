@@ -21,7 +21,7 @@ import {
 import { useMediaQuery } from "usehooks-ts"
 import { cn } from "@/lib/utils"
 import { SearchIcon } from "lucide-react"
-import { usePlayerListStore } from "@/hooks/usePlayerList"
+import { usePlayerListStore } from "@/hooks/usePlayerListStore"
 
 export const PlayersContainer = () => {
   const [position, setPosition] = useState("top")

@@ -13,10 +13,13 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { useRosterBoxStore } from "@/hooks/useRosterBoxStore"
 import { toast } from "sonner"
+import { Skeleton } from "@/components/ui/skeleton"
+import { useMediaQuery } from "usehooks-ts"
 
 export const RosterSidebar = () => {
   const { rosters, isLoading } = useRosterStore()
   const { rosterId } = useRosterBoxStore()
+  const isMobile = useMediaQuery("(max-width: 768px)")
 
   const onClickOpenButton = () => {
     if (!rosterId) {
@@ -58,9 +61,10 @@ export const RosterSidebar = () => {
           )}
         </Button>
       </div>
-      {isLoading && (
-        <div className="flex items-center justify-center mt-[300px]">
-          <FadeLoader color="#555555" />
+      {!isMobile && isLoading && (
+        <div className="flex flex-col items-center justify-center mt-[300px] space-y-4">
+          <RosterCard.Skeleton />
+          <RosterCard.Skeleton />
         </div>
       )}
       {rosters?.map((roster) => (

@@ -13,6 +13,7 @@ import { removeRoster } from "@/actions/remove-roster"
 import { toast } from "sonner"
 import { useRosterBoxStore } from "@/hooks/useRosterBoxStore"
 import { useMediaQuery } from "usehooks-ts"
+import { Skeleton } from "@/components/ui/skeleton"
 
 interface RosterCardProps {
   roster: RosterTypes
@@ -132,5 +133,33 @@ export const RosterCard = ({ roster }: RosterCardProps) => {
       </div>
       <div className="w-0 h-0 border-t-[32px] border-t-transparent border-r-[32px] border-r-[#27272a] rounded-br-md absolute bottom-0 right-0" />
     </div>
+  )
+}
+
+RosterCard.Skeleton = function RosterCardSkeleton() {
+  return (
+    <Skeleton className="rounded-lg pt-[8px] px-[12px] pb-[10px] bg-[#272727] w-[280px] h-[160px]">
+      <div className="pb-2">
+        <Skeleton className="h-5 w-[120px] bg-[#555555] rounded-xl" />
+      </div>
+      <div className="flex space-x-2 mb-2 items-center justify-center">
+        <Skeleton className="h-[46px] w-[46px] bg-[#555555] rounded-[50px]" />
+        <Skeleton className="h-[46px] w-[46px] bg-[#555555] rounded-[50px]" />
+        <Skeleton className="h-[46px] w-[46px] bg-[#555555] rounded-[50px]" />
+        <Skeleton className="h-[46px] w-[46px] bg-[#555555] rounded-[50px]" />
+        <Skeleton className="h-[46px] w-[46px] bg-[#555555] rounded-[50px]" />
+      </div>
+      <div className="flex space-x-20">
+        <div className="space-y-2">
+          <Skeleton className="h-3 w-[46px] bg-[#555555]" />
+          <Skeleton className="h-3 w-[46px] bg-[#555555]" />
+          <Skeleton className="h-3 w-[46px] bg-[#555555]" />
+        </div>
+        <div className="space-y-2">
+          <Skeleton className="h-3 w-[46px] bg-[#555555]" />
+          <Skeleton className="h-3 w-[46px] bg-[#555555]" />
+        </div>
+      </div>
+    </Skeleton>
   )
 }

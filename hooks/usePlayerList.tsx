@@ -17,10 +17,9 @@ type usePlayerListStoreTypes = {
 
 export const usePlayerListStore = create<usePlayerListStoreTypes>(
   (set, get) => ({
-    isLoading: false,
+    isLoading: true,
     playerList: null,
     action: async () => {
-      set({ isLoading: true })
       try {
         const res = await playerList()
         if (res) {

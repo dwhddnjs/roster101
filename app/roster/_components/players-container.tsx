@@ -26,10 +26,11 @@ import { usePlayerListStore } from "@/hooks/usePlayerList"
 export const PlayersContainer = () => {
   const [position, setPosition] = useState("top")
   const [searchValue, setSearchValue] = useState("")
-  const { playerList } = usePlayerListStore()
+  const { playerList, isLoading } = usePlayerListStore()
   console.log("playerList: ", playerList)
 
   const isMobile = useMediaQuery("(max-width: 768px)")
+  const skeletonArray = Array.from({ length: 32 }, (v, i) => i + 1)
 
   const onSelectPosition = (position: string) => {
     setPosition(position)
@@ -147,25 +148,13 @@ export const PlayersContainer = () => {
           isMobile && "grid-cols-3 gap-2 p-2 h-[380px] overflow-y-scroll"
         )}
       >
-        {/* {playerList && searchValue.length === 0
-          ? playerList[position]?.map((player: any) => (
-              <PlayerCard
-                player={player}
-                key={player.id}
-                onSelectPosition={onSelectPosition}
-                setSearchValue={setSearchValue}
-              />
-            ))
-          : findPlayerByNicknameOrName(playerList, searchValue).map(
-              (player) => (
-                <PlayerCard
-                  key={player.id}
-                  player={player}
-                  setSearchValue={setSearchValue}
-                  onSelectPosition={onSelectPosition}
-                />
-              )
-            )} */}
+        {!playerList && isLoading && (
+          <>
+            {skeletonArray.map((value) => (
+              <PlayerCard.Skeleton key={value} />
+            ))}
+          </>
+        )}
         {playerList &&
           searchValue.length === 0 &&
           playerList[position]?.map((player: any) => (

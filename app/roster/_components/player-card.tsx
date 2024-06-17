@@ -12,6 +12,7 @@ import { PlayerTypes } from "../../../types/player-types"
 import { useRosterBoxStore } from "@/hooks/useRosterBoxStore"
 import { cn } from "@/lib/utils"
 import { useMediaQuery } from "usehooks-ts"
+import { Skeleton } from "@/components/ui/skeleton"
 
 interface PlayerCardProps {
   player: PlayerTypes
@@ -114,5 +115,36 @@ export const PlayerCard = ({
         </div>
       </HoverCardContent>
     </HoverCard>
+  )
+}
+
+PlayerCard.Skeleton = function PlayerCardSkeleton() {
+  const isMobile = useMediaQuery("(max-width: 768px)")
+  return (
+    <Skeleton
+      className={cn(
+        "h-[222px] bg-[#272727] rounded-lg ",
+        isMobile && "h-[170px]"
+      )}
+    >
+      <div className="flex flex-col w-full justify-end items-center pt-[20px]">
+        <Skeleton
+          className={cn(
+            "w-[64px] h-[64px] bg-[#555555] rounded-[50px] ",
+            isMobile && "w-[48px] h-[48px]"
+          )}
+        />
+        <Skeleton
+          className={cn(
+            "w-[125px] h-[80px] bg-[#555555] rounded-tl-[50px] rounded-tr-[50px] rounded-bl-none rounded-br-none",
+            isMobile && "w-[80px] h-[50px] rounded-tl-[30px] rounded-tr-[30px]"
+          )}
+        />
+      </div>
+      <div className="w-full pt-[12px] space-y-1 px-[12px]">
+        <Skeleton className="w-[48px] h-3.5 bg-[#555555] rounded-[50px] " />
+        <Skeleton className="w-[24px] h-3 bg-[#555555] rounded-[50px] " />
+      </div>
+    </Skeleton>
   )
 }

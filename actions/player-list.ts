@@ -7,17 +7,17 @@ export const playerList = async () => {
   const user = await currentUser()
 
   if (!user) {
-    return
+    return { error: "유저가 존재하지 않습니다" }
   }
 
-  const result = await db.user.findUnique({
+  const result = (await db.user.findUnique({
     where: {
       id: user.id,
     },
     select: {
       playerList: true,
-    } as any,
-  })
+    },
+  })) as any
 
   return result
 }

@@ -1,11 +1,10 @@
 "use client"
 
 import Image from "next/image"
-import React, { FC, useState, useTransition } from "react"
+import React, { useTransition } from "react"
 import { Button } from "@/components/ui/button"
 import { X } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { Player, Roster } from "@prisma/client"
 import { renderPositionImg } from "@/lib/function"
 import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import { RosterTypes, useRosterStore } from "@/hooks/useRosterStore"

@@ -44,7 +44,6 @@ export default async function RootLayout({
 
   return (
     <SessionProvider session={session}>
-      {/* <ReactQueryProvider> */}
       <html lang="en">
         <body className={inter.className}>
           <MainHeader />
@@ -53,7 +52,6 @@ export default async function RootLayout({
           <Toaster />
         </body>
       </html>
-      {/* </ReactQueryProvider> */}
     </SessionProvider>
   )
 }

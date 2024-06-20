@@ -15,7 +15,6 @@ import { useMediaQuery } from "usehooks-ts"
 export default function HomePage() {
   const { push } = useRouter()
   const isMobile = useMediaQuery("(max-width: 768px)")
-
   const user = useUser()
 
   return (

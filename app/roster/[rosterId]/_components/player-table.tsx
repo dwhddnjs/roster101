@@ -1,5 +1,4 @@
 import { Avatar, AvatarImage } from "@/components/ui/avatar"
-import { Card } from "@/components/ui/card"
 import { VerticalText } from "@/components/vertical-text"
 import { renderPositionImg } from "@/lib/function"
 import { cn } from "@/lib/utils"

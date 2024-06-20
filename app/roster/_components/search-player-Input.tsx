@@ -1,7 +1,7 @@
 "use client"
 
 import { Input } from "@/components/ui/input"
-import { SearchCheck, SearchIcon } from "lucide-react"
+import { SearchIcon } from "lucide-react"
 import React from "react"
 
 interface SearchPlayerInputProps {

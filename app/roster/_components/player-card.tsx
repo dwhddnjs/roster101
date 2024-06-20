@@ -7,7 +7,7 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card"
-import { Medal, Trophy } from "lucide-react"
+import { Trophy } from "lucide-react"
 import { PlayerTypes } from "../../../types/player-types"
 import { useRosterBoxStore } from "@/hooks/useRosterBoxStore"
 import { cn } from "@/lib/utils"

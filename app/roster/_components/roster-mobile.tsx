@@ -3,14 +3,7 @@
 import React, { useState } from "react"
 import { RosterBox } from "./roster-box"
 import { PlayersContainer } from "./players-container"
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet"
+import { Sheet, SheetContent } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
 import { WalletCards } from "lucide-react"
 import { useRosterStore } from "@/hooks/useRosterStore"
@@ -18,7 +11,6 @@ import { RosterCard } from "./roster-card"
 import Link from "next/link"
 import { useRosterBoxStore } from "@/hooks/useRosterBoxStore"
 import { toast } from "sonner"
-import { FadeLoader } from "react-spinners"
 import Image from "next/image"
 
 export const RosterMobile = () => {

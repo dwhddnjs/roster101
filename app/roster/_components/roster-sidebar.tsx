@@ -1,19 +1,11 @@
-import {
-  FadeLoader,
-  PacmanLoader,
-  BeatLoader,
-  ClipLoader,
-} from "react-spinners"
 import React, { useEffect } from "react"
 import { RosterCard } from "./roster-card"
-import { Roster } from "@prisma/client"
 import { useRosterStore } from "@/hooks/useRosterStore"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { useRosterBoxStore } from "@/hooks/useRosterBoxStore"
 import { toast } from "sonner"
-import { Skeleton } from "@/components/ui/skeleton"
 import { useMediaQuery } from "usehooks-ts"
 
 export const RosterSidebar = () => {

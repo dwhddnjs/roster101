@@ -7,7 +7,7 @@ export const memo = async (rosterId: string, memo: string) => {
   const user = await currentUser()
 
   if (!user) {
-    return
+    return { error: "유저가 존재하지 않습니다" }
   }
 
   const result = await db.roster.update({

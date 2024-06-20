@@ -8,8 +8,6 @@ import React, { useEffect, useState } from "react"
 import { ProfileCarousel } from "./_components/profile-carousel"
 import { AwardsChart } from "./_components/awards-chart"
 import { PlayerTable } from "./_components/player-table"
-
-import { Player } from ".prisma/client"
 import { MemoBox } from "./_components/memo-box"
 import { FadeLoader } from "react-spinners"
 import { useMediaQuery } from "usehooks-ts"
@@ -38,10 +36,8 @@ function RosterIdPage() {
     if (!api) {
       return
     }
-
     setCount(api.scrollSnapList().length)
     setCurrent(api.selectedScrollSnap() + 1)
-
     api.on("select", () => {
       setCurrent(api.selectedScrollSnap() + 1)
     })

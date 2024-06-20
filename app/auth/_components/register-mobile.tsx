@@ -1,4 +1,3 @@
-import { Divider } from "@/components/divider"
 import { Button } from "@/components/ui/button"
 import {
   Form,
@@ -14,7 +13,6 @@ import { Input } from "@/components/ui/input"
 import { RegisterSchema } from "../schemas"
 import * as z from "zod"
 import { UseFormReturn } from "react-hook-form"
-import { SocialButton } from "./social-button"
 import { useRouter } from "next/navigation"
 
 interface RegisterMobileProps {

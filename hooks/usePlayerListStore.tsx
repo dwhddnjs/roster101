@@ -5,7 +5,6 @@ import { create } from "zustand"
 import { useUser } from "./useUser"
 import { currentUser } from "@/lib/auth"
 import { PlayerTypes } from "@/types/player-types"
-import { players } from "@/lib/player"
 import playerData from "@/playerData.json"
 
 type usePlayerListStoreTypes = {

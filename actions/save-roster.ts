@@ -10,7 +10,7 @@ export const saveRoster = async (roster: PlayerTypes[], title: string) => {
   const user = await currentUser()
 
   if (!user) {
-    return { error: "Unauthorized" }
+    return { error: "유저가 존재하지 않습니다" }
   }
 
   if (!title) {

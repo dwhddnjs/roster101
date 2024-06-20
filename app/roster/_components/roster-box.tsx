@@ -2,7 +2,6 @@
 
 import Image from "next/image"
 import esportIcon from "@/public/images/esport_icon.svg"
-import React, { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 
 import { Check, RotateCcw, ChevronsDown, ChevronsUp } from "lucide-react"
@@ -24,7 +23,7 @@ export const RosterBox = () => {
         isMobile && "w-full flex-col"
       )}
     >
-      {isMobile ? (
+      {isMobile && (
         <div className="w-full flex justify-end ">
           <div className="w-fit bg-[#272727] p-[6px] pl-[12px] rounded-t-md">
             <div className="space-x-3 flex">
@@ -45,7 +44,8 @@ export const RosterBox = () => {
             </div>
           </div>
         </div>
-      ) : (
+      )}
+      {!isMobile && (
         <div
           className={cn(
             "w-[100px] h-[130px] border-[1px] bg-[#272727] border-[#1e1e1e] flex flex-col items-center justify-between pt-[18px] pb-[10px]",

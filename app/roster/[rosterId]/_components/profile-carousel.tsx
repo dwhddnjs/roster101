@@ -8,10 +8,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
-import { RosterTypes } from "@/hooks/useRosterStore"
 import { renderPositionImg } from "@/lib/function"
 import { cn } from "@/lib/utils"
-import { PlayerTypes } from "@/types/player-types"
 import { Player } from "@prisma/client"
 import { Trophy, User } from "lucide-react"
 
@@ -40,12 +38,11 @@ export const ProfileCarousel = ({ setApi, players }: ProfileCarouselProps) => {
       <CarouselContent>
         {players?.map((player) => (
           <>
-            {isMobile ? (
+            {isMobile && (
               <CarouselItem
                 key={player.id}
                 className="w-full flex h-[200px] bg-[#1e1e1e]  "
               >
-                {/* 테스트 필요 */}
                 <div className="flex items-end bg-[#191919] w-3/7 min-h-200">
                   <Image
                     src={player.img}
@@ -88,7 +85,8 @@ export const ProfileCarousel = ({ setApi, players }: ProfileCarouselProps) => {
                   </div>
                 </div>
               </CarouselItem>
-            ) : (
+            )}
+            {!isMobile && (
               <CarouselItem
                 key={player.id}
                 className="flex w-1/2 h-full bg-[#1e1e1e] relative "

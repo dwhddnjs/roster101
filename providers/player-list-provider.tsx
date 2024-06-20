@@ -1,8 +1,6 @@
 "use client"
 
 import { usePlayerListStore } from "@/hooks/usePlayerListStore"
-import { useRosterStore } from "@/hooks/useRosterStore"
-import { useUser } from "@/hooks/useUser"
 import React, { useEffect, useState } from "react"
 
 export const PlayerListProvider = ({

@@ -7,17 +7,21 @@ export const playerList = async () => {
   const user = await currentUser()
 
   if (!user) {
-    return { error: "유저가 존재하지 않습니다" }
+    return
   }
 
-  const result = (await db.user.findUnique({
+  const getPlayerList = await db.user.findUnique({
     where: {
       id: user.id,
     },
     select: {
       playerList: true,
     },
-  })) as any
+  })
+
+  const result = {
+    playerList: JSON.parse(getPlayerList?.playerList as string),
+  }
 
   return result
 }

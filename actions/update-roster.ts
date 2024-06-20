@@ -3,7 +3,6 @@
 import { currentUser } from "@/lib/auth"
 import { db } from "@/lib/db"
 import { PlayerTypes } from "@/types/player-types"
-import { Player, Roster } from "@prisma/client"
 
 export const updateRoster = async (
   rosterId: number,

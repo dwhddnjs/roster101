@@ -7,7 +7,7 @@ export const rosters = async () => {
   const user = await currentUser()
 
   if (!user) {
-    return { error: "유저가 존재하지 않습니다" }
+    return
   }
 
   const existingUser = await db.user.findUnique({

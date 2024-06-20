@@ -2,9 +2,7 @@
 
 import { currentUser } from "@/lib/auth"
 import { db } from "@/lib/db"
-
 import { PlayerTypes } from "@/types/player-types"
-import { revalidatePath } from "next/cache"
 
 export const saveRoster = async (roster: PlayerTypes[], title: string) => {
   const user = await currentUser()

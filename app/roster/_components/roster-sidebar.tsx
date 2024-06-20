@@ -21,8 +21,8 @@ export const RosterSidebar = () => {
 
   if (!rosters || (!isLoading && rosters?.length === 0)) {
     return (
-      <div className="w-[18%]  bg-[#191919] pt-[95px] px-[18px] h-full space-y-4 max-h-[1750px] min-h-[1750px] overflow-y-scroll ">
-        <div className="flex flex-col items-center justify-center mt-[300px]  z-1000 space-y-3">
+      <div className="w-[18%]  bg-[#191919] pt-[95px] px-[18px] min-h-full space-y-4 overflow-y-scroll ">
+        <div className="flex flex-col items-center justify-center mt-[300px] z-1000 space-y-3">
           <Image
             src="/images/empty_esport_icon.svg"
             width={60}
@@ -39,7 +39,7 @@ export const RosterSidebar = () => {
   }
 
   return (
-    <div className="w-[18%] min-w-[300px] bg-[#191919] pt-[95px] px-[18px] h-full space-y-4 max-h-[1750px] min-h-[1750px] overflow-y-auto">
+    <div className="w-[18%] min-w-[300px] bg-[#191919] pt-[95px] px-[18px] min-h-full space-y-4 overflow-y-auto">
       <div className="w-full flex justify-end">
         <Button size={"sm"} className="rounded-xl bg-[#272727] ">
           {!rosterId ? (
@@ -59,7 +59,7 @@ export const RosterSidebar = () => {
           <RosterCard.Skeleton />
         </div>
       )}
-      {rosters?.map((roster) => (
+      {rosters.map((roster) => (
         <RosterCard key={roster.id} roster={roster} />
       ))}
     </div>

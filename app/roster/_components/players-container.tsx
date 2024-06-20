@@ -25,6 +25,7 @@ export const PlayersContainer = () => {
   const [position, setPosition] = useState("top")
   const [searchValue, setSearchValue] = useState("")
   const { playerList, isLoading } = usePlayerListStore()
+
   const isMobile = useMediaQuery("(max-width: 768px)")
   const skeletonArray = Array.from({ length: 32 }, (v, i) => i + 1)
 
@@ -37,7 +38,7 @@ export const PlayersContainer = () => {
   }
 
   return (
-    <div className="w-full">
+    <div className="w-full ">
       <div className="w-full bg-[#1e1e1e] py-1.5 px-3 flex justify-between ">
         <div className="w-fit flex items-center justify-center">
           <Button
@@ -154,7 +155,7 @@ export const PlayersContainer = () => {
         )}
         {playerList &&
           searchValue.length === 0 &&
-          playerList[position]?.map((player: any) => (
+          playerList[position]?.map((player) => (
             <PlayerCard
               player={player}
               key={player.id}
@@ -164,17 +165,15 @@ export const PlayersContainer = () => {
           ))}
         {playerList &&
           searchValue.length > 0 &&
-          findPlayerByNicknameOrName(playerList, searchValue).map(
-            (player: any) => (
-              <PlayerCard
-                key={player.id}
-                player={player}
-                setSearchValue={setSearchValue}
-                onSelectPosition={onSelectPosition}
-              />
-            )
-          )}
-        <div className="h-[290px]" />
+          findPlayerByNicknameOrName(playerList, searchValue).map((player) => (
+            <PlayerCard
+              key={player.id}
+              player={player}
+              setSearchValue={setSearchValue}
+              onSelectPosition={onSelectPosition}
+            />
+          ))}
+        <div className="h-[430px]" />
       </div>
     </div>
   )

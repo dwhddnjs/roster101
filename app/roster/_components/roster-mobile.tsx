@@ -26,7 +26,7 @@ export const RosterMobile = () => {
   }
 
   return (
-    <div className="pt-[60px] w-full h-full flex flex-col justify-between space-y-4 ">
+    <div className="pt-[60px] w-full h-full flex flex-col justify-between space-y-4 overflow-hidden">
       <div className="space-y-1 ml-3  px-[18px] flex items-center justify-between">
         <div>
           <h3 className="text-xl text-[#eeeeee] font-bold">Roster</h3>

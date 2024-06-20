@@ -7,9 +7,6 @@ import { SessionProvider } from "next-auth/react"
 import { MainHeader } from "@/components/main-header"
 import { ModalProvider } from "@/providers/modal-provider"
 import icon from "../public/images/esport_icon.svg"
-
-import { ReactQueryProvider } from "@/providers/react-query-provider"
-
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {

@@ -17,7 +17,7 @@ import { useSaveRosterModalStore } from "@/hooks/useSaveRosterModalStore"
 import { useUser } from "@/hooks/useUser"
 import { cn } from "@/lib/utils"
 import { useRouter } from "next/navigation"
-import React, { useRef, useState, useTransition } from "react"
+import React, { useState, useTransition } from "react"
 import { toast } from "sonner"
 import { useMediaQuery } from "usehooks-ts"
 
@@ -75,7 +75,8 @@ export const RosterSaveModal = () => {
           })),
         })
         updateRoster(rosterId, inputValue, roster).then((data) => {
-          if (data.success) {
+          console.log("data.data: ", data.data)
+          if (data.success && data.data) {
             toast(data.success)
             onResponse(data.data, "update")
           }
@@ -90,7 +91,8 @@ export const RosterSaveModal = () => {
       onSave(responseData)
       saveRoster(roster, inputValue)
         .then((data) => {
-          if (data.success) {
+          if (data.success && data.data) {
+            console.log("data: ", data.data)
             toast(data.success)
             onResponse(data.data, "save")
           }

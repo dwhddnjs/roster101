@@ -14,7 +14,7 @@ export const MemoBox = () => {
   const isMobile = useMediaQuery("(max-width: 768px)")
   const { rosterId } = useParams()
   const [isPending, startTrasition] = useTransition()
-  const ref = useRef<any>(null)
+  const ref = useRef<HTMLTextAreaElement | null>(null)
   const { rosters, onUpdate } = useRosterStore()
 
   const currentRoster = rosters.filter(
@@ -22,13 +22,13 @@ export const MemoBox = () => {
   )[0]
 
   useEffect(() => {
-    if (currentRoster?.memo) {
+    if (currentRoster?.memo && ref.current) {
       ref.current.value = JSON.parse(currentRoster.memo as string)
     }
   }, [currentRoster])
 
   const onSubmitMemo = () => {
-    const textValue = JSON.stringify(ref.current.value)
+    const textValue = JSON.stringify(ref.current?.value)
     startTrasition(() => {
       memo(rosterId as string, textValue)
         .then((data) => {

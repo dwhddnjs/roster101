@@ -9,11 +9,11 @@ export type RosterTypes = Omit<Roster, "memo"> & { memo?: Prisma.JsonValue } & {
 type useRosterTypes = {
   rosters: Array<RosterTypes>
   action: () => void
-  onSave: (roster: RosterTypes, response?: any) => void
+  onSave: (roster: RosterTypes, response?: RosterTypes) => void
   isLoading: boolean
   onRemove: (rosterId: number) => void
   onUpdate: (rosterId: number, roster: RosterTypes) => void
-  onResponse: (roster: any, type: "save" | "update") => void
+  onResponse: (roster: RosterTypes, type: "save" | "update") => void
 }
 
 export const useRosterStore = create<useRosterTypes>((set, get) => ({

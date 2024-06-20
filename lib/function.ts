@@ -1,21 +1,25 @@
 import { PlayerTypes } from "@/types/player-types"
+
 import TopIcon from "@/public/images/top_icon_p.svg"
 import JglIcon from "@/public/images/jgl_icon_p.svg"
 import MidIcon from "@/public/images/mid_icon_p.svg"
 import AdIcon from "@/public/images/ad_icon_p.svg"
 import SptIcon from "@/public/images/spt_icon_p.svg"
 
-export const findPlayerByNicknameOrName = (players: any, name: string) => {
+export const findPlayerByNicknameOrName = (
+  players: { [key: string]: PlayerTypes[] },
+  name: string
+) => {
   const objToValuesArr = Object.values(players)
 
-  const playersArray: any = objToValuesArr.flat()
+  const playersArray = objToValuesArr.flat()
 
   const result = playersArray.filter(
-    (el: any) =>
+    (el) =>
       el.name.toLowerCase().includes(name.toLowerCase()) ||
       el.nickname.toLowerCase().includes(name.toLowerCase())
   )
-  return result.map((el: any, i: any) => ({ ...el, id: i + 1 }))
+  return result.map((el, i) => ({ ...el, id: i + 1 }))
 }
 
 export const removeHtmlAndQuote = (text: string) => {

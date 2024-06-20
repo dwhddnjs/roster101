@@ -11,11 +11,9 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { FaUser } from "react-icons/fa"
 import { LogOutIcon } from "lucide-react"
 import { signOut } from "next-auth/react"
-import { toast } from "sonner"
 import { useUser } from "@/hooks/useUser"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
-import { useMediaQuery } from "usehooks-ts"
 import { cn } from "@/lib/utils"
 
 interface UserButtonProps {

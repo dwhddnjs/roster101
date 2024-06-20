@@ -1,4 +1,3 @@
-import { playerList } from "@/actions/player-list"
 import { useSession } from "next-auth/react"
 
 export const useUser = () => {

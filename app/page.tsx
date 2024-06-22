@@ -29,7 +29,7 @@ export default function HomePage() {
             <br />
             당신만의 매력적인 로스터를 구성 해보세요!!
           </p>
-          <div className="space-x-5 p-[24px] mr-3  ">
+          <div className="space-x-5 pb-[48px] mr-3  ">
             <Button
               onClick={() => push("/roster")}
               className="w-[160px] h-[44px] bg-[#555555] text-[16px] rounded-none font-bold "
@@ -48,10 +48,10 @@ export default function HomePage() {
         </div>
         <div className=" shadow-[#272727] shadow-2xl border-2 border-[#1e1e1e] ">
           <Image
-            src="/images/rending.png"
+            src="/images/landing.png"
             width={1200}
             height={400}
-            alt="roster101 rending_icon "
+            alt="roster101 landing"
           />
         </div>
       </div>
@@ -61,7 +61,7 @@ export default function HomePage() {
             src="/images/empty_esport_icon.svg"
             width={16}
             height={16}
-            alt="roster101 rending_empty_icon"
+            alt="roster101 empty_icon"
           />
           <p className="text-[#c4c4c4] text-sm">syd1215no@gmail.com</p>
         </div>

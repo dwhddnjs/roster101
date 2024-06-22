@@ -5,19 +5,12 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { useRosterBoxStore } from "@/hooks/useRosterBoxStore"
-import { toast } from "sonner"
 import { useMediaQuery } from "usehooks-ts"
 
 export const RosterSidebar = () => {
   const { rosters, isLoading } = useRosterStore()
   const { rosterId } = useRosterBoxStore()
   const isMobile = useMediaQuery("(max-width: 768px)")
-
-  const onClickOpenButton = () => {
-    if (!rosterId) {
-      return toast("로스터 카드를 선택해주세요")
-    }
-  }
 
   if (!rosters || (!isLoading && rosters?.length === 0)) {
     return (
@@ -39,14 +32,10 @@ export const RosterSidebar = () => {
   }
 
   return (
-    <div className="w-[18%] min-w-[300px] bg-[#191919] pt-[95px] px-[18px] min-h-full space-y-4 overflow-y-auto">
-      <div className="w-full flex justify-end">
-        <Button size={"sm"} className="rounded-xl bg-[#272727] ">
-          {!rosterId ? (
-            <span onClick={onClickOpenButton} className="text-xs">
-              OPEN
-            </span>
-          ) : (
+    <div className="w-[18%] min-w-[300px] bg-[#191919] pt-[90px] px-[18px] min-h-full space-y-4 overflow-y-auto">
+      <div className="w-full flex justify-end ">
+        <Button size={"sm"} className="rounded-xl bg-transparent ">
+          {rosterId && (
             <Link className="text-xs" href={`/roster/${rosterId}`}>
               OPEN
             </Link>

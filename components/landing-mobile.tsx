@@ -40,13 +40,22 @@ export const LandingMobile = () => {
             )}
           </div>
         </div>
-        <div className=" shadow-[#272727] shadow-xl border-2 border-[#1e1e1e] absolute -bottom-44">
+        <div className="pt-[18px]">
           <Image
-            src="/images/rending_mobile.png"
+            src="/images/landing_mobile.png"
             width={320}
             height={200}
-            alt="roster101 rending_mobile_icon"
+            alt="roster101 landing_mobile_icon"
           />
+        </div>
+        <div className="flex space-x-2 w-full justify-end mt-[24px] pb-[12px] ">
+          <Image
+            src="/images/empty_esport_icon.svg"
+            width={16}
+            height={16}
+            alt="roster101 empty_icon"
+          />
+          <p className="text-[#c4c4c4] text-sm">syd1215no@gmail.com</p>
         </div>
       </div>
     </div>

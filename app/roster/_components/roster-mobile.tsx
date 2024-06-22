@@ -18,13 +18,6 @@ export const RosterMobile = () => {
   const { rosters, isLoading } = useRosterStore()
   const { rosterId } = useRosterBoxStore()
 
-  const onClickOpenButton = () => {
-    if (!rosterId) {
-      setOpen(false)
-      return toast("로스터 카드를 선택해주세요")
-    }
-  }
-
   return (
     <div className="pt-[60px] w-full h-full flex flex-col justify-between space-y-4 overflow-hidden">
       <div className="space-y-1 ml-3  px-[18px] flex items-center justify-between">
@@ -45,9 +38,25 @@ export const RosterMobile = () => {
       </div>
       <RosterBox />
       <Sheet open={open} onOpenChange={setOpen}>
-        <SheetContent className="bg-[#191919] border-none space-y-3 pt-[55px] text-[#eeeeee] font-bold">
+        <SheetContent className="bg-[#191919] border-none space-y-3 pt-[40px] text-[#eeeeee] font-bold overflow-y-auto overflow-x-hidden">
+          {rosters && rosters.length > 0 && (
+            <>
+              <div className="w-full flex justify-start">
+                <Button size={"sm"} className="rounded-[50px] bg-transparent ">
+                  {rosterId && (
+                    <Link className="text-xs" href={`/roster/${rosterId}`}>
+                      OPEN
+                    </Link>
+                  )}
+                </Button>
+              </div>
+              {rosters?.map((roster) => (
+                <RosterCard key={roster.id} roster={roster} />
+              ))}
+            </>
+          )}
           {!rosters && (
-            <div className="flex flex-col items-center justify-center mt-[200px]  z-1000 space-y-3">
+            <div className="flex flex-col items-center justify-center mt-[200px] z-1000 space-y-3">
               <Image
                 src="/images/empty_esport_icon.svg"
                 width={60}
@@ -61,7 +70,7 @@ export const RosterMobile = () => {
             </div>
           )}
           {rosters && rosters.length === 0 && (
-            <div className="flex flex-col items-center justify-center mt-[200px]  z-1000 space-y-3">
+            <div className="flex flex-col items-center justify-center mt-[200px] z-1000 space-y-3">
               <Image
                 src="/images/empty_esport_icon.svg"
                 width={60}
@@ -73,26 +82,6 @@ export const RosterMobile = () => {
                 없습니다.
               </p>
             </div>
-          )}
-          {rosters && rosters.length > 0 && (
-            <>
-              {rosters?.map((roster) => (
-                <RosterCard key={roster.id} roster={roster} />
-              ))}
-              <div className="w-full flex justify-end">
-                <Button size={"sm"} className="rounded-[50px] bg-[#272727] ">
-                  {!rosterId ? (
-                    <span onClick={onClickOpenButton} className="text-xs">
-                      OPEN
-                    </span>
-                  ) : (
-                    <Link className="text-xs" href={`/roster/${rosterId}`}>
-                      OPEN
-                    </Link>
-                  )}
-                </Button>
-              </div>
-            </>
           )}
         </SheetContent>
       </Sheet>

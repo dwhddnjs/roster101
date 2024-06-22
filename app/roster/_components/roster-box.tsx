@@ -25,17 +25,17 @@ export const RosterBox = () => {
     >
       {isMobile && (
         <div className="w-full flex justify-end ">
-          <div className="w-fit bg-[#272727] p-[6px] pl-[12px] rounded-t-md">
+          <div className="w-fit bg-[#272727] p-[6px] pt-[8px] pl-[12px] rounded-t-lg">
             <div className="space-x-3 flex">
               <Button
-                className="font-bold bg-[#555555] rounded-[50%] text-xs w-6 h-6"
+                className="font-bold bg-[#555555] rounded-[50%] w-7 h-7"
                 size={"xs"}
                 onClick={onOpen}
               >
                 <Check className="w-4 h-4" />
               </Button>
               <Button
-                className="font-bold bg-transparent rounded-[50%] w-6 h-6"
+                className="font-bold bg-[#1e1e1e] rounded-[50%] w-7 h-7"
                 size={"xs"}
                 onClick={onResetRoster}
               >

@@ -1,14 +1,9 @@
 import * as z from "zod"
 
 export const PlayerSchema = z.object({
-  //   email: z
-  //     .string()
-  //     .min(1, { message: "최소 1글자 이상 작성해주세요" })
-  //     .email("이메일 주소가 유효하지 않습니다"),
-  //   password: z.string().min(7, { message: "최소 7자 이상 작성해주세요" }),
-  img: z.string(),
-  position: z.string(),
-  nickname: z.string(),
-  name: z.string(),
-  career: z.string(),
+  img: z.string().optional(),
+  position: z.string().min(1, { message: "포지션을 선택해주세요" }),
+  nickname: z.string().min(1, { message: "최소 1글자 이상 작성해주세요" }),
+  name: z.string().min(1, { message: "최소 1글자 이상 작성해주세요" }),
+  career: z.array(z.string()).optional(),
 })

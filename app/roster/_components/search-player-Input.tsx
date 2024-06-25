@@ -15,7 +15,7 @@ export const SearchPlayerInput = ({
 }: SearchPlayerInputProps) => {
   return (
     <div className="bg-[#191919] flex items-center  border-[1px] border-[#191919] rounded-md ">
-      <div className="p-3 ">
+      <div className="p-3  bg-[#27272a] rounded-tl-md rounded-bl-md">
         <SearchIcon size={18} className="" color="#c4c4c4" />
       </div>
       <Input

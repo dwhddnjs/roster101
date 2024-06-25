@@ -27,9 +27,9 @@ function RosterPage() {
               당신의 로스터를 구성해보세요
             </p>
           </div>
-          <Button size="sm" className="text-sm bg-[#272727]" onClick={onOpen}>
+          {/* <Button size="sm" className="text-sm bg-[#272727]" onClick={onOpen}>
             선수 생성
-          </Button>
+          </Button> */}
         </div>
         <PlayersContainer />
       </div>

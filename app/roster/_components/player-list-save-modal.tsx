@@ -32,11 +32,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { usePlayerListStore } from "@/hooks/usePlayerListStore"
+import { savePlayer } from "@/actions/save-player"
 
 export const PlayerListSaveModal = () => {
   const { isOpen, onOpen, onClose } = usePlayerListModal()
   const { push } = useRouter()
   const [isPending, startTransition] = useTransition()
+  const { playerList } = usePlayerListStore()
 
   const form = useForm<z.infer<typeof PlayerSchema>>({
     resolver: zodResolver(PlayerSchema),
@@ -45,22 +48,32 @@ export const PlayerListSaveModal = () => {
       position: "",
       name: "",
       nickname: "",
-      careers: [],
+      career: [],
     },
   })
 
   const { append, fields, remove } = useFieldArray({
     control: form.control,
-    name: "careers",
+    name: "career",
   } as any)
 
   const onSubmit = (values: z.infer<typeof PlayerSchema>) => {
-    console.log("착하고 건실하게 살겠습니다", values)
-    // startTransition(() => {
-    //   login(values).catch((error) => {
-    //     console.log(error)
-    //   })
-    // })
+    const careersValues = values.career.map((career) => career.value)
+
+    if (!playerList) return
+
+    const requestBody = {
+      id: playerList[`${values.position}`].length + 1,
+      img: values.img,
+      position: values.position,
+      name: values.name,
+      nickname: values.nickname,
+      careers: careersValues,
+    }
+
+    startTransition(() => {
+      savePlayer(requestBody)
+    })
   }
 
   return (
@@ -72,10 +85,10 @@ export const PlayerListSaveModal = () => {
         <div>
           <Form {...form}>
             <form
-              // onSubmit={form.handleSubmit(onSubmit)}
+              onSubmit={form.handleSubmit(onSubmit)}
               onChange={() => console.log(form.getValues())}
             >
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 ">
                 <FormField
                   control={form.control}
                   name="nickname"
@@ -90,7 +103,7 @@ export const PlayerListSaveModal = () => {
                     </FormItem>
                   )}
                 />
-                <div className="flex flex-col w-full">
+                <div className="flex flex-col w-full space-y-2">
                   <FormField
                     control={form.control}
                     name="nickname"
@@ -160,7 +173,7 @@ export const PlayerListSaveModal = () => {
                       </FormItem>
                     )}
                   />
-                  <div>
+                  <div className="space-y-2 ">
                     <h3 className="text-[#c4c4c4] font-semibold pl-1 text-sm">
                       Careers*
                     </h3>
@@ -170,31 +183,34 @@ export const PlayerListSaveModal = () => {
                         className="flex items-center space-x-3"
                       >
                         <Input
-                          {...form.register(`careers.${index}.value`)}
-                          className="bg-[#191919] text-[#eeeeee]  placeholder:text-[#555555] text-xs"
-                          placeholder="Ex :) 이상혁"
+                          {...form.register(`career.${index}.value`)}
+                          className="bg-[#191919] h-6 text-[#eeeeee] border-t-0 border-l-0 border-r-0 rounded-none border-[#555555] placeholder:text-[#555555] text-xs "
+                          placeholder="Ex :) 2024 Worlds 우승"
                           type="text"
                         />
+
                         <Button
                           size={"xs"}
                           onClick={() => remove(index)}
-                          className=""
+                          className="bg-red-500 h-6"
                         >
                           <Minus size={16} />
                         </Button>
                       </div>
                     ))}
+                    <div className="w-full flex justify-center">
+                      <Button
+                        size={"xs"}
+                        onClick={(e) => {
+                          e.preventDefault()
+                          append({ value: "" })
+                        }}
+                        className="rounded-full w-7 bg-[#555555]"
+                      >
+                        <PlusIcon size={16} />
+                      </Button>
+                    </div>
                   </div>
-                  <Button
-                    size={"xs"}
-                    onClick={(e) => {
-                      e.preventDefault()
-                      append({ value: "" })
-                    }}
-                    className="rounded-full w-8 bg-[#555555]"
-                  >
-                    <PlusIcon size={16} />
-                  </Button>
                 </div>
               </div>
               <div className="mt-10 flex flex-col ">

@@ -72,7 +72,9 @@ export const PlayerListSaveModal = () => {
     }
 
     startTransition(() => {
-      savePlayer(requestBody)
+      savePlayer(requestBody).then((data) => {
+        console.log(data)
+      })
     })
   }
 

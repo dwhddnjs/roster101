@@ -48,14 +48,15 @@ export const PlayerCard = ({
         <div
           onClick={onSelectPlayerWithResetSearch}
           className={cn(
-            "bg-[#272727] rounded-lg  border-[2px] border-[#191919] hover:translate-y-2  duration-200 ease-linear shadow-md relative",
+            "bg-[#272727] rounded-lg  border-[2px] border-[#191919] hover:translate-y-2 min-h-[222px] duration-200 ease-linear shadow-md relative flex flex-col justify-end",
             selectedPlayer?.nickname === player?.nickname &&
-              "border-[#eeeeee] border-[2px]"
+              "border-[#eeeeee] border-[2px]",
+            isMobile && "min-h-[174px]"
           )}
         >
           <div className="flex items-end justify-center">
             <Image
-              src={player.img}
+              src={player.img ? player.img : "/images/empty_user.svg"}
               width={130}
               height={130}
               alt="roster101 player_image"

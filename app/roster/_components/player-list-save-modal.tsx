@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useTransition } from "react"
+import { CldUploadWidget, CldUploadWidgetProps } from "next-cloudinary"
 import {
   Dialog,
   DialogContent,
@@ -34,6 +35,8 @@ import {
 } from "@/components/ui/select"
 import { usePlayerListStore } from "@/hooks/usePlayerListStore"
 import { savePlayer } from "@/actions/save-player"
+import { ImageUploader } from "@/components/image-uploader"
+import { PlayerTypes } from "@/types/player-types"
 
 export const PlayerListSaveModal = () => {
   const { isOpen, onOpen, onClose } = usePlayerListModal()
@@ -64,10 +67,10 @@ export const PlayerListSaveModal = () => {
 
     const requestBody = {
       id: playerList[`${values.position}`].length + 1,
-      img: values.img,
-      position: values.position,
-      name: values.name,
       nickname: values.nickname,
+      name: values.name,
+      position: values.position,
+      img: values.img,
       careers: careersValues,
     }
 
@@ -93,13 +96,14 @@ export const PlayerListSaveModal = () => {
               <div className="flex space-x-4 ">
                 <FormField
                   control={form.control}
-                  name="nickname"
+                  name="img"
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>
-                        <div className="w-[180px] h-[240px] flex justify-center items-center border-2 border-[#1e1e1e] bg-[#1e1e1e] rounded-lg">
-                          <PlusIcon color="#555555" width={32} height={32} />
-                        </div>
+                        <ImageUploader
+                          value={field.value as string}
+                          onChange={field.onChange}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>

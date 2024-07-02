@@ -7,6 +7,7 @@ import { useMediaQuery } from "usehooks-ts"
 import { RosterMobile } from "./_components/roster-mobile"
 import { Button } from "@/components/ui/button"
 import { usePlayerListModal } from "@/hooks/usePlayerListModalStore"
+import { ImageUploader } from "@/components/image-uploader"
 
 function RosterPage() {
   const isMobile = useMediaQuery("(max-width: 768px)")
@@ -27,9 +28,9 @@ function RosterPage() {
               당신의 로스터를 구성해보세요
             </p>
           </div>
-          {/* <Button size="sm" className="text-sm bg-[#272727]" onClick={onOpen}>
+          <Button size="sm" className="text-sm bg-[#272727]" onClick={onOpen}>
             선수 생성
-          </Button> */}
+          </Button>
         </div>
         <PlayersContainer />
       </div>

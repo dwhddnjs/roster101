@@ -2,7 +2,8 @@
 
 import { PlusIcon } from "lucide-react"
 import { CldUploadWidget } from "next-cloudinary"
-import React from "react"
+import React, { useEffect, useState } from "react"
+import { Button } from "./ui/button"
 
 interface ImageUploaderProps {
   value: string
@@ -22,12 +23,13 @@ export const ImageUploader = ({ value, onChange }: ImageUploaderProps) => {
           open()
         }
         return (
-          <div
+          <Button
+            type="button"
             onClick={onClick}
             className="w-[180px] h-[240px] flex justify-center items-center border-2 border-[#1e1e1e] bg-[#1e1e1e] rounded-lg"
           >
             <PlusIcon color="#555555" width={32} height={32} />
-          </div>
+          </Button>
         )
       }}
     </CldUploadWidget>

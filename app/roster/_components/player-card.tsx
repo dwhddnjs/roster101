@@ -1,6 +1,6 @@
 "use client"
 
-import React, { SetStateAction } from "react"
+import React, { SetStateAction, useState } from "react"
 import Image from "next/image"
 import {
   HoverCard,

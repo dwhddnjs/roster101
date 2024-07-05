@@ -17,7 +17,7 @@ import { UseFormReturn } from "react-hook-form"
 import { SocialButton } from "./social-button"
 import { useRouter } from "next/navigation"
 
-interface LoginMobileProps {
+export interface LoginMobileProps {
   form: UseFormReturn<z.infer<typeof LoginSchema>>
   onSubmit: (values: z.infer<typeof LoginSchema>) => void
   isPending: boolean

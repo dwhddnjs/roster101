@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useTransition } from "react"
+import React, { useState, useTransition } from "react"
 import { CldUploadWidget, CldUploadWidgetProps } from "next-cloudinary"
 import {
   Dialog,
@@ -43,6 +43,7 @@ export const PlayerListSaveModal = () => {
   const { push } = useRouter()
   const [isPending, startTransition] = useTransition()
   const { playerList } = usePlayerListStore()
+  const [file, setFile] = useState("")
 
   const form = useForm<z.infer<typeof PlayerSchema>>({
     resolver: zodResolver(PlayerSchema),
@@ -91,7 +92,7 @@ export const PlayerListSaveModal = () => {
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
-              onChange={() => console.log(form.getValues())}
+              onChange={(e) => console.log(form.getValues())}
             >
               <div className="flex space-x-4 ">
                 <FormField
